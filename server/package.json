@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "babel-node": "babel-node --stage 0 --ignore='foo|bar|baz'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^8.6.1",
+    "uuid": "^2.0.1"
+  }
+}

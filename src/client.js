@@ -11,13 +11,35 @@ var DefaultRoute = ReactRouter.DefaultRoute;
 var Link = ReactRouter.Link;
 var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
+var OrdersComponent = require('./components/orders-component.react');
+var AppBarComponent = require('./components/appbar-component.react');
+var App = React.createClass({
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+  getChildContext: function() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
+  render: function(){
+    return (
+      <div>
+        <AppBarComponent />
+        <RouteHandler />
+      </div>
+    )
+  }
+})
 
 var SpotComponent = React.createClass({
   render: function(){
     return (
       <div>
         <Dashboard store={dashboardStore} actions={dashboardActions} ctype={'spot'} />
-        <RouteHandler />
       </div>
     )
   }
@@ -27,14 +49,14 @@ var MarginComponent = React.createClass({
     return (
       <div>
         <Dashboard store={dashboardStore} actions={dashboardActions} ctype={'margin'} />
-        <RouteHandler />
       </div>
     )
   }
 });
 
 var routes = (
-  <Route name="app" path="/" handler={SpotComponent}>
+  <Route name="app" path="/" handler={App}>
+    <DefaultRoute handler={SpotComponent} />
     <Route name="margin" path="/margin" handler={MarginComponent} />
     <Route name="orders" path="/orders" handler={OrdersComponent} />
   </Route>

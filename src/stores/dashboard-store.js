@@ -11,14 +11,7 @@ module.exports = function(actions){
     () =>
       Bacon.fromPromise(
         fetch(
-          '/accounts', {
-            headers: {
-              'accept': 'application/json',
-              'x-quoine-device' :'desktop-or-else',
-              'x-quoine-user-id' :5219,
-              'x-quoine-user-token':'w3cR1WV5GdhiKvG2hC_K'
-            }
-          }
+          '/accounts'
         ).
         then(
           (response) => response.json()
@@ -26,12 +19,12 @@ module.exports = function(actions){
       ).map(
         (json) => json
       )
-  )
-  var accounts = Bacon.update(
+  );
+  var currencies = Bacon.update(
     Immutable.List(),
-    getAccounts, (oldList, newList) => newList
+    getAccounts, (oldList, newList) =>  newList.fiat_accounts
   );
   return {
-    currencies: accounts.map((i) => i.fiat_accounts)
+    currencies: currencies
   }
 }

@@ -2,8 +2,8 @@ module.exports = {
     context: __dirname ,
     entry: "./src/client.js",
     output: {
-        path: __dirname + '../../../app/assets/javascripts',
-        filename: "mobiledashboard.js"
+        path: __dirname + '/server/public',
+        filename: "build.js"
     },
     module: {
       loaders: [
