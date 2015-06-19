@@ -9,24 +9,39 @@ var Link = ReactRouter.Link;
 var ToolbarGroup = mui.ToolbarGroup;
 var FlatButton = mui.FlatButton;
 var HeadComponent = React.createClass({
+  getStyles: function(){
+    return {
+      ul: {
+        listStyleType: 'none',
+        margin: '0',
+        padding: '20px'  
+      },
+      li: {
+        display: 'inline'
+      }
+      
+    }
+  },
   render: function(){
     return (
-      <ToolbarGroup key={1} float="left">
-        <div style={{paddingTop: '5%', backgroundColor:"#00bcd4 none repeat scroll 0 0"}}>
-          <Link style={{textDecoration: 'none', color:Typography.textFullWhite}} to="app">
-            <FlatButton style={{backgroundColor:"#00bcd4 none repeat scroll 0 0", color:Typography.textFullWhite}}>Spot
-            </FlatButton>
+      <ul style={this.getStyles().ul}>
+        <li style={this.getStyles().li}>
+          <Link activeStyle={{textDecoration:'none', color:Typography.textFullWhite}} to="app">
+            Spot
           </Link>
-          <Link style={{textDecoration: 'none', color:Typography.textFullWhite}} to="margin">
-            <FlatButton style={{backgroundColor:"#00bcd4 none repeat scroll 0 0", color:Typography.textFullWhite}}>Margin
-            </FlatButton>
+        </li>
+        <li style={this.getStyles().li}>
+          <Link activeStyle={{textDecoration:'none', color:Typography.textFullWhite}} to="margin">
+            Margin
           </Link>
-          <Link style={{textDecoration: 'none'}} to="orders">
-            <FlatButton style={{backgroundColor:"#00bcd4 none repeat scroll 0 0", color:Typography.textFullWhite}}>Orders
-            </FlatButton>
+        </li>
+        <li style={this.getStyles().li}>
+          <Link activeStyle={{textDecoration:'none', color:Typography.textFullWhite}} to="orders">
+            Orders
           </Link>
-        </div>
-      </ToolbarGroup>
+        </li>
+
+      </ul>
     )
   },
 });

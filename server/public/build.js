@@ -50,17 +50,17 @@
 	var dashboardActions = __webpack_require__(174);
 	var dashboardStore = __webpack_require__(179)(dashboardActions);
 	var Dashboard = __webpack_require__(187);
-	__webpack_require__(337)();
+	__webpack_require__(301)();
 
-	var ReactRouter = __webpack_require__(297);
+	var ReactRouter = __webpack_require__(305);
 	var DefaultRoute = ReactRouter.DefaultRoute;
 	var Link = ReactRouter.Link;
 	var Route = ReactRouter.Route;
 	var RouteHandler = ReactRouter.RouteHandler;
-	var mui = __webpack_require__(188);
+	var mui = __webpack_require__(192);
 	var ThemeManager = new mui.Styles.ThemeManager();
-	var OrdersComponent = __webpack_require__(341);
-	var AppBarComponent = __webpack_require__(344);
+	var OrdersComponent = __webpack_require__(344);
+	var AppBarComponent = __webpack_require__(345);
 	var App = React.createClass({displayName: "App",
 	  childContextTypes: {
 	    muiTheme: React.PropTypes.object
@@ -44690,12 +44690,12 @@
 /* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */var React = __webpack_require__(190);
+	/** @jsx React.DOM */var React = __webpack_require__(188);
 	var _ = __webpack_require__(186);
 	var Immutable = __webpack_require__(185);
-	var Loader = __webpack_require__(342);
+	var Loader = __webpack_require__(189);
 
-	var CurrenciesTabsComponent = __webpack_require__(345);
+	var CurrenciesTabsComponent = __webpack_require__(191);
 
 
 
@@ -44735,104 +44735,821 @@
 /* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */'use strict';
+	/** @jsx React.DOM */module.exports = __webpack_require__(29);
 
-	module.exports = {
-	  AppBar: __webpack_require__(208),
-	  AppCanvas: __webpack_require__(215),
-	  Avatar: __webpack_require__(216),
-	  BeforeAfterWrapper: __webpack_require__(217),
-	  Checkbox: __webpack_require__(218),
-	  CircularProgress: __webpack_require__(224),
-	  ClearFix: __webpack_require__(221),
-	  DatePicker: __webpack_require__(225),
-	  Dialog: __webpack_require__(258),
-	  DialogWindow: __webpack_require__(253),
-	  DropDownIcon: __webpack_require__(259),
-	  DropDownMenu: __webpack_require__(237),
-	  EnhancedButton: __webpack_require__(199),
-	  FlatButton: __webpack_require__(254),
-	  FloatingActionButton: __webpack_require__(260),
-	  FontIcon: __webpack_require__(210),
-	  IconButton: __webpack_require__(209),
-	  LeftNav: __webpack_require__(261),
-	  LinearProgress: __webpack_require__(262),
-	  List: __webpack_require__(263),
-	  ListDivider: __webpack_require__(264),
-	  ListItem: __webpack_require__(265),
-	  Menu: __webpack_require__(240),
-	  MenuItem: __webpack_require__(242),
-	  Mixins: {
-	    Classable: __webpack_require__(266),
-	    ClickAwayable: __webpack_require__(239),
-	    WindowListenable: __webpack_require__(200),
-	    StylePropable: __webpack_require__(191),
-	    StyleResizable: __webpack_require__(268)
-	  },
-	  Paper: __webpack_require__(207),
-	  RadioButton: __webpack_require__(269),
-	  RadioButtonGroup: __webpack_require__(272),
-	  RaisedButton: __webpack_require__(189),
-	  Slider: __webpack_require__(273),
-	  SvgIcon: __webpack_require__(214),
-	  Icons: {
-	    NavigationMenu: __webpack_require__(213),
-	    NavigationChevronLeft: __webpack_require__(246),
-	    NavigationChevronRight: __webpack_require__(248)
-	  },
-	  Styles: {
-	    AutoPrefix: __webpack_require__(192),
-	    Colors: __webpack_require__(198),
-	    Spacing: __webpack_require__(211),
-	    ThemeManager: __webpack_require__(275),
-	    Transitions: __webpack_require__(195),
-	    Typography: __webpack_require__(197)
-	  },
-	  Snackbar: __webpack_require__(278),
-	  Tab: __webpack_require__(279),
-	  Tabs: __webpack_require__(280),
-	  InvertTabs: __webpack_require__(347),
-	  Theme: __webpack_require__(283),
-	  Toggle: __webpack_require__(243),
-	  TimePicker: __webpack_require__(284),
-	  TextField: __webpack_require__(256),
-	  Toolbar: __webpack_require__(235),
-	  ToolbarGroup: __webpack_require__(236),
-	  ToolbarSeparator: __webpack_require__(294),
-	  ToolbarTitle: __webpack_require__(295),
-	  Tooltip: __webpack_require__(212),
-	  Utils: {
-	    CssEvent: __webpack_require__(228),
-	    Dom: __webpack_require__(205),
-	    Events: __webpack_require__(201),
-	    KeyCode: __webpack_require__(202),
-	    KeyLine: __webpack_require__(241),
-	    ColorManipulator: __webpack_require__(196),
-	    Extend: __webpack_require__(194),
-	    UniqueId: __webpack_require__(220)
-	  }
-	};
 
 /***/ },
 /* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/** @jsx React.DOM */(function (root, factory) {
+
+	  if (true) {
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(188), __webpack_require__(190)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if (typeof module === 'object' && typeof module.exports === 'object') {
+	    module.exports = factory(require('react'), require('spin.js'));
+	  } else {
+	    root.Loader = factory(root.React, root.Spinner);
+	  }
+
+	}(this, function (React, Spinner) {
+
+	  var Loader = React.createClass({displayName: "Loader",
+	    propTypes: {
+	      component: React.PropTypes.any,
+	      loaded:    React.PropTypes.bool,
+	      options:   React.PropTypes.object,
+	      scale:     React.PropTypes.number,
+	      lines:     React.PropTypes.number,
+	      length:    React.PropTypes.number,
+	      width:     React.PropTypes.number,
+	      radius:    React.PropTypes.number,
+	      corners:   React.PropTypes.number,
+	      rotate:    React.PropTypes.number,
+	      direction: React.PropTypes.oneOf([1, -1]),
+	      color:     React.PropTypes.string,
+	      speed:     React.PropTypes.number,
+	      trail:     React.PropTypes.number,
+	      shadow:    React.PropTypes.bool,
+	      hwaccell:  React.PropTypes.bool,
+	      className: React.PropTypes.string,
+	      zIndex:    React.PropTypes.number,
+	      top:       React.PropTypes.string,
+	      left:      React.PropTypes.string
+	    },
+
+	    getDefaultProps: function () {
+	      return { component: 'div' };
+	    },
+
+	    getInitialState: function () {
+	      return { loaded: false, options: {} };
+	    },
+
+	    componentDidMount: function () {
+	      this.updateState(this.props);
+	    },
+
+	    componentWillReceiveProps: function (nextProps) {
+	      this.updateState(nextProps);
+	    },
+
+	    updateState: function (props) {
+	      props || (props = {});
+
+	      var loaded = this.state.loaded;
+	      var options = this.state.options;
+
+	      // update loaded state, if supplied
+	      if ('loaded' in props) {
+	        loaded = !!props.loaded;
+	      }
+
+	      // update spinner options, if supplied
+	      var allowedOptions = Object.keys(this.constructor.propTypes);
+	      allowedOptions.splice(allowedOptions.indexOf('loaded'), 1);
+	      allowedOptions.splice(allowedOptions.indexOf('options'), 1);
+
+	      // allows passing options as either props or as an option object
+	      var propsOrObjectOptions = 'options' in props ? props.options : props;
+
+	      allowedOptions.forEach(function (key) {
+	        if (key in propsOrObjectOptions) {
+	          options[key] = propsOrObjectOptions[key];
+	        }
+	      });
+
+	      this.setState({ loaded: loaded, options: options }, this.spin);
+	    },
+
+	    spin: function () {
+	      if (this.isMounted() && !this.state.loaded) {
+	        var spinner = new Spinner(this.state.options);
+	        var target = this.refs.loader.getDOMNode();
+
+	        // clear out any other spinners from previous renders
+	        target.innerHTML = '';
+	        spinner.spin(target);
+	      }
+	    },
+
+	    render: function () {
+	      var props, children;
+
+	      if (this.state.loaded) {
+	        props = { key: 'content', className: 'loadedContent' };
+	        children = this.props.children;
+	      } else {
+	        props = { key: 'loader', ref: 'loader', className: 'loader' };
+	      }
+
+	      return React.createElement(this.props.component, props, children);
+	    }
+	  });
+
+	  return Loader;
+
+	}));
+
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM *//**
+	 * Copyright (c) 2011-2014 Felix Gnass
+	 * Licensed under the MIT license
+	 * http://spin.js.org/
+	 *
+	 * Example:
+	    var opts = {
+	      lines: 12             // The number of lines to draw
+	    , length: 7             // The length of each line
+	    , width: 5              // The line thickness
+	    , radius: 10            // The radius of the inner circle
+	    , scale: 1.0            // Scales overall size of the spinner
+	    , corners: 1            // Roundness (0..1)
+	    , color: '#000'         // #rgb or #rrggbb
+	    , opacity: 1/4          // Opacity of the lines
+	    , rotate: 0             // Rotation offset
+	    , direction: 1          // 1: clockwise, -1: counterclockwise
+	    , speed: 1              // Rounds per second
+	    , trail: 100            // Afterglow percentage
+	    , fps: 20               // Frames per second when using setTimeout()
+	    , zIndex: 2e9           // Use a high z-index by default
+	    , className: 'spinner'  // CSS class to assign to the element
+	    , top: '50%'            // center vertically
+	    , left: '50%'           // center horizontally
+	    , shadow: false         // Whether to render a shadow
+	    , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
+	    , position: 'absolute'  // Element positioning
+	    }
+	    var target = document.getElementById('foo')
+	    var spinner = new Spinner(opts).spin(target)
+	 */
+	;(function (root, factory) {
+
+	  /* CommonJS */
+	  if (true) module.exports = factory()
+
+	  /* AMD module */
+	  else if (typeof define == 'function' && define.amd) define(factory)
+
+	  /* Browser global */
+	  else root.Spinner = factory()
+	}(this, function () {
+	  "use strict"
+
+	  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
+	    , animations = {} /* Animation rules keyed by their name */
+	    , useCssAnimations /* Whether to use CSS animations or setTimeout */
+	    , sheet /* A stylesheet to hold the @keyframe or VML rules. */
+
+	  /**
+	   * Utility function to create elements. If no tag name is given,
+	   * a DIV is created. Optionally properties can be passed.
+	   */
+	  function createEl (tag, prop) {
+	    var el = document.createElement(tag || 'div')
+	      , n
+
+	    for (n in prop) el[n] = prop[n]
+	    return el
+	  }
+
+	  /**
+	   * Appends children and returns the parent.
+	   */
+	  function ins (parent /* child1 child2, ...*/) {
+	    for (var i = 1, n = arguments.length; i < n; i++) {
+	      parent.appendChild(arguments[i])
+	    }
+
+	    return parent
+	  }
+
+	  /**
+	   * Creates an opacity keyframe animation rule and returns its name.
+	   * Since most mobile Webkits have timing issues with animation-delay,
+	   * we create separate rules for each line/segment.
+	   */
+	  function addAnimation (alpha, trail, i, lines) {
+	    var name = ['opacity', trail, ~~(alpha * 100), i, lines].join('-')
+	      , start = 0.01 + i/lines * 100
+	      , z = Math.max(1 - (1-alpha) / trail * (100-start), alpha)
+	      , prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase()
+	      , pre = prefix && '-' + prefix + '-' || ''
+
+	    if (!animations[name]) {
+	      sheet.insertRule(
+	        '@' + pre + 'keyframes ' + name + '{' +
+	        '0%{opacity:' + z + '}' +
+	        start + '%{opacity:' + alpha + '}' +
+	        (start+0.01) + '%{opacity:1}' +
+	        (start+trail) % 100 + '%{opacity:' + alpha + '}' +
+	        '100%{opacity:' + z + '}' +
+	        '}', sheet.cssRules.length)
+
+	      animations[name] = 1
+	    }
+
+	    return name
+	  }
+
+	  /**
+	   * Tries various vendor prefixes and returns the first supported property.
+	   */
+	  function vendor (el, prop) {
+	    var s = el.style
+	      , pp
+	      , i
+
+	    prop = prop.charAt(0).toUpperCase() + prop.slice(1)
+	    if (s[prop] !== undefined) return prop
+	    for (i = 0; i < prefixes.length; i++) {
+	      pp = prefixes[i]+prop
+	      if (s[pp] !== undefined) return pp
+	    }
+	  }
+
+	  /**
+	   * Sets multiple style properties at once.
+	   */
+	  function css (el, prop) {
+	    for (var n in prop) {
+	      el.style[vendor(el, n) || n] = prop[n]
+	    }
+
+	    return el
+	  }
+
+	  /**
+	   * Fills in default values.
+	   */
+	  function merge (obj) {
+	    for (var i = 1; i < arguments.length; i++) {
+	      var def = arguments[i]
+	      for (var n in def) {
+	        if (obj[n] === undefined) obj[n] = def[n]
+	      }
+	    }
+	    return obj
+	  }
+
+	  /**
+	   * Returns the line color from the given string or array.
+	   */
+	  function getColor (color, idx) {
+	    return typeof color == 'string' ? color : color[idx % color.length]
+	  }
+
+	  // Built-in defaults
+
+	  var defaults = {
+	    lines: 12             // The number of lines to draw
+	  , length: 7             // The length of each line
+	  , width: 5              // The line thickness
+	  , radius: 10            // The radius of the inner circle
+	  , scale: 1.0            // Scales overall size of the spinner
+	  , corners: 1            // Roundness (0..1)
+	  , color: '#000'         // #rgb or #rrggbb
+	  , opacity: 1/4          // Opacity of the lines
+	  , rotate: 0             // Rotation offset
+	  , direction: 1          // 1: clockwise, -1: counterclockwise
+	  , speed: 1              // Rounds per second
+	  , trail: 100            // Afterglow percentage
+	  , fps: 20               // Frames per second when using setTimeout()
+	  , zIndex: 2e9           // Use a high z-index by default
+	  , className: 'spinner'  // CSS class to assign to the element
+	  , top: '50%'            // center vertically
+	  , left: '50%'           // center horizontally
+	  , shadow: false         // Whether to render a shadow
+	  , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
+	  , position: 'absolute'  // Element positioning
+	  }
+
+	  /** The constructor */
+	  function Spinner (o) {
+	    this.opts = merge(o || {}, Spinner.defaults, defaults)
+	  }
+
+	  // Global defaults that override the built-ins:
+	  Spinner.defaults = {}
+
+	  merge(Spinner.prototype, {
+	    /**
+	     * Adds the spinner to the given target element. If this instance is already
+	     * spinning, it is automatically removed from its previous target b calling
+	     * stop() internally.
+	     */
+	    spin: function (target) {
+	      this.stop()
+
+	      var self = this
+	        , o = self.opts
+	        , el = self.el = createEl(null, {className: o.className})
+
+	      css(el, {
+	        position: o.position
+	      , width: 0
+	      , zIndex: o.zIndex
+	      , left: o.left
+	      , top: o.top
+	      })
+
+	      if (target) {
+	        target.insertBefore(el, target.firstChild || null)
+	      }
+
+	      el.setAttribute('role', 'progressbar')
+	      self.lines(el, self.opts)
+
+	      if (!useCssAnimations) {
+	        // No CSS animation support, use setTimeout() instead
+	        var i = 0
+	          , start = (o.lines - 1) * (1 - o.direction) / 2
+	          , alpha
+	          , fps = o.fps
+	          , f = fps / o.speed
+	          , ostep = (1 - o.opacity) / (f * o.trail / 100)
+	          , astep = f / o.lines
+
+	        ;(function anim () {
+	          i++
+	          for (var j = 0; j < o.lines; j++) {
+	            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity)
+
+	            self.opacity(el, j * o.direction + start, alpha, o)
+	          }
+	          self.timeout = self.el && setTimeout(anim, ~~(1000 / fps))
+	        })()
+	      }
+	      return self
+	    }
+
+	    /**
+	     * Stops and removes the Spinner.
+	     */
+	  , stop: function () {
+	      var el = this.el
+	      if (el) {
+	        clearTimeout(this.timeout)
+	        if (el.parentNode) el.parentNode.removeChild(el)
+	        this.el = undefined
+	      }
+	      return this
+	    }
+
+	    /**
+	     * Internal method that draws the individual lines. Will be overwritten
+	     * in VML fallback mode below.
+	     */
+	  , lines: function (el, o) {
+	      var i = 0
+	        , start = (o.lines - 1) * (1 - o.direction) / 2
+	        , seg
+
+	      function fill (color, shadow) {
+	        return css(createEl(), {
+	          position: 'absolute'
+	        , width: o.scale * (o.length + o.width) + 'px'
+	        , height: o.scale * o.width + 'px'
+	        , background: color
+	        , boxShadow: shadow
+	        , transformOrigin: 'left'
+	        , transform: 'rotate(' + ~~(360/o.lines*i + o.rotate) + 'deg) translate(' + o.scale*o.radius + 'px' + ',0)'
+	        , borderRadius: (o.corners * o.scale * o.width >> 1) + 'px'
+	        })
+	      }
+
+	      for (; i < o.lines; i++) {
+	        seg = css(createEl(), {
+	          position: 'absolute'
+	        , top: 1 + ~(o.scale * o.width / 2) + 'px'
+	        , transform: o.hwaccel ? 'translate3d(0,0,0)' : ''
+	        , opacity: o.opacity
+	        , animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1 / o.speed + 's linear infinite'
+	        })
+
+	        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px #000'), {top: '2px'}))
+	        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')))
+	      }
+	      return el
+	    }
+
+	    /**
+	     * Internal method that adjusts the opacity of a single line.
+	     * Will be overwritten in VML fallback mode below.
+	     */
+	  , opacity: function (el, i, val) {
+	      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val
+	    }
+
+	  })
+
+
+	  function initVML () {
+
+	    /* Utility function to create a VML tag */
+	    function vml (tag, attr) {
+	      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr)
+	    }
+
+	    // No CSS transforms but VML support, add a CSS rule for VML elements:
+	    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)')
+
+	    Spinner.prototype.lines = function (el, o) {
+	      var r = o.scale * (o.length + o.width)
+	        , s = o.scale * 2 * r
+
+	      function grp () {
+	        return css(
+	          vml('group', {
+	            coordsize: s + ' ' + s
+	          , coordorigin: -r + ' ' + -r
+	          })
+	        , { width: s, height: s }
+	        )
+	      }
+
+	      var margin = -(o.width + o.length) * o.scale * 2 + 'px'
+	        , g = css(grp(), {position: 'absolute', top: margin, left: margin})
+	        , i
+
+	      function seg (i, dx, filter) {
+	        ins(
+	          g
+	        , ins(
+	            css(grp(), {rotation: 360 / o.lines * i + 'deg', left: ~~dx})
+	          , ins(
+	              css(
+	                vml('roundrect', {arcsize: o.corners})
+	              , { width: r
+	                , height: o.scale * o.width
+	                , left: o.scale * o.radius
+	                , top: -o.scale * o.width >> 1
+	                , filter: filter
+	                }
+	              )
+	            , vml('fill', {color: getColor(o.color, i), opacity: o.opacity})
+	            , vml('stroke', {opacity: 0}) // transparent stroke to fix color bleeding upon opacity change
+	            )
+	          )
+	        )
+	      }
+
+	      if (o.shadow)
+	        for (i = 1; i <= o.lines; i++) {
+	          seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)')
+	        }
+
+	      for (i = 1; i <= o.lines; i++) seg(i)
+	      return ins(el, g)
+	    }
+
+	    Spinner.prototype.opacity = function (el, i, val, o) {
+	      var c = el.firstChild
+	      o = o.shadow && o.lines || 0
+	      if (c && i + o < c.childNodes.length) {
+	        c = c.childNodes[i + o]; c = c && c.firstChild; c = c && c.firstChild
+	        if (c) c.opacity = val
+	      }
+	    }
+	  }
+
+	  if (typeof document !== 'undefined') {
+	    sheet = (function () {
+	      var el = createEl('style', {type : 'text/css'})
+	      ins(document.getElementsByTagName('head')[0], el)
+	      return el.sheet || el.styleSheet
+	    }())
+
+	    var probe = css(createEl('group'), {behavior: 'url(#default#VML)'})
+
+	    if (!vendor(probe, 'transform') && probe.adj) initVML()
+	    else useCssAnimations = vendor(probe, 'animation')
+	  }
+
+	  return Spinner
+
+	}));
+
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(188);
+	var mui = __webpack_require__(192);
+	var InvertTabs = mui.InvertTabs;
+	var Tab = mui.Tab;
+	var CurrencyComponent = __webpack_require__(300);
+	var width = window.innerWidth
+	  || document.documentElement.clientWidth
+	  || document.body.clientWidth;
+
+	  var height = window.innerHeight
+	  || document.documentElement.clientHeight
+	  || document.body.clientHeight;
+	var CurrenciesTabsComponent = React.createClass({displayName: "CurrenciesTabsComponent",
+		
+		render: function(){
+			return (
+				React.createElement(InvertTabs, {style: {marginBottom: '1px'}, tabStyle: {height: height * 0.75}}, 
+					React.createElement(Tab, {label: "Market", style: {marginBottom: '22%'}}, 
+						React.createElement(CurrencyComponent, null)
+					), 
+					React.createElement(Tab, {label: "Limit", style: {marginBottom: '22%'}}, 
+						React.createElement(CurrencyComponent, null)
+					), 
+					React.createElement(Tab, {label: "Range", style: {marginBottom: '22%'}}, 
+						React.createElement(CurrencyComponent, null)
+					)
+				)
+			)
+		}
+	});
+
+	module.exports = CurrenciesTabsComponent;
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/** @jsx React.DOM */'use strict';
+
+	module.exports = {
+	  AppBar: __webpack_require__(193),
+	  AppCanvas: __webpack_require__(216),
+	  Avatar: __webpack_require__(217),
+	  BeforeAfterWrapper: __webpack_require__(218),
+	  Checkbox: __webpack_require__(219),
+	  CircularProgress: __webpack_require__(225),
+	  ClearFix: __webpack_require__(222),
+	  DatePicker: __webpack_require__(226),
+	  Dialog: __webpack_require__(260),
+	  DialogWindow: __webpack_require__(254),
+	  DropDownIcon: __webpack_require__(261),
+	  DropDownMenu: __webpack_require__(238),
+	  EnhancedButton: __webpack_require__(195),
+	  FlatButton: __webpack_require__(255),
+	  FloatingActionButton: __webpack_require__(262),
+	  FontIcon: __webpack_require__(209),
+	  IconButton: __webpack_require__(194),
+	  LeftNav: __webpack_require__(263),
+	  LinearProgress: __webpack_require__(264),
+	  List: __webpack_require__(265),
+	  ListDivider: __webpack_require__(266),
+	  ListItem: __webpack_require__(267),
+	  Menu: __webpack_require__(241),
+	  MenuItem: __webpack_require__(243),
+	  Mixins: {
+	    Classable: __webpack_require__(268),
+	    ClickAwayable: __webpack_require__(240),
+	    WindowListenable: __webpack_require__(196),
+	    StylePropable: __webpack_require__(199),
+	    StyleResizable: __webpack_require__(270)
+	  },
+	  Paper: __webpack_require__(215),
+	  RadioButton: __webpack_require__(271),
+	  RadioButtonGroup: __webpack_require__(274),
+	  RaisedButton: __webpack_require__(275),
+	  Slider: __webpack_require__(276),
+	  SvgIcon: __webpack_require__(214),
+	  Icons: {
+	    NavigationMenu: __webpack_require__(213),
+	    NavigationChevronLeft: __webpack_require__(247),
+	    NavigationChevronRight: __webpack_require__(249)
+	  },
+	  Styles: {
+	    AutoPrefix: __webpack_require__(200),
+	    Colors: __webpack_require__(205),
+	    Spacing: __webpack_require__(210),
+	    ThemeManager: __webpack_require__(278),
+	    Transitions: __webpack_require__(204),
+	    Typography: __webpack_require__(212)
+	  },
+	  Snackbar: __webpack_require__(281),
+	  Tab: __webpack_require__(282),
+	  Tabs: __webpack_require__(283),
+	  InvertTabs: __webpack_require__(286),
+	  Theme: __webpack_require__(287),
+	  Toggle: __webpack_require__(244),
+	  TimePicker: __webpack_require__(288),
+	  TextField: __webpack_require__(258),
+	  Toolbar: __webpack_require__(236),
+	  ToolbarGroup: __webpack_require__(237),
+	  ToolbarSeparator: __webpack_require__(298),
+	  ToolbarTitle: __webpack_require__(299),
+	  Tooltip: __webpack_require__(211),
+	  Utils: {
+	    CssEvent: __webpack_require__(229),
+	    Dom: __webpack_require__(207),
+	    Events: __webpack_require__(197),
+	    KeyCode: __webpack_require__(198),
+	    KeyLine: __webpack_require__(242),
+	    ColorManipulator: __webpack_require__(256),
+	    Extend: __webpack_require__(202),
+	    UniqueId: __webpack_require__(221)
+	  }
+	};
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
+
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Typography = __webpack_require__(212);
+	var IconButton = __webpack_require__(194);
+	var NavigationMenu = __webpack_require__(213);
+	var Paper = __webpack_require__(215);
+
+	var AppBar = React.createClass({
+	  displayName: 'AppBar',
+
+	  mixins: [StylePropable],
+
+	  contextTypes: {
+	    muiTheme: React.PropTypes.object
+	  },
+
+	  propTypes: {
+	    onLeftIconButtonTouchTap: React.PropTypes.func,
+	    onRightIconButtonTouchTap: React.PropTypes.func,
+	    showMenuIconButton: React.PropTypes.bool,
+	    iconClassNameLeft: React.PropTypes.string,
+	    iconClassNameRight: React.PropTypes.string,
+	    iconElementLeft: React.PropTypes.element,
+	    iconElementRight: React.PropTypes.element,
+	    iconStyleRight: React.PropTypes.object,
+	    title: React.PropTypes.node,
+	    zDepth: React.PropTypes.number
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      showMenuIconButton: true,
+	      title: '',
+	      zDepth: 1
+	    };
+	  },
+
+	  componentDidMount: function componentDidMount() {
+	    if (process.env.NODE_ENV !== 'production' && (this.props.iconElementLeft && this.props.iconClassNameLeft)) {
+	      var warning = 'Properties iconClassNameLeft and iconElementLeft cannot be simultaneously ' + 'defined. Please use one or the other.';
+	      console.warn(warning);
+	    }
+	  },
+
+	  getStyles: function getStyles() {
+	    var spacing = this.context.muiTheme.spacing;
+	    var themeVariables = this.context.muiTheme.component.appBar;
+	    var iconButtonSize = this.context.muiTheme.component.button.iconButtonSize;
+	    var styles = {
+	      root: {
+	        zIndex: 5,
+	        width: '100%',
+	        minHeight: themeVariables.height,
+	        backgroundColor: themeVariables.color,
+	        paddingLeft: spacing.desktopGutter,
+	        paddingRight: spacing.desktopGutter
+	      },
+	      title: {
+	        float: 'left',
+	        margin: 0,
+	        paddingTop: 0,
+	        letterSpacing: 0,
+	        fontSize: 24,
+	        fontWeight: Typography.fontWeightNormal,
+	        color: themeVariables.textColor,
+	        lineHeight: themeVariables.height + 'px'
+	      },
+	      iconButton: {
+	        style: {
+	          marginTop: (themeVariables.height - iconButtonSize) / 2,
+	          float: 'left',
+	          marginRight: 8,
+	          marginLeft: -16
+	        },
+	        iconStyle: {
+	          fill: themeVariables.textColor,
+	          color: themeVariables.textColor
+	        }
+	      }
+	    };
+	    return styles;
+	  },
+
+	  render: function render() {
+	    var styles = this.getStyles();
+
+	    var title;
+	    var menuElementLeft;
+	    var menuElementRight;
+	    var iconRightStyle = this.mergeAndPrefix(styles.iconButton.style, {
+	      float: 'right',
+	      marginRight: -16,
+	      marginLeft: 8
+	    }, this.props.iconStyleRight);
+
+	    if (this.props.title) {
+	      // If the title is a string, wrap in an h1 tag.
+	      // If not, just use it as a node.
+	      title = Object.prototype.toString.call(this.props.title) === '[object String]' ? React.createElement(
+	        'h1',
+	        { style: this.mergeAndPrefix(styles.title) },
+	        this.props.title
+	      ) : this.props.title;
+	    }
+
+	    if (this.props.showMenuIconButton) {
+	      if (this.props.iconElementLeft) {
+	        menuElementLeft = React.createElement(
+	          'div',
+	          { style: styles.iconButton.style },
+	          this.props.iconElementLeft
+	        );
+	      } else {
+	        var child = this.props.iconClassNameLeft ? '' : React.createElement(NavigationMenu, { style: this.mergeAndPrefix(styles.iconButton.iconStyle) });
+	        menuElementLeft = React.createElement(
+	          IconButton,
+	          {
+	            style: this.mergeAndPrefix(styles.iconButton.style),
+	            iconStyle: this.mergeAndPrefix(styles.iconButton.iconStyle),
+	            iconClassName: this.props.iconClassNameLeft,
+	            onTouchTap: this._onLeftIconButtonTouchTap },
+	          child
+	        );
+	      }
+
+	      if (this.props.iconElementRight) {
+	        menuElementRight = React.createElement(
+	          'div',
+	          { style: iconRightStyle },
+	          this.props.iconElementRight
+	        );
+	      } else if (this.props.iconClassNameRight) {
+	        menuElementRight = React.createElement(IconButton, {
+	          style: iconRightStyle,
+	          iconStyle: this.mergeAndPrefix(styles.iconButton.iconStyle),
+	          iconClassName: this.props.iconClassNameRight,
+	          onTouchTap: this._onRightIconButtonTouchTap });
+	      }
+	    }
+
+	    return React.createElement(
+	      Paper,
+	      {
+	        rounded: false,
+	        className: this.props.className,
+	        style: this.mergeAndPrefix(styles.root, this.props.style),
+	        zDepth: this.props.zDepth },
+	      menuElementLeft,
+	      title,
+	      menuElementRight,
+	      this.props.children
+	    );
+	  },
+
+	  _onLeftIconButtonTouchTap: function _onLeftIconButtonTouchTap(event) {
+	    if (this.props.onLeftIconButtonTouchTap) {
+	      this.props.onLeftIconButtonTouchTap(event);
+	    }
+	  },
+
+	  _onRightIconButtonTouchTap: function _onRightIconButtonTouchTap(event) {
+	    if (this.props.onRightIconButtonTouchTap) {
+	      this.props.onRightIconButtonTouchTap(event);
+	    }
+	  }
+
+	});
+
+	module.exports = AppBar;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var ColorManipulator = __webpack_require__(196);
-	var Typography = __webpack_require__(197);
-	var EnhancedButton = __webpack_require__(199);
-	var Paper = __webpack_require__(207);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var EnhancedButton = __webpack_require__(195);
+	var FontIcon = __webpack_require__(209);
+	var Tooltip = __webpack_require__(211);
 
-	var RaisedButton = React.createClass({
-	  displayName: 'RaisedButton',
+	var IconButton = React.createClass({
+	  displayName: 'IconButton',
 
 	  mixins: [StylePropable],
 
@@ -44843,97 +45560,82 @@
 	  propTypes: {
 	    className: React.PropTypes.string,
 	    disabled: React.PropTypes.bool,
-	    label: function label(props, propName, componentName) {
-	      if (!props.children && !props.label) {
-	        return new Error('Warning: Required prop `label` or `children` was not specified in `' + componentName + '`.');
-	      }
-	    },
-	    onMouseDown: React.PropTypes.func,
-	    onMouseUp: React.PropTypes.func,
-	    onMouseOut: React.PropTypes.func,
-	    onTouchEnd: React.PropTypes.func,
-	    onTouchStart: React.PropTypes.func,
-	    primary: React.PropTypes.bool,
-	    secondary: React.PropTypes.bool,
-	    labelStyle: React.PropTypes.object
+	    iconClassName: React.PropTypes.string,
+	    iconStyle: React.PropTypes.object,
+	    onBlur: React.PropTypes.func,
+	    onFocus: React.PropTypes.func,
+	    tooltip: React.PropTypes.string,
+	    touch: React.PropTypes.bool
 	  },
 
 	  getInitialState: function getInitialState() {
-	    var zDepth = this.props.disabled ? 0 : 1;
 	    return {
-	      zDepth: zDepth,
-	      initialZDepth: zDepth,
-	      hovered: false
+	      tooltipShown: false
 	    };
 	  },
 
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    var zDepth = nextProps.disabled ? 0 : 1;
-	    this.setState({
-	      zDepth: zDepth,
-	      initialZDepth: zDepth
-	    });
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      iconStyle: {}
+	    };
 	  },
 
-	  _getBackgroundColor: function _getBackgroundColor() {
-	    return this.props.disabled ? this.getTheme().disabledColor : this.props.primary ? this.getTheme().primaryColor : this.props.secondary ? this.getTheme().secondaryColor : this.getTheme().color;
-	  },
-
-	  _getLabelColor: function _getLabelColor() {
-	    return this.props.disabled ? this.getTheme().disabledTextColor : this.props.primary ? this.getTheme().primaryTextColor : this.props.secondary ? this.getTheme().secondaryTextColor : this.getTheme().textColor;
-	  },
-
-	  getThemeButton: function getThemeButton() {
-	    return this.context.muiTheme.component.button;
+	  componentDidMount: function componentDidMount() {
+	    if (this.props.tooltip) {
+	      this._positionTooltip();
+	    }
+	    if (process.env.NODE_ENV !== 'production') {
+	      if (this.props.iconClassName && this.props.children) {
+	        var warning = 'You have set both an iconClassName and a child icon. ' + 'It is recommended you use only one method when adding ' + 'icons to IconButtons.';
+	        console.warn(warning);
+	      }
+	    }
 	  },
 
 	  getTheme: function getTheme() {
-	    return this.context.muiTheme.component.raisedButton;
+	    return this.context.muiTheme.palette;
+	  },
+
+	  getSpacing: function getSpacing() {
+	    return this.context.muiTheme.spacing;
+	  },
+
+	  getDisabledColor: function getDisabledColor() {
+	    return this.context.muiTheme.palette.disabledColor;
 	  },
 
 	  getStyles: function getStyles() {
-	    var amount = this.props.primary || this.props.secondary ? 0.4 : 0.08;
 	    var styles = {
 	      root: {
-	        display: 'inline-block',
-	        minWidth: this.getThemeButton().minWidth,
-	        height: this.getThemeButton().height,
-	        transition: Transitions.easeOut()
-	      },
-	      container: {
 	        position: 'relative',
-	        height: '100%',
-	        width: '100%',
-	        padding: 0,
-	        overflow: 'hidden',
-	        borderRadius: 2,
+	        boxSizing: 'border-box',
 	        transition: Transitions.easeOut(),
-	        backgroundColor: this._getBackgroundColor(),
-
-	        //This is need so that ripples do not bleed
-	        //past border radius.
-	        //See: http://stackoverflow.com/questions/17298739/css-overflow-hidden-not-working-in-chrome-when-parent-has-border-radius-and-chil
-	        transform: 'translate3d(0, 0, 0)'
+	        padding: this.getSpacing().iconSize / 2,
+	        width: this.getSpacing().iconSize * 2,
+	        height: this.getSpacing().iconSize * 2
 	      },
-	      label: {
-	        position: 'relative',
-	        opacity: 1,
-	        fontSize: '14px',
-	        letterSpacing: 0,
-	        textTransform: 'uppercase',
-	        fontWeight: Typography.fontWeightMedium,
-	        margin: 0,
-	        padding: '0px ' + this.context.muiTheme.spacing.desktopGutterLess + 'px',
-	        userSelect: 'none',
-	        lineHeight: this.getThemeButton().height + 'px',
-	        color: this._getLabelColor()
+	      tooltip: {
+	        boxSizing: 'border-box',
+	        marginTop: this.context.muiTheme.component.button.iconButtonSize + 4
+	      },
+	      icon: {
+	        color: this.getTheme().textColor,
+	        fill: this.getTheme().textColor
 	      },
 	      overlay: {
-	        transition: Transitions.easeOut(),
-	        top: 0
+	        position: 'relative',
+	        top: 0,
+	        width: '100%',
+	        height: '100%',
+	        background: this.getDisabledColor()
 	      },
-	      overlayWhenHovered: {
-	        backgroundColor: ColorManipulator.fade(this._getLabelColor(), amount)
+	      rootWhenDisabled: {
+	        color: this.getDisabledColor(),
+	        fill: this.getDisabledColor()
+	      },
+	      iconWhenDisabled: {
+	        color: this.getDisabledColor(),
+	        fill: this.getDisabledColor()
 	      }
 	    };
 	    return styles;
@@ -44941,120 +45643,446 @@
 
 	  render: function render() {
 	    var _props = this.props;
-	    var label = _props.label;
-	    var primary = _props.primary;
-	    var secondary = _props.secondary;
+	    var tooltip = _props.tooltip;
+	    var touch = _props.touch;
 
-	    var other = _objectWithoutProperties(_props, ['label', 'primary', 'secondary']);
+	    var other = _objectWithoutProperties(_props, ['tooltip', 'touch']);
+
+	    var tooltipElement;
+	    var fonticon;
 
 	    var styles = this.getStyles();
 
-	    var labelElement;
-	    if (label) {
-	      labelElement = React.createElement(
-	        'span',
-	        { style: this.mergeAndPrefix(styles.label, this.props.labelStyle) },
-	        label
-	      );
+	    if (tooltip) {
+	      tooltipElement = React.createElement(Tooltip, {
+	        ref: 'tooltip',
+	        label: tooltip,
+	        show: this.state.tooltipShown,
+	        touch: touch,
+	        style: this.mergeStyles(styles.tooltip) });
 	    }
 
-	    var rippleColor = styles.label.color;
-	    var rippleOpacity = !(primary || secondary) ? 0.1 : 0.16;
+	    if (this.props.iconClassName) {
+	      var _props$iconStyle = this.props.iconStyle;
+	      var iconHoverColor = _props$iconStyle.iconHoverColor;
+
+	      var iconStyle = _objectWithoutProperties(_props$iconStyle, ['iconHoverColor']);
+
+	      fonticon = React.createElement(FontIcon, {
+	        className: this.props.iconClassName,
+	        hoverColor: iconHoverColor,
+	        style: this.mergeStyles(styles.icon, this.props.disabled && styles.iconWhenDisabled, iconStyle) });
+	    }
+
+	    if (this.props.children && this.props.disabled) {
+	      React.Children.forEach(this.props.children, function (child) {
+	        child.props.style = {
+	          color: this.getDisabledColor(),
+	          fill: this.getDisabledColor()
+	        };
+	      }, this);
+	    }
 
 	    return React.createElement(
-	      Paper,
-	      {
-	        style: this.mergeAndPrefix(styles.root, this.props.style),
-	        zDepth: this.state.zDepth },
-	      React.createElement(
-	        EnhancedButton,
-	        _extends({}, other, {
-	          ref: 'container',
-	          style: this.mergeAndPrefix(styles.container),
-	          onMouseUp: this._handleMouseUp,
-	          onMouseDown: this._handleMouseDown,
-	          onMouseOut: this._handleMouseOut,
-	          onMouseOver: this._handleMouseOver,
-	          onTouchStart: this._handleTouchStart,
-	          onTouchEnd: this._handleTouchEnd,
-	          focusRippleColor: rippleColor,
-	          touchRippleColor: rippleColor,
-	          focusRippleOpacity: rippleOpacity,
-	          touchRippleOpacity: rippleOpacity,
-	          onKeyboardFocus: this._handleKeyboardFocus }),
-	        React.createElement(
-	          'div',
-	          { ref: 'overlay', style: this.mergeAndPrefix(styles.overlay, this.state.hovered && !this.props.disabled && styles.overlayWhenHovered) },
-	          labelElement,
-	          this.props.children
-	        )
-	      )
+	      EnhancedButton,
+	      _extends({}, other, {
+	        ref: 'button',
+	        centerRipple: true,
+	        style: this.mergeStyles(styles.root, this.props.style),
+	        onBlur: this._handleBlur,
+	        onFocus: this._handleFocus,
+	        onMouseOut: this._handleMouseOut,
+	        onMouseOver: this._handleMouseOver,
+	        onKeyboardFocus: this._handleKeyboardFocus }),
+	      tooltipElement,
+	      fonticon,
+	      this.props.children
 	    );
 	  },
 
-	  _handleMouseDown: function _handleMouseDown(e) {
-	    //only listen to left clicks
-	    if (e.button === 0) {
-	      this.setState({ zDepth: this.state.initialZDepth + 1 });
-	    }
-	    if (this.props.onMouseDown) this.props.onMouseDown(e);
+	  _positionTooltip: function _positionTooltip() {
+	    var tooltip = React.findDOMNode(this.refs.tooltip);
+	    var tooltipWidth = tooltip.offsetWidth;
+	    var buttonWidth = 48;
+
+	    tooltip.style.left = (tooltipWidth - buttonWidth) / 2 * -1 + 'px';
 	  },
 
-	  _handleMouseUp: function _handleMouseUp(e) {
-	    this.setState({ zDepth: this.state.initialZDepth });
-	    if (this.props.onMouseUp) this.props.onMouseUp(e);
+	  _showTooltip: function _showTooltip() {
+	    if (!this.props.disabled && this.props.tooltip) {
+	      this.setState({ tooltipShown: true });
+	    }
+	  },
+
+	  _hideTooltip: function _hideTooltip() {
+	    if (this.props.tooltip) this.setState({ tooltipShown: false });
+	  },
+
+	  _handleBlur: function _handleBlur(e) {
+	    this._hideTooltip();
+	    if (this.props.onBlur) this.props.onBlur(e);
+	  },
+
+	  _handleFocus: function _handleFocus(e) {
+	    this._showTooltip();
+	    if (this.props.onFocus) this.props.onFocus(e);
 	  },
 
 	  _handleMouseOut: function _handleMouseOut(e) {
-	    if (!this.refs.container.isKeyboardFocused()) this.setState({ zDepth: this.state.initialZDepth, hovered: false });
+	    if (!this.refs.button.isKeyboardFocused()) this._hideTooltip();
 	    if (this.props.onMouseOut) this.props.onMouseOut(e);
 	  },
 
 	  _handleMouseOver: function _handleMouseOver(e) {
-	    if (!this.refs.container.isKeyboardFocused()) this.setState({ hovered: true });
+	    this._showTooltip();
 	    if (this.props.onMouseOver) this.props.onMouseOver(e);
-	  },
-
-	  _handleTouchStart: function _handleTouchStart(e) {
-	    this.setState({ zDepth: this.state.initialZDepth + 1 });
-	    if (this.props.onTouchStart) this.props.onTouchStart(e);
-	  },
-
-	  _handleTouchEnd: function _handleTouchEnd(e) {
-	    this.setState({ zDepth: this.state.initialZDepth });
-	    if (this.props.onTouchEnd) this.props.onTouchEnd(e);
 	  },
 
 	  _handleKeyboardFocus: function _handleKeyboardFocus(e, keyboardFocused) {
 	    if (keyboardFocused && !this.props.disabled) {
-	      this.setState({ zDepth: this.state.initialZDepth + 1 });
-	      var amount = this.props.primary || this.props.secondary ? 0.4 : 0.08;
-	      React.findDOMNode(this.refs.overlay).style.backgroundColor = ColorManipulator.fade(this.mergeAndPrefix(this.getStyles().label, this.props.labelStyle).color, amount);
+	      this._showTooltip();
+	      if (this.props.onFocus) this.props.onFocus(e);
 	    } else if (!this.state.hovered) {
-	      this.setState({ zDepth: this.state.initialZDepth });
-	      React.findDOMNode(this.refs.overlay).style.backgroundColor = 'transparent';
+	      this._hideTooltip();
+	      if (this.props.onBlur) this.props.onBlur(e);
 	    }
 	  }
+
 	});
 
-	module.exports = RaisedButton;
+	module.exports = IconButton;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 190 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */module.exports = __webpack_require__(29);
+	/** @jsx React.DOM */'use strict';
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var React = __webpack_require__(188);
+	var KeyCode = __webpack_require__(198);
+	var StylePropable = __webpack_require__(199);
+	var WindowListenable = __webpack_require__(196);
+	var FocusRipple = __webpack_require__(203);
+	var TouchRipple = __webpack_require__(206);
+
+	var EnhancedButton = React.createClass({
+	  displayName: 'EnhancedButton',
+
+	  mixins: [StylePropable, WindowListenable],
+
+	  contextTypes: {
+	    muiTheme: React.PropTypes.object
+	  },
+
+	  propTypes: {
+	    centerRipple: React.PropTypes.bool,
+	    className: React.PropTypes.string,
+	    disabled: React.PropTypes.bool,
+	    disableFocusRipple: React.PropTypes.bool,
+	    disableTouchRipple: React.PropTypes.bool,
+	    keyboardFocused: React.PropTypes.bool,
+	    linkButton: React.PropTypes.bool,
+	    focusRippleColor: React.PropTypes.string,
+	    touchRippleColor: React.PropTypes.string,
+	    focusRippleOpacity: React.PropTypes.number,
+	    touchRippleOpacity: React.PropTypes.number,
+	    onBlur: React.PropTypes.func,
+	    onFocus: React.PropTypes.func,
+	    onMouseOut: React.PropTypes.func,
+	    onMouseOver: React.PropTypes.func,
+	    onTouchTap: React.PropTypes.func,
+	    onKeyboardFocus: React.PropTypes.func
+	  },
+
+	  windowListeners: {
+	    'keydown': '_handleWindowKeydown',
+	    'keyup': '_handleWindowKeyup'
+	  },
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      isKeyboardFocused: !this.props.disabled && this.props.keyboardFocused
+	    };
+	  },
+
+	  // Remove inner padding and border in Firefox 4+.
+	  componentDidMount: function componentDidMount() {
+	    if (!EnhancedButton.hasStyleBeenInjected) {
+	      var style = document.createElement('style');
+	      style.innerHTML = 'button::-moz-focus-inner,' + 'input::-moz-focus-inner {' + ' border: 0;' + ' padding: 0;' + ' }';
+	      document.body.appendChild(style);
+	      EnhancedButton.hasStyleBeenInjected = true;
+	    }
+	  },
+
+	  getStyles: function getStyles() {
+	    var styles = {
+	      root: {
+	        border: 10,
+	        background: 'none',
+	        boxSizing: 'border-box',
+	        font: 'inherit',
+	        fontFamily: this.context.muiTheme.contentFontFamily,
+	        WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+	        WebkitAppearance: !this.props.linkButton && 'button',
+	        cursor: 'pointer'
+	      },
+	      rootWhenLinkButton: {
+	        display: 'inline-block',
+	        cursor: this.props.disabled ? 'default' : 'pointer',
+	        textDecoration: 'none'
+	      },
+	      rootWhenDisabled: {
+	        cursor: 'default'
+	      }
+	    };
+	    return styles;
+	  },
+
+	  render: function render() {
+	    var _props = this.props;
+	    var centerRipple = _props.centerRipple;
+	    var disabled = _props.disabled;
+	    var disableFocusRipple = _props.disableFocusRipple;
+	    var disableTouchRipple = _props.disableTouchRipple;
+	    var linkButton = _props.linkButton;
+	    var touchRippleColor = _props.touchRippleColor;
+	    var onBlur = _props.onBlur;
+	    var onFocus = _props.onFocus;
+	    var onMouseOver = _props.onMouseOver;
+	    var onMouseOut = _props.onMouseOut;
+	    var onTouchTap = _props.onTouchTap;
+
+	    var other = _objectWithoutProperties(_props, ['centerRipple', 'disabled', 'disableFocusRipple', 'disableTouchRipple', 'linkButton', 'touchRippleColor', 'onBlur', 'onFocus', 'onMouseOver', 'onMouseOut', 'onTouchTap']);
+
+	    var styles = this.mergeAndPrefix(this.getStyles().root, this.props.linkButton && this.getStyles().rootWhenLinkButton, this.props.disabled && this.getStyles().rootWhenDisabled, this.props.style);
+	    var buttonChildren = [];
+
+	    // Create ripples if we need to
+	    buttonChildren.push(disabled || disableTouchRipple ? this.props.children : React.createElement(
+	      TouchRipple,
+	      {
+	        ref: 'touchRipple',
+	        key: 'touchRipple',
+	        centerRipple: centerRipple,
+	        color: this.props.touchRippleColor,
+	        opacity: this.props.touchRippleOpacity },
+	      this.props.children
+	    ));
+	    buttonChildren.push(disabled || disableFocusRipple ? null : React.createElement(FocusRipple, {
+	      key: 'focusRipple',
+	      color: this.props.focusRippleColor,
+	      opacity: this.props.focusRippleOpacity,
+	      show: this.state.isKeyboardFocused }));
+
+	    var buttonProps = {
+	      style: styles,
+	      disabled: disabled,
+	      onBlur: this._handleBlur,
+	      onFocus: this._handleFocus,
+	      onMouseOver: this._handleMouseOver,
+	      onMouseOut: this._handleMouseOut,
+	      onTouchTap: this._handleTouchTap
+	    };
+
+	    if (disabled && linkButton) {
+	      return React.createElement(
+	        'span',
+	        _extends({}, other, {
+	          className: this.props.className,
+	          disabled: disabled }),
+	        this.props.children
+	      );
+	    }
+
+	    return React.createElement(linkButton ? 'a' : 'button', _extends({}, other, buttonProps), buttonChildren);
+	  },
+
+	  isKeyboardFocused: function isKeyboardFocused() {
+	    return this.state.isKeyboardFocused;
+	  },
+
+	  _handleWindowKeydown: function _handleWindowKeydown(e) {
+	    if (!this.props.disabled) {
+	      if (e.keyCode == KeyCode.TAB) this._tabPressed = true;
+	      if (e.keyCode == KeyCode.ENTER && this.state.isKeyboardFocused) {
+	        this._handleTouchTap(e);
+	      }
+	    }
+	  },
+
+	  _handleWindowKeyup: function _handleWindowKeyup(e) {
+	    if (!this.props.disabled && e.keyCode == KeyCode.SPACE && this.state.isKeyboardFocused) {
+	      this._handleTouchTap(e);
+	    }
+	  },
+
+	  _handleBlur: function _handleBlur(e) {
+	    this._cancelFocusTimeout();
+	    if (!this.props.disabled) {
+	      this.setState({
+	        isKeyboardFocused: false
+	      });
+	      if (this.props.onKeyboardFocus) this.props.onKeyboardFocus(e, false);
+	      if (this.props.onBlur) this.props.onBlur(e);
+	    }
+	  },
+
+	  _handleFocus: function _handleFocus(e) {
+	    React.findDOMNode(this).style.outline = 'none';
+	    if (!this.props.disabled) {
+	      //setTimeout is needed because the focus event fires first
+	      //Wait so that we can capture if this was a keyboard focus
+	      //or touch focus
+	      this._focusTimeout = setTimeout((function () {
+	        if (this._tabPressed) {
+	          this.setState({
+	            isKeyboardFocused: true
+	          });
+	          if (this.props.onKeyboardFocus) this.props.onKeyboardFocus(e, true);
+	        }
+	      }).bind(this), 150);
+
+	      if (this.props.onFocus) this.props.onFocus(e);
+	    }
+	  },
+
+	  _handleMouseOver: function _handleMouseOver(e) {
+	    React.findDOMNode(this).style.textDecoration = 'none';
+	    if (this.props.onMouseOver) this.props.onMouseOver(e);
+	  },
+
+	  _handleMouseOut: function _handleMouseOut(e) {
+	    if (this.props.onMouseOut) this.props.onMouseOut(e);
+	  },
+
+	  _handleTouchTap: function _handleTouchTap(e) {
+	    this._cancelFocusTimeout();
+	    if (!this.props.disabled) {
+	      this._tabPressed = false;
+	      this.setState({
+	        isKeyboardFocused: false
+	      });
+	      if (this.props.onKeyboardFocus) this.props.onKeyboardFocus(e, false);
+	      if (this.props.onTouchTap) this.props.onTouchTap(e);
+	    }
+	  },
+
+	  _cancelFocusTimeout: function _cancelFocusTimeout() {
+	    if (this._focusTimeout) {
+	      clearTimeout(this._focusTimeout);
+	      this._focusTimeout = null;
+	    }
+	  }
+
+	});
+
+	EnhancedButton.hasStyleBeenInjected = false;
+
+	module.exports = EnhancedButton;
 
 /***/ },
-/* 191 */
+/* 196 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var Events = __webpack_require__(197);
+
+	module.exports = {
+
+	  componentDidMount: function componentDidMount() {
+	    var listeners = this.windowListeners;
+
+	    for (var eventName in listeners) {
+	      var callbackName = listeners[eventName];
+	      Events.on(window, eventName, this[callbackName]);
+	    }
+	  },
+
+	  componentWillUnmount: function componentWillUnmount() {
+	    var listeners = this.windowListeners;
+
+	    for (var eventName in listeners) {
+	      var callbackName = listeners[eventName];
+	      Events.off(window, eventName, this[callbackName]);
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 197 */
+/***/ function(module, exports) {
+
+	/** @jsx React.DOM */'use strict';
+
+	module.exports = {
+
+	  once: function once(el, type, callback) {
+	    var typeArray = type.split(' ');
+	    var recursiveFunction = function recursiveFunction(e) {
+	      e.target.removeEventListener(e.type, recursiveFunction);
+	      return callback(e);
+	    };
+
+	    for (var i = typeArray.length - 1; i >= 0; i--) {
+	      this.on(el, typeArray[i], recursiveFunction);
+	    }
+	  },
+
+	  // IE8+ Support
+	  on: function on(el, type, callback) {
+	    if (el.addEventListener) {
+	      el.addEventListener(type, callback);
+	    } else {
+	      el.attachEvent('on' + type, function () {
+	        callback.call(el);
+	      });
+	    }
+	  },
+
+	  // IE8+ Support
+	  off: function off(el, type, callback) {
+	    if (el.removeEventListener) {
+	      el.removeEventListener(type, callback);
+	    } else {
+	      el.detachEvent('on' + type, callback);
+	    }
+	  }
+	};
+
+/***/ },
+/* 198 */
+/***/ function(module, exports) {
+
+	/** @jsx React.DOM */"use strict";
+
+	module.exports = {
+	  DOWN: 40,
+	  ESC: 27,
+	  ENTER: 13,
+	  LEFT: 37,
+	  RIGHT: 39,
+	  SPACE: 32,
+	  TAB: 9,
+	  UP: 38
+	};
+
+/***/ },
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var React = __webpack_require__(1);
-	var AutoPrefix = __webpack_require__(192);
-	var Extend = __webpack_require__(194);
+	var AutoPrefix = __webpack_require__(200);
+	var Extend = __webpack_require__(202);
 
 	/**
 	 *	@params:
@@ -45087,13 +46115,13 @@
 	};
 
 /***/ },
-/* 192 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var isBrowser = typeof window !== 'undefined';
-	var Modernizr = isBrowser ? __webpack_require__(193) : undefined;
+	var Modernizr = isBrowser ? __webpack_require__(201) : undefined;
 
 	module.exports = {
 
@@ -45124,7 +46152,7 @@
 	};
 
 /***/ },
-/* 193 */
+/* 201 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM *//* Modernizr 2.8.3 (Custom Build) | MIT & BSD
@@ -45394,7 +46422,7 @@
 	;
 
 /***/ },
-/* 194 */
+/* 202 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */'use strict';
@@ -45448,12 +46476,109 @@
 	module.exports = extend;
 
 /***/ },
-/* 195 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var AutoPrefix = __webpack_require__(192);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Colors = __webpack_require__(205);
+	var AutoPrefix = __webpack_require__(200);
+
+	var pulsateDuration = 750;
+
+	var FocusRipple = React.createClass({
+	  displayName: 'FocusRipple',
+
+	  mixins: [StylePropable],
+
+	  propTypes: {
+	    color: React.PropTypes.string,
+	    opacity: React.PropTypes.number,
+	    show: React.PropTypes.bool,
+	    innerStyle: React.PropTypes.object
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      color: Colors.darkBlack
+	    };
+	  },
+
+	  componentDidMount: function componentDidMount() {
+	    this._setRippleSize();
+	    this._pulsate();
+	  },
+
+	  render: function render() {
+
+	    var outerStyles = this.mergeAndPrefix({
+	      height: '100%',
+	      width: '100%',
+	      position: 'absolute',
+	      top: 0,
+	      left: 0,
+	      transition: Transitions.easeOut(),
+	      transform: this.props.show ? 'scale(1)' : 'scale(0)',
+	      opacity: this.props.show ? 1 : 0
+	    }, this.props.style);
+
+	    var innerStyles = this.mergeAndPrefix({
+	      position: 'absolute',
+	      height: '100%',
+	      width: '100%',
+	      borderRadius: '50%',
+	      opacity: this.props.opacity ? this.props.opacity : 0.16,
+	      backgroundColor: this.props.color,
+	      transition: Transitions.easeOut(pulsateDuration + 'ms', null, null, Transitions.easeInOutFunction)
+	    }, this.props.innerStyle);
+
+	    return React.createElement(
+	      'div',
+	      { style: outerStyles },
+	      React.createElement('div', { ref: 'innerCircle', style: innerStyles })
+	    );
+	  },
+
+	  _pulsate: function _pulsate() {
+	    if (!this.isMounted() || !this.props.show) return;
+
+	    var startScale = 'scale(0.75)';
+	    var endScale = 'scale(0.85)';
+	    var innerCircle = React.findDOMNode(this.refs.innerCircle);
+	    var currentScale = innerCircle.style[AutoPrefix.single('transform')];
+	    var nextScale;
+
+	    currentScale = currentScale || startScale;
+	    nextScale = currentScale === startScale ? endScale : startScale;
+
+	    innerCircle.style[AutoPrefix.single('transform')] = nextScale;
+	    setTimeout(this._pulsate, pulsateDuration);
+	  },
+
+	  _setRippleSize: function _setRippleSize() {
+	    var el = React.findDOMNode(this);
+	    var height = el.offsetHeight;
+	    var width = el.offsetWidth;
+	    var size = Math.max(height, width);
+
+	    el.style.height = size + 'px';
+	    el.style.top = size / 2 * -1 + height / 2 + 'px';
+	  }
+
+	});
+
+	module.exports = FocusRipple;
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var AutoPrefix = __webpack_require__(200);
 
 	module.exports = {
 
@@ -45479,216 +46604,7 @@
 	};
 
 /***/ },
-/* 196 */
-/***/ function(module, exports) {
-
-	/** @jsx React.DOM */'use strict';
-
-	module.exports = {
-
-	  /**
-	   * The relative brightness of any point in a colorspace, normalized to 0 for 
-	   * darkest black and 1 for lightest white. RGB colors only. Does not take 
-	   * into account alpha values. 
-	   *
-	   * TODO: 
-	   * - Take into account alpha values.
-	   * - Identify why there are minor discrepancies for some use cases 
-	   *   (i.e. #F0F & #FFF). Note that these cases rarely occur.
-	   *
-	   * Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
-	   */
-	  _luminance: function _luminance(color) {
-	    color = this._decomposeColor(color);
-
-	    if (color.type.indexOf('rgb') > -1) {
-	      var rgb = color.values.map(function (val) {
-	        val /= 255; // normalized
-	        return val <= 0.03928 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
-	      });
-
-	      return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
-	    } else {
-	      var message = 'Calculating the relative luminance is not available for ' + 'HSL and HSLA.';
-	      console.error(message);
-	      return -1;
-	    }
-	  },
-
-	  /**
-	   * @params:
-	   * additionalValue = An extra value that has been calculated but not included 
-	   *                   with the original color object, such as an alpha value.
-	   */
-	  _convertColorToString: function _convertColorToString(color, additonalValue) {
-	    var str = color.type + '(' + parseInt(color.values[0]) + ',' + parseInt(color.values[1]) + ',' + parseInt(color.values[2]);
-
-	    if (additonalValue !== undefined) {
-	      str += ',' + additonalValue + ')';
-	    } else if (color.values.length == 4) {
-	      str += ',' + color.values[3] + ')';
-	    } else {
-	      str += ')';
-	    }
-
-	    return str;
-	  },
-
-	  // Converts a color from hex format to rgb format.
-	  _convertHexToRGB: function _convertHexToRGB(color) {
-	    if (color.length === 4) {
-	      var extendedColor = '#';
-	      for (var i = 1; i < color.length; i++) {
-	        extendedColor += color.charAt(i) + color.charAt(i);
-	      }
-	      color = extendedColor;
-	    }
-
-	    var values = {
-	      r: parseInt(color.substr(1, 2), 16),
-	      g: parseInt(color.substr(3, 2), 16),
-	      b: parseInt(color.substr(5, 2), 16)
-	    };
-
-	    return 'rgb(' + values.r + ',' + values.g + ',' + values.b + ')';
-	  },
-
-	  // Returns the type and values of a color of any given type.
-	  _decomposeColor: function _decomposeColor(color) {
-	    if (color.charAt(0) === '#') {
-	      return this._decomposeColor(this._convertHexToRGB(color));
-	    }
-
-	    var marker = color.indexOf('(');
-	    var type = color.substring(0, marker);
-	    var values = color.substring(marker + 1, color.length - 1).split(',');
-
-	    return { type: type, values: values };
-	  },
-
-	  // Set the absolute transparency of a color.
-	  // Any existing alpha values are overwritten.
-	  fade: function fade(color, amount) {
-	    color = this._decomposeColor(color);
-	    if (color.type == 'rgb' || color.type == 'hsl') color.type += 'a';
-	    return this._convertColorToString(color, amount);
-	  },
-
-	  // Desaturates rgb and sets opacity to 0.15
-	  lighten: function lighten(color, amount) {
-	    color = this._decomposeColor(color);
-
-	    if (color.type.indexOf('hsl') > -1) {
-	      color.values[2] += amount;
-	      return this._decomposeColor(this._convertColorToString(color));
-	    } else if (color.type.indexOf('rgb') > -1) {
-	      for (var i = 0; i < 3; i++) {
-	        color.values[i] *= 1 + amount;
-	        if (color.values[i] > 255) color.values[i] = 255;
-	      }
-	    }
-
-	    if (color.type.indexOf('a') <= -1) color.type += 'a';
-
-	    return this._convertColorToString(color, '0.15');
-	  },
-
-	  darken: function darken(color, amount) {
-	    color = this._decomposeColor(color);
-
-	    if (color.type.indexOf('hsl') > -1) {
-	      color.values[2] += amount;
-	      return this._decomposeColor(this._convertColorToString(color));
-	    } else if (color.type.indexOf('rgb') > -1) {
-	      for (var i = 0; i < 3; i++) {
-	        color.values[i] *= 1 - amount;
-	        if (color.values[i] < 0) color.values[i] = 0;
-	      }
-	    }
-
-	    return this._convertColorToString(color);
-	  },
-
-	  // Calculates the contrast ratio between two colors.
-	  //
-	  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
-	  contrastRatio: function contrastRatio(background, foreground) {
-	    var lumA = this._luminance(background);
-	    var lumB = this._luminance(foreground);
-
-	    if (lumA >= lumB) {
-	      return ((lumA + 0.05) / (lumB + 0.05)).toFixed(2);
-	    } else {
-	      return ((lumB + 0.05) / (lumA + 0.05)).toFixed(2);
-	    }
-	  },
-
-	  /** 
-	   * Determines how readable a color combination is based on its level.
-	   * Levels are defined from @LeaVerou:
-	   * https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/contrast-ratio.js
-	   */
-	  contrastRatioLevel: function contrastRatioLevel(background, foreground) {
-	    var levels = {
-	      'fail': {
-	        range: [0, 3],
-	        color: 'hsl(0, 100%, 40%)'
-	      },
-	      'aa-large': {
-	        range: [3, 4.5],
-	        color: 'hsl(40, 100%, 45%)'
-	      },
-	      'aa': {
-	        range: [4.5, 7],
-	        color: 'hsl(80, 60%, 45%)'
-	      },
-	      'aaa': {
-	        range: [7, 22],
-	        color: 'hsl(95, 60%, 41%)'
-	      }
-	    };
-
-	    var ratio = this.contrastRatio(background, foreground);
-
-	    for (var level in levels) {
-	      var range = levels[level].range;
-	      if (ratio >= range[0] && ratio <= range[1]) return level;
-	    }
-	  }
-
-	};
-
-/***/ },
-/* 197 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var Colors = __webpack_require__(198);
-
-	var Typography = function Typography() {
-
-	  // text colors
-	  this.textFullBlack = Colors.fullBlack;
-	  this.textDarkBlack = Colors.darkBlack;
-	  this.textLightBlack = Colors.lightBlack;
-	  this.textMinBlack = Colors.minBlack;
-	  this.textFullWhite = Colors.fullWhite;
-	  this.textDarkWhite = Colors.darkWhite;
-	  this.textLightWhite = Colors.lightWhite;
-
-	  // font weight
-	  this.fontWeightLight = 300;
-	  this.fontWeightNormal = 400;
-	  this.fontWeightMedium = 500;
-
-	  this.fontStyleButtonFontSize = 14;
-	};
-
-	module.exports = new Typography();
-
-/***/ },
-/* 198 */
+/* 205 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */// To include this file in your project:
@@ -45988,433 +46904,15 @@
 	};
 
 /***/ },
-/* 199 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	var React = __webpack_require__(190);
-	var KeyCode = __webpack_require__(202);
-	var StylePropable = __webpack_require__(191);
-	var WindowListenable = __webpack_require__(200);
-	var FocusRipple = __webpack_require__(203);
-	var TouchRipple = __webpack_require__(204);
-
-	var EnhancedButton = React.createClass({
-	  displayName: 'EnhancedButton',
-
-	  mixins: [StylePropable, WindowListenable],
-
-	  contextTypes: {
-	    muiTheme: React.PropTypes.object
-	  },
-
-	  propTypes: {
-	    centerRipple: React.PropTypes.bool,
-	    className: React.PropTypes.string,
-	    disabled: React.PropTypes.bool,
-	    disableFocusRipple: React.PropTypes.bool,
-	    disableTouchRipple: React.PropTypes.bool,
-	    keyboardFocused: React.PropTypes.bool,
-	    linkButton: React.PropTypes.bool,
-	    focusRippleColor: React.PropTypes.string,
-	    touchRippleColor: React.PropTypes.string,
-	    focusRippleOpacity: React.PropTypes.number,
-	    touchRippleOpacity: React.PropTypes.number,
-	    onBlur: React.PropTypes.func,
-	    onFocus: React.PropTypes.func,
-	    onMouseOut: React.PropTypes.func,
-	    onMouseOver: React.PropTypes.func,
-	    onTouchTap: React.PropTypes.func,
-	    onKeyboardFocus: React.PropTypes.func
-	  },
-
-	  windowListeners: {
-	    'keydown': '_handleWindowKeydown',
-	    'keyup': '_handleWindowKeyup'
-	  },
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      isKeyboardFocused: !this.props.disabled && this.props.keyboardFocused
-	    };
-	  },
-
-	  // Remove inner padding and border in Firefox 4+.
-	  componentDidMount: function componentDidMount() {
-	    if (!EnhancedButton.hasStyleBeenInjected) {
-	      var style = document.createElement('style');
-	      style.innerHTML = 'button::-moz-focus-inner,' + 'input::-moz-focus-inner {' + ' border: 0;' + ' padding: 0;' + ' }';
-	      document.body.appendChild(style);
-	      EnhancedButton.hasStyleBeenInjected = true;
-	    }
-	  },
-
-	  getStyles: function getStyles() {
-	    var styles = {
-	      root: {
-	        border: 10,
-	        background: 'none',
-	        boxSizing: 'border-box',
-	        font: 'inherit',
-	        fontFamily: this.context.muiTheme.contentFontFamily,
-	        WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-	        WebkitAppearance: !this.props.linkButton && 'button',
-	        cursor: 'pointer'
-	      },
-	      rootWhenLinkButton: {
-	        display: 'inline-block',
-	        cursor: this.props.disabled ? 'default' : 'pointer',
-	        textDecoration: 'none'
-	      },
-	      rootWhenDisabled: {
-	        cursor: 'default'
-	      }
-	    };
-	    return styles;
-	  },
-
-	  render: function render() {
-	    var _props = this.props;
-	    var centerRipple = _props.centerRipple;
-	    var disabled = _props.disabled;
-	    var disableFocusRipple = _props.disableFocusRipple;
-	    var disableTouchRipple = _props.disableTouchRipple;
-	    var linkButton = _props.linkButton;
-	    var touchRippleColor = _props.touchRippleColor;
-	    var onBlur = _props.onBlur;
-	    var onFocus = _props.onFocus;
-	    var onMouseOver = _props.onMouseOver;
-	    var onMouseOut = _props.onMouseOut;
-	    var onTouchTap = _props.onTouchTap;
-
-	    var other = _objectWithoutProperties(_props, ['centerRipple', 'disabled', 'disableFocusRipple', 'disableTouchRipple', 'linkButton', 'touchRippleColor', 'onBlur', 'onFocus', 'onMouseOver', 'onMouseOut', 'onTouchTap']);
-
-	    var styles = this.mergeAndPrefix(this.getStyles().root, this.props.linkButton && this.getStyles().rootWhenLinkButton, this.props.disabled && this.getStyles().rootWhenDisabled, this.props.style);
-	    var buttonChildren = [];
-
-	    // Create ripples if we need to
-	    buttonChildren.push(disabled || disableTouchRipple ? this.props.children : React.createElement(
-	      TouchRipple,
-	      {
-	        ref: 'touchRipple',
-	        key: 'touchRipple',
-	        centerRipple: centerRipple,
-	        color: this.props.touchRippleColor,
-	        opacity: this.props.touchRippleOpacity },
-	      this.props.children
-	    ));
-	    buttonChildren.push(disabled || disableFocusRipple ? null : React.createElement(FocusRipple, {
-	      key: 'focusRipple',
-	      color: this.props.focusRippleColor,
-	      opacity: this.props.focusRippleOpacity,
-	      show: this.state.isKeyboardFocused }));
-
-	    var buttonProps = {
-	      style: styles,
-	      disabled: disabled,
-	      onBlur: this._handleBlur,
-	      onFocus: this._handleFocus,
-	      onMouseOver: this._handleMouseOver,
-	      onMouseOut: this._handleMouseOut,
-	      onTouchTap: this._handleTouchTap
-	    };
-
-	    if (disabled && linkButton) {
-	      return React.createElement(
-	        'span',
-	        _extends({}, other, {
-	          className: this.props.className,
-	          disabled: disabled }),
-	        this.props.children
-	      );
-	    }
-
-	    return React.createElement(linkButton ? 'a' : 'button', _extends({}, other, buttonProps), buttonChildren);
-	  },
-
-	  isKeyboardFocused: function isKeyboardFocused() {
-	    return this.state.isKeyboardFocused;
-	  },
-
-	  _handleWindowKeydown: function _handleWindowKeydown(e) {
-	    if (!this.props.disabled) {
-	      if (e.keyCode == KeyCode.TAB) this._tabPressed = true;
-	      if (e.keyCode == KeyCode.ENTER && this.state.isKeyboardFocused) {
-	        this._handleTouchTap(e);
-	      }
-	    }
-	  },
-
-	  _handleWindowKeyup: function _handleWindowKeyup(e) {
-	    if (!this.props.disabled && e.keyCode == KeyCode.SPACE && this.state.isKeyboardFocused) {
-	      this._handleTouchTap(e);
-	    }
-	  },
-
-	  _handleBlur: function _handleBlur(e) {
-	    this._cancelFocusTimeout();
-	    if (!this.props.disabled) {
-	      this.setState({
-	        isKeyboardFocused: false
-	      });
-	      if (this.props.onKeyboardFocus) this.props.onKeyboardFocus(e, false);
-	      if (this.props.onBlur) this.props.onBlur(e);
-	    }
-	  },
-
-	  _handleFocus: function _handleFocus(e) {
-	    React.findDOMNode(this).style.outline = 'none';
-	    if (!this.props.disabled) {
-	      //setTimeout is needed because the focus event fires first
-	      //Wait so that we can capture if this was a keyboard focus
-	      //or touch focus
-	      this._focusTimeout = setTimeout((function () {
-	        if (this._tabPressed) {
-	          this.setState({
-	            isKeyboardFocused: true
-	          });
-	          if (this.props.onKeyboardFocus) this.props.onKeyboardFocus(e, true);
-	        }
-	      }).bind(this), 150);
-
-	      if (this.props.onFocus) this.props.onFocus(e);
-	    }
-	  },
-
-	  _handleMouseOver: function _handleMouseOver(e) {
-	    React.findDOMNode(this).style.textDecoration = 'none';
-	    if (this.props.onMouseOver) this.props.onMouseOver(e);
-	  },
-
-	  _handleMouseOut: function _handleMouseOut(e) {
-	    if (this.props.onMouseOut) this.props.onMouseOut(e);
-	  },
-
-	  _handleTouchTap: function _handleTouchTap(e) {
-	    this._cancelFocusTimeout();
-	    if (!this.props.disabled) {
-	      this._tabPressed = false;
-	      this.setState({
-	        isKeyboardFocused: false
-	      });
-	      if (this.props.onKeyboardFocus) this.props.onKeyboardFocus(e, false);
-	      if (this.props.onTouchTap) this.props.onTouchTap(e);
-	    }
-	  },
-
-	  _cancelFocusTimeout: function _cancelFocusTimeout() {
-	    if (this._focusTimeout) {
-	      clearTimeout(this._focusTimeout);
-	      this._focusTimeout = null;
-	    }
-	  }
-
-	});
-
-	EnhancedButton.hasStyleBeenInjected = false;
-
-	module.exports = EnhancedButton;
-
-/***/ },
-/* 200 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var Events = __webpack_require__(201);
-
-	module.exports = {
-
-	  componentDidMount: function componentDidMount() {
-	    var listeners = this.windowListeners;
-
-	    for (var eventName in listeners) {
-	      var callbackName = listeners[eventName];
-	      Events.on(window, eventName, this[callbackName]);
-	    }
-	  },
-
-	  componentWillUnmount: function componentWillUnmount() {
-	    var listeners = this.windowListeners;
-
-	    for (var eventName in listeners) {
-	      var callbackName = listeners[eventName];
-	      Events.off(window, eventName, this[callbackName]);
-	    }
-	  }
-
-	};
-
-/***/ },
-/* 201 */
-/***/ function(module, exports) {
-
-	/** @jsx React.DOM */'use strict';
-
-	module.exports = {
-
-	  once: function once(el, type, callback) {
-	    var typeArray = type.split(' ');
-	    var recursiveFunction = function recursiveFunction(e) {
-	      e.target.removeEventListener(e.type, recursiveFunction);
-	      return callback(e);
-	    };
-
-	    for (var i = typeArray.length - 1; i >= 0; i--) {
-	      this.on(el, typeArray[i], recursiveFunction);
-	    }
-	  },
-
-	  // IE8+ Support
-	  on: function on(el, type, callback) {
-	    if (el.addEventListener) {
-	      el.addEventListener(type, callback);
-	    } else {
-	      el.attachEvent('on' + type, function () {
-	        callback.call(el);
-	      });
-	    }
-	  },
-
-	  // IE8+ Support
-	  off: function off(el, type, callback) {
-	    if (el.removeEventListener) {
-	      el.removeEventListener(type, callback);
-	    } else {
-	      el.detachEvent('on' + type, callback);
-	    }
-	  }
-	};
-
-/***/ },
-/* 202 */
-/***/ function(module, exports) {
-
-	/** @jsx React.DOM */"use strict";
-
-	module.exports = {
-	  DOWN: 40,
-	  ESC: 27,
-	  ENTER: 13,
-	  LEFT: 37,
-	  RIGHT: 39,
-	  SPACE: 32,
-	  TAB: 9,
-	  UP: 38
-	};
-
-/***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Colors = __webpack_require__(198);
-	var AutoPrefix = __webpack_require__(192);
-
-	var pulsateDuration = 750;
-
-	var FocusRipple = React.createClass({
-	  displayName: 'FocusRipple',
-
-	  mixins: [StylePropable],
-
-	  propTypes: {
-	    color: React.PropTypes.string,
-	    opacity: React.PropTypes.number,
-	    show: React.PropTypes.bool,
-	    innerStyle: React.PropTypes.object
-	  },
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      color: Colors.darkBlack
-	    };
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    this._setRippleSize();
-	    this._pulsate();
-	  },
-
-	  render: function render() {
-
-	    var outerStyles = this.mergeAndPrefix({
-	      height: '100%',
-	      width: '100%',
-	      position: 'absolute',
-	      top: 0,
-	      left: 0,
-	      transition: Transitions.easeOut(),
-	      transform: this.props.show ? 'scale(1)' : 'scale(0)',
-	      opacity: this.props.show ? 1 : 0
-	    }, this.props.style);
-
-	    var innerStyles = this.mergeAndPrefix({
-	      position: 'absolute',
-	      height: '100%',
-	      width: '100%',
-	      borderRadius: '50%',
-	      opacity: this.props.opacity ? this.props.opacity : 0.16,
-	      backgroundColor: this.props.color,
-	      transition: Transitions.easeOut(pulsateDuration + 'ms', null, null, Transitions.easeInOutFunction)
-	    }, this.props.innerStyle);
-
-	    return React.createElement(
-	      'div',
-	      { style: outerStyles },
-	      React.createElement('div', { ref: 'innerCircle', style: innerStyles })
-	    );
-	  },
-
-	  _pulsate: function _pulsate() {
-	    if (!this.isMounted() || !this.props.show) return;
-
-	    var startScale = 'scale(0.75)';
-	    var endScale = 'scale(0.85)';
-	    var innerCircle = React.findDOMNode(this.refs.innerCircle);
-	    var currentScale = innerCircle.style[AutoPrefix.single('transform')];
-	    var nextScale;
-
-	    currentScale = currentScale || startScale;
-	    nextScale = currentScale === startScale ? endScale : startScale;
-
-	    innerCircle.style[AutoPrefix.single('transform')] = nextScale;
-	    setTimeout(this._pulsate, pulsateDuration);
-	  },
-
-	  _setRippleSize: function _setRippleSize() {
-	    var el = React.findDOMNode(this);
-	    var height = el.offsetHeight;
-	    var width = el.offsetWidth;
-	    var size = Math.max(height, width);
-
-	    el.style.height = size + 'px';
-	    el.style.top = size / 2 * -1 + height / 2 + 'px';
-	  }
-
-	});
-
-	module.exports = FocusRipple;
-
-/***/ },
-/* 204 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Dom = __webpack_require__(205);
-	var RippleCircle = __webpack_require__(206);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Dom = __webpack_require__(207);
+	var RippleCircle = __webpack_require__(208);
 	var TouchRipple = React.createClass({
 	  displayName: 'TouchRipple',
 
@@ -46605,7 +47103,7 @@
 	module.exports = TouchRipple;
 
 /***/ },
-/* 205 */
+/* 207 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */'use strict';
@@ -46671,7 +47169,7 @@
 	};
 
 /***/ },
-/* 206 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -46680,10 +47178,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Colors = __webpack_require__(198);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Colors = __webpack_require__(205);
 
 	var RippleCircle = React.createClass({
 	  displayName: 'RippleCircle',
@@ -46733,498 +47231,19 @@
 	module.exports = RippleCircle;
 
 /***/ },
-/* 207 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Paper = React.createClass({
-	  displayName: 'Paper',
-
-	  mixins: [StylePropable],
-
-	  contextTypes: {
-	    muiTheme: React.PropTypes.object
-	  },
-
-	  propTypes: {
-	    circle: React.PropTypes.bool,
-	    rounded: React.PropTypes.bool,
-	    zDepth: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
-	    transitionEnabled: React.PropTypes.bool
-	  },
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      rounded: true,
-	      zDepth: 1,
-	      transitionEnabled: true
-	    };
-	  },
-
-	  getStyles: function getStyles() {
-	    var styles = {
-	      root: {
-	        backgroundColor: this.context.muiTheme.component.paper.backgroundColor,
-	        transition: this.props.transitionEnabled && Transitions.easeOut(),
-	        boxSizing: 'border-box',
-	        fontFamily: this.context.muiTheme.contentFontFamily,
-	        WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-	        boxShadow: this._getZDepthShadows(this.props.zDepth),
-	        borderRadius: this.props.circle ? '50%' : this.props.rounded ? '2px' : '0px'
-	      }
-	    };
-	    return styles;
-	  },
-
-	  render: function render() {
-	    var _props = this.props;
-	    var style = _props.style;
-	    var circle = _props.circle;
-	    var rounded = _props.rounded;
-	    var zDepth = _props.zDepth;
-
-	    var other = _objectWithoutProperties(_props, ['style', 'circle', 'rounded', 'zDepth']);
-
-	    var styles = this.getStyles();
-
-	    return React.createElement(
-	      'div',
-	      _extends({}, other, { style: this.mergeAndPrefix(styles.root, this.props.style) }),
-	      this.props.children
-	    );
-	  },
-
-	  _getZDepthShadows: function _getZDepthShadows(zDepth) {
-	    var shadows = ['', '0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)', '0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23)', '0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23)', '0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22)', '0 19px 60px rgba(0, 0, 0, 0.30), 0 15px 20px rgba(0, 0, 0, 0.22)'];
-
-	    return shadows[zDepth];
-	  }
-
-	});
-
-	module.exports = Paper;
-
-/***/ },
-/* 208 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
-
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Typography = __webpack_require__(197);
-	var IconButton = __webpack_require__(209);
-	var NavigationMenu = __webpack_require__(213);
-	var Paper = __webpack_require__(207);
-
-	var AppBar = React.createClass({
-	  displayName: 'AppBar',
-
-	  mixins: [StylePropable],
-
-	  contextTypes: {
-	    muiTheme: React.PropTypes.object
-	  },
-
-	  propTypes: {
-	    onLeftIconButtonTouchTap: React.PropTypes.func,
-	    onRightIconButtonTouchTap: React.PropTypes.func,
-	    showMenuIconButton: React.PropTypes.bool,
-	    iconClassNameLeft: React.PropTypes.string,
-	    iconClassNameRight: React.PropTypes.string,
-	    iconElementLeft: React.PropTypes.element,
-	    iconElementRight: React.PropTypes.element,
-	    iconStyleRight: React.PropTypes.object,
-	    title: React.PropTypes.node,
-	    zDepth: React.PropTypes.number
-	  },
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      showMenuIconButton: true,
-	      title: '',
-	      zDepth: 1
-	    };
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    if (process.env.NODE_ENV !== 'production' && (this.props.iconElementLeft && this.props.iconClassNameLeft)) {
-	      var warning = 'Properties iconClassNameLeft and iconElementLeft cannot be simultaneously ' + 'defined. Please use one or the other.';
-	      console.warn(warning);
-	    }
-	  },
-
-	  getStyles: function getStyles() {
-	    var spacing = this.context.muiTheme.spacing;
-	    var themeVariables = this.context.muiTheme.component.appBar;
-	    var iconButtonSize = this.context.muiTheme.component.button.iconButtonSize;
-	    var styles = {
-	      root: {
-	        zIndex: 5,
-	        width: '100%',
-	        minHeight: themeVariables.height,
-	        backgroundColor: themeVariables.color,
-	        paddingLeft: spacing.desktopGutter,
-	        paddingRight: spacing.desktopGutter
-	      },
-	      title: {
-	        float: 'left',
-	        margin: 0,
-	        paddingTop: 0,
-	        letterSpacing: 0,
-	        fontSize: 24,
-	        fontWeight: Typography.fontWeightNormal,
-	        color: themeVariables.textColor,
-	        lineHeight: themeVariables.height + 'px'
-	      },
-	      iconButton: {
-	        style: {
-	          marginTop: (themeVariables.height - iconButtonSize) / 2,
-	          float: 'left',
-	          marginRight: 8,
-	          marginLeft: -16
-	        },
-	        iconStyle: {
-	          fill: themeVariables.textColor,
-	          color: themeVariables.textColor
-	        }
-	      }
-	    };
-	    return styles;
-	  },
-
-	  render: function render() {
-	    var styles = this.getStyles();
-
-	    var title;
-	    var menuElementLeft;
-	    var menuElementRight;
-	    var iconRightStyle = this.mergeAndPrefix(styles.iconButton.style, {
-	      float: 'right',
-	      marginRight: -16,
-	      marginLeft: 8
-	    }, this.props.iconStyleRight);
-
-	    if (this.props.title) {
-	      // If the title is a string, wrap in an h1 tag.
-	      // If not, just use it as a node.
-	      title = Object.prototype.toString.call(this.props.title) === '[object String]' ? React.createElement(
-	        'h1',
-	        { style: this.mergeAndPrefix(styles.title) },
-	        this.props.title
-	      ) : this.props.title;
-	    }
-
-	    if (this.props.showMenuIconButton) {
-	      if (this.props.iconElementLeft) {
-	        menuElementLeft = React.createElement(
-	          'div',
-	          { style: styles.iconButton.style },
-	          this.props.iconElementLeft
-	        );
-	      } else {
-	        var child = this.props.iconClassNameLeft ? '' : React.createElement(NavigationMenu, { style: this.mergeAndPrefix(styles.iconButton.iconStyle) });
-	        menuElementLeft = React.createElement(
-	          IconButton,
-	          {
-	            style: this.mergeAndPrefix(styles.iconButton.style),
-	            iconStyle: this.mergeAndPrefix(styles.iconButton.iconStyle),
-	            iconClassName: this.props.iconClassNameLeft,
-	            onTouchTap: this._onLeftIconButtonTouchTap },
-	          child
-	        );
-	      }
-
-	      if (this.props.iconElementRight) {
-	        menuElementRight = React.createElement(
-	          'div',
-	          { style: iconRightStyle },
-	          this.props.iconElementRight
-	        );
-	      } else if (this.props.iconClassNameRight) {
-	        menuElementRight = React.createElement(IconButton, {
-	          style: iconRightStyle,
-	          iconStyle: this.mergeAndPrefix(styles.iconButton.iconStyle),
-	          iconClassName: this.props.iconClassNameRight,
-	          onTouchTap: this._onRightIconButtonTouchTap });
-	      }
-	    }
-
-	    return React.createElement(
-	      Paper,
-	      {
-	        rounded: false,
-	        className: this.props.className,
-	        style: this.mergeAndPrefix(styles.root, this.props.style),
-	        zDepth: this.props.zDepth },
-	      menuElementLeft,
-	      title,
-	      menuElementRight,
-	      this.props.children
-	    );
-	  },
-
-	  _onLeftIconButtonTouchTap: function _onLeftIconButtonTouchTap(event) {
-	    if (this.props.onLeftIconButtonTouchTap) {
-	      this.props.onLeftIconButtonTouchTap(event);
-	    }
-	  },
-
-	  _onRightIconButtonTouchTap: function _onRightIconButtonTouchTap(event) {
-	    if (this.props.onRightIconButtonTouchTap) {
-	      this.props.onRightIconButtonTouchTap(event);
-	    }
-	  }
-
-	});
-
-	module.exports = AppBar;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ },
 /* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var EnhancedButton = __webpack_require__(199);
-	var FontIcon = __webpack_require__(210);
-	var Tooltip = __webpack_require__(212);
-
-	var IconButton = React.createClass({
-	  displayName: 'IconButton',
-
-	  mixins: [StylePropable],
-
-	  contextTypes: {
-	    muiTheme: React.PropTypes.object
-	  },
-
-	  propTypes: {
-	    className: React.PropTypes.string,
-	    disabled: React.PropTypes.bool,
-	    iconClassName: React.PropTypes.string,
-	    iconStyle: React.PropTypes.object,
-	    onBlur: React.PropTypes.func,
-	    onFocus: React.PropTypes.func,
-	    tooltip: React.PropTypes.string,
-	    touch: React.PropTypes.bool
-	  },
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      tooltipShown: false
-	    };
-	  },
-
-	  getDefaultProps: function getDefaultProps() {
-	    return {
-	      iconStyle: {}
-	    };
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    if (this.props.tooltip) {
-	      this._positionTooltip();
-	    }
-	    if (process.env.NODE_ENV !== 'production') {
-	      if (this.props.iconClassName && this.props.children) {
-	        var warning = 'You have set both an iconClassName and a child icon. ' + 'It is recommended you use only one method when adding ' + 'icons to IconButtons.';
-	        console.warn(warning);
-	      }
-	    }
-	  },
-
-	  getTheme: function getTheme() {
-	    return this.context.muiTheme.palette;
-	  },
-
-	  getSpacing: function getSpacing() {
-	    return this.context.muiTheme.spacing;
-	  },
-
-	  getDisabledColor: function getDisabledColor() {
-	    return this.context.muiTheme.palette.disabledColor;
-	  },
-
-	  getStyles: function getStyles() {
-	    var styles = {
-	      root: {
-	        position: 'relative',
-	        boxSizing: 'border-box',
-	        transition: Transitions.easeOut(),
-	        padding: this.getSpacing().iconSize / 2,
-	        width: this.getSpacing().iconSize * 2,
-	        height: this.getSpacing().iconSize * 2
-	      },
-	      tooltip: {
-	        boxSizing: 'border-box',
-	        marginTop: this.context.muiTheme.component.button.iconButtonSize + 4
-	      },
-	      icon: {
-	        color: this.getTheme().textColor,
-	        fill: this.getTheme().textColor
-	      },
-	      overlay: {
-	        position: 'relative',
-	        top: 0,
-	        width: '100%',
-	        height: '100%',
-	        background: this.getDisabledColor()
-	      },
-	      rootWhenDisabled: {
-	        color: this.getDisabledColor(),
-	        fill: this.getDisabledColor()
-	      },
-	      iconWhenDisabled: {
-	        color: this.getDisabledColor(),
-	        fill: this.getDisabledColor()
-	      }
-	    };
-	    return styles;
-	  },
-
-	  render: function render() {
-	    var _props = this.props;
-	    var tooltip = _props.tooltip;
-	    var touch = _props.touch;
-
-	    var other = _objectWithoutProperties(_props, ['tooltip', 'touch']);
-
-	    var tooltipElement;
-	    var fonticon;
-
-	    var styles = this.getStyles();
-
-	    if (tooltip) {
-	      tooltipElement = React.createElement(Tooltip, {
-	        ref: 'tooltip',
-	        label: tooltip,
-	        show: this.state.tooltipShown,
-	        touch: touch,
-	        style: this.mergeStyles(styles.tooltip) });
-	    }
-
-	    if (this.props.iconClassName) {
-	      var _props$iconStyle = this.props.iconStyle;
-	      var iconHoverColor = _props$iconStyle.iconHoverColor;
-
-	      var iconStyle = _objectWithoutProperties(_props$iconStyle, ['iconHoverColor']);
-
-	      fonticon = React.createElement(FontIcon, {
-	        className: this.props.iconClassName,
-	        hoverColor: iconHoverColor,
-	        style: this.mergeStyles(styles.icon, this.props.disabled && styles.iconWhenDisabled, iconStyle) });
-	    }
-
-	    if (this.props.children && this.props.disabled) {
-	      React.Children.forEach(this.props.children, function (child) {
-	        child.props.style = {
-	          color: this.getDisabledColor(),
-	          fill: this.getDisabledColor()
-	        };
-	      }, this);
-	    }
-
-	    return React.createElement(
-	      EnhancedButton,
-	      _extends({}, other, {
-	        ref: 'button',
-	        centerRipple: true,
-	        style: this.mergeStyles(styles.root, this.props.style),
-	        onBlur: this._handleBlur,
-	        onFocus: this._handleFocus,
-	        onMouseOut: this._handleMouseOut,
-	        onMouseOver: this._handleMouseOver,
-	        onKeyboardFocus: this._handleKeyboardFocus }),
-	      tooltipElement,
-	      fonticon,
-	      this.props.children
-	    );
-	  },
-
-	  _positionTooltip: function _positionTooltip() {
-	    var tooltip = React.findDOMNode(this.refs.tooltip);
-	    var tooltipWidth = tooltip.offsetWidth;
-	    var buttonWidth = 48;
-
-	    tooltip.style.left = (tooltipWidth - buttonWidth) / 2 * -1 + 'px';
-	  },
-
-	  _showTooltip: function _showTooltip() {
-	    if (!this.props.disabled && this.props.tooltip) {
-	      this.setState({ tooltipShown: true });
-	    }
-	  },
-
-	  _hideTooltip: function _hideTooltip() {
-	    if (this.props.tooltip) this.setState({ tooltipShown: false });
-	  },
-
-	  _handleBlur: function _handleBlur(e) {
-	    this._hideTooltip();
-	    if (this.props.onBlur) this.props.onBlur(e);
-	  },
-
-	  _handleFocus: function _handleFocus(e) {
-	    this._showTooltip();
-	    if (this.props.onFocus) this.props.onFocus(e);
-	  },
-
-	  _handleMouseOut: function _handleMouseOut(e) {
-	    if (!this.refs.button.isKeyboardFocused()) this._hideTooltip();
-	    if (this.props.onMouseOut) this.props.onMouseOut(e);
-	  },
-
-	  _handleMouseOver: function _handleMouseOver(e) {
-	    this._showTooltip();
-	    if (this.props.onMouseOver) this.props.onMouseOver(e);
-	  },
-
-	  _handleKeyboardFocus: function _handleKeyboardFocus(e, keyboardFocused) {
-	    if (keyboardFocused && !this.props.disabled) {
-	      this._showTooltip();
-	      if (this.props.onFocus) this.props.onFocus(e);
-	    } else if (!this.state.hovered) {
-	      this._hideTooltip();
-	      if (this.props.onBlur) this.props.onBlur(e);
-	    }
-	  }
-
-	});
-
-	module.exports = IconButton;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ },
-/* 210 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/** @jsx React.DOM */'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Spacing = __webpack_require__(211);
-	var Transitions = __webpack_require__(195);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Spacing = __webpack_require__(210);
+	var Transitions = __webpack_require__(204);
 
 	var FontIcon = React.createClass({
 	  displayName: 'FontIcon',
@@ -47297,7 +47316,7 @@
 	module.exports = FontIcon;
 
 /***/ },
-/* 211 */
+/* 210 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */"use strict";
@@ -47318,7 +47337,7 @@
 	};
 
 /***/ },
-/* 212 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -47327,10 +47346,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Colors = __webpack_require__(198);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Colors = __webpack_require__(205);
 
 	var Tooltip = React.createClass({
 	  displayName: 'Tooltip',
@@ -47448,12 +47467,41 @@
 	module.exports = Tooltip;
 
 /***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var Colors = __webpack_require__(205);
+
+	var Typography = function Typography() {
+
+	  // text colors
+	  this.textFullBlack = Colors.fullBlack;
+	  this.textDarkBlack = Colors.darkBlack;
+	  this.textLightBlack = Colors.lightBlack;
+	  this.textMinBlack = Colors.minBlack;
+	  this.textFullWhite = Colors.fullWhite;
+	  this.textDarkWhite = Colors.darkWhite;
+	  this.textLightWhite = Colors.lightWhite;
+
+	  // font weight
+	  this.fontWeightLight = 300;
+	  this.fontWeightNormal = 400;
+	  this.fontWeightMedium = 500;
+
+	  this.fontStyleButtonFontSize = 14;
+	};
+
+	module.exports = new Typography();
+
+/***/ },
 /* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var NavigationMenu = React.createClass({
@@ -47482,7 +47530,7 @@
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 	var React = __webpack_require__(1);
-	var StylePropable = __webpack_require__(191);
+	var StylePropable = __webpack_require__(199);
 
 	var SvgIcon = React.createClass({
 	  displayName: 'SvgIcon',
@@ -47536,7 +47584,87 @@
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Paper = React.createClass({
+	  displayName: 'Paper',
+
+	  mixins: [StylePropable],
+
+	  contextTypes: {
+	    muiTheme: React.PropTypes.object
+	  },
+
+	  propTypes: {
+	    circle: React.PropTypes.bool,
+	    rounded: React.PropTypes.bool,
+	    zDepth: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
+	    transitionEnabled: React.PropTypes.bool
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      rounded: true,
+	      zDepth: 1,
+	      transitionEnabled: true
+	    };
+	  },
+
+	  getStyles: function getStyles() {
+	    var styles = {
+	      root: {
+	        backgroundColor: this.context.muiTheme.component.paper.backgroundColor,
+	        transition: this.props.transitionEnabled && Transitions.easeOut(),
+	        boxSizing: 'border-box',
+	        fontFamily: this.context.muiTheme.contentFontFamily,
+	        WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+	        boxShadow: this._getZDepthShadows(this.props.zDepth),
+	        borderRadius: this.props.circle ? '50%' : this.props.rounded ? '2px' : '0px'
+	      }
+	    };
+	    return styles;
+	  },
+
+	  render: function render() {
+	    var _props = this.props;
+	    var style = _props.style;
+	    var circle = _props.circle;
+	    var rounded = _props.rounded;
+	    var zDepth = _props.zDepth;
+
+	    var other = _objectWithoutProperties(_props, ['style', 'circle', 'rounded', 'zDepth']);
+
+	    var styles = this.getStyles();
+
+	    return React.createElement(
+	      'div',
+	      _extends({}, other, { style: this.mergeAndPrefix(styles.root, this.props.style) }),
+	      this.props.children
+	    );
+	  },
+
+	  _getZDepthShadows: function _getZDepthShadows(zDepth) {
+	    var shadows = ['', '0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)', '0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23)', '0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23)', '0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22)', '0 19px 60px rgba(0, 0, 0, 0.30), 0 15px 20px rgba(0, 0, 0, 0.22)'];
+
+	    return shadows[zDepth];
+	  }
+
+	});
+
+	module.exports = Paper;
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var React = __webpack_require__(188);
 
 	var AppCanvas = React.createClass({
 	  displayName: 'AppCanvas',
@@ -47583,7 +47711,7 @@
 	module.exports = AppCanvas;
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -47593,9 +47721,9 @@
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 	var React = __webpack_require__(1);
-	var StylePropable = __webpack_require__(191);
-	var Colors = __webpack_require__(198);
-	var Typography = __webpack_require__(197);
+	var StylePropable = __webpack_require__(199);
+	var Colors = __webpack_require__(205);
+	var Typography = __webpack_require__(212);
 
 	var SvgIcon = React.createClass({
 	  displayName: 'SvgIcon',
@@ -47673,16 +47801,16 @@
 	module.exports = SvgIcon;
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var AutoPrefix = __webpack_require__(192);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var AutoPrefix = __webpack_require__(200);
 
 	/**  
 	 *  BeforeAfterWrapper
@@ -47772,7 +47900,7 @@
 	module.exports = BeforeAfterWrapper;
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -47781,12 +47909,12 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var EnhancedSwitch = __webpack_require__(219);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var CheckboxOutline = __webpack_require__(222);
-	var CheckboxChecked = __webpack_require__(223);
+	var React = __webpack_require__(188);
+	var EnhancedSwitch = __webpack_require__(220);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var CheckboxOutline = __webpack_require__(223);
+	var CheckboxChecked = __webpack_require__(224);
 
 	var Checkbox = React.createClass({
 	  displayName: 'Checkbox',
@@ -47926,7 +48054,7 @@
 	module.exports = Checkbox;
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
@@ -47935,17 +48063,17 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var KeyCode = __webpack_require__(202);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var UniqueId = __webpack_require__(220);
-	var WindowListenable = __webpack_require__(200);
-	var Spacing = __webpack_require__(211);
-	var ClearFix = __webpack_require__(221);
+	var React = __webpack_require__(188);
+	var KeyCode = __webpack_require__(198);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var UniqueId = __webpack_require__(221);
+	var WindowListenable = __webpack_require__(196);
+	var Spacing = __webpack_require__(210);
+	var ClearFix = __webpack_require__(222);
 	var FocusRipple = __webpack_require__(203);
-	var TouchRipple = __webpack_require__(204);
-	var Paper = __webpack_require__(207);
+	var TouchRipple = __webpack_require__(206);
+	var Paper = __webpack_require__(215);
 
 	var EnhancedSwitch = React.createClass({
 	  displayName: 'EnhancedSwitch',
@@ -48327,7 +48455,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */"use strict";
@@ -48341,7 +48469,7 @@
 	};
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -48350,8 +48478,8 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var BeforeAfterWrapper = __webpack_require__(217);
+	var React = __webpack_require__(188);
+	var BeforeAfterWrapper = __webpack_require__(218);
 
 	var ClearFix = React.createClass({
 	  displayName: 'ClearFix',
@@ -48386,12 +48514,12 @@
 	module.exports = ClearFix;
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var ToggleCheckBoxOutlineBlank = React.createClass({
@@ -48410,12 +48538,12 @@
 	module.exports = ToggleCheckBoxOutlineBlank;
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var ToggleCheckBoxChecked = React.createClass({
@@ -48434,7 +48562,7 @@
 	module.exports = ToggleCheckBoxChecked;
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -48443,9 +48571,9 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
 
 	var CircularProgress = React.createClass({
 	  displayName: 'CircularProgress',
@@ -48617,7 +48745,7 @@
 	module.exports = CircularProgress;
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -48626,12 +48754,12 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var WindowListenable = __webpack_require__(200);
-	var DateTime = __webpack_require__(226);
-	var DatePickerDialog = __webpack_require__(227);
-	var TextField = __webpack_require__(256);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var WindowListenable = __webpack_require__(196);
+	var DateTime = __webpack_require__(227);
+	var DatePickerDialog = __webpack_require__(228);
+	var TextField = __webpack_require__(258);
 
 	var DatePicker = React.createClass({
 	  displayName: 'DatePicker',
@@ -48768,7 +48896,7 @@
 	//TO DO: open the dialog if input has focus
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */'use strict';
@@ -48969,7 +49097,7 @@
 	};
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -48978,14 +49106,14 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var WindowListenable = __webpack_require__(200);
-	var CssEvent = __webpack_require__(228);
-	var KeyCode = __webpack_require__(202);
-	var Calendar = __webpack_require__(229);
-	var DialogWindow = __webpack_require__(253);
-	var FlatButton = __webpack_require__(254);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var WindowListenable = __webpack_require__(196);
+	var CssEvent = __webpack_require__(229);
+	var KeyCode = __webpack_require__(198);
+	var Calendar = __webpack_require__(230);
+	var DialogWindow = __webpack_require__(254);
+	var FlatButton = __webpack_require__(255);
 
 	var DatePickerDialog = React.createClass({
 	  displayName: 'DatePickerDialog',
@@ -49157,12 +49285,12 @@
 	module.exports = DatePickerDialog;
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var Events = __webpack_require__(201);
+	var Events = __webpack_require__(197);
 
 	module.exports = {
 
@@ -49215,23 +49343,23 @@
 	};
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var WindowListenable = __webpack_require__(200);
-	var DateTime = __webpack_require__(226);
-	var KeyCode = __webpack_require__(202);
-	var Transitions = __webpack_require__(195);
-	var CalendarMonth = __webpack_require__(230);
-	var CalendarYear = __webpack_require__(232);
-	var CalendarToolbar = __webpack_require__(234);
-	var DateDisplay = __webpack_require__(252);
-	var SlideInTransitionGroup = __webpack_require__(250);
-	var ClearFix = __webpack_require__(221);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var WindowListenable = __webpack_require__(196);
+	var DateTime = __webpack_require__(227);
+	var KeyCode = __webpack_require__(198);
+	var Transitions = __webpack_require__(204);
+	var CalendarMonth = __webpack_require__(231);
+	var CalendarYear = __webpack_require__(233);
+	var CalendarToolbar = __webpack_require__(235);
+	var DateDisplay = __webpack_require__(253);
+	var SlideInTransitionGroup = __webpack_require__(251);
+	var ClearFix = __webpack_require__(222);
 
 	var Calendar = React.createClass({
 	  displayName: 'Calendar',
@@ -49583,15 +49711,15 @@
 	module.exports = Calendar;
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var DateTime = __webpack_require__(226);
-	var DayButton = __webpack_require__(231);
-	var ClearFix = __webpack_require__(221);
+	var React = __webpack_require__(188);
+	var DateTime = __webpack_require__(227);
+	var DayButton = __webpack_require__(232);
+	var ClearFix = __webpack_require__(222);
 
 	var CalendarMonth = React.createClass({
 	  displayName: 'CalendarMonth',
@@ -49676,7 +49804,7 @@
 	module.exports = CalendarMonth;
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -49685,11 +49813,11 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transition = __webpack_require__(195);
-	var DateTime = __webpack_require__(226);
-	var EnhancedButton = __webpack_require__(199);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transition = __webpack_require__(204);
+	var DateTime = __webpack_require__(227);
+	var EnhancedButton = __webpack_require__(195);
 
 	var DayButton = React.createClass({
 	  displayName: 'DayButton',
@@ -49819,18 +49947,18 @@
 	module.exports = DayButton;
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Colors = __webpack_require__(198);
-	var DateTime = __webpack_require__(226);
-	var YearButton = __webpack_require__(233);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Colors = __webpack_require__(205);
+	var DateTime = __webpack_require__(227);
+	var YearButton = __webpack_require__(234);
 
 	var CalendarYear = React.createClass({
 	  displayName: 'CalendarYear',
@@ -49923,7 +50051,7 @@
 	module.exports = CalendarYear;
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -49932,10 +50060,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var DateTime = __webpack_require__(226);
-	var EnhancedButton = __webpack_require__(199);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var DateTime = __webpack_require__(227);
+	var EnhancedButton = __webpack_require__(195);
 
 	var YearButton = React.createClass({
 	  displayName: 'YearButton',
@@ -50057,22 +50185,22 @@
 	module.exports = YearButton;
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var DateTime = __webpack_require__(226);
-	var IconButton = __webpack_require__(209);
-	var Toolbar = __webpack_require__(235);
-	var ToolbarGroup = __webpack_require__(236);
-	var DropDownMenu = __webpack_require__(237);
-	var NavigationChevronLeft = __webpack_require__(246);
-	var NavigationChevronLeftDouble = __webpack_require__(247);
-	var NavigationChevronRight = __webpack_require__(248);
-	var NavigationChevronRightDouble = __webpack_require__(249);
-	var SlideInTransitionGroup = __webpack_require__(250);
+	var React = __webpack_require__(188);
+	var DateTime = __webpack_require__(227);
+	var IconButton = __webpack_require__(194);
+	var Toolbar = __webpack_require__(236);
+	var ToolbarGroup = __webpack_require__(237);
+	var DropDownMenu = __webpack_require__(238);
+	var NavigationChevronLeft = __webpack_require__(247);
+	var NavigationChevronLeftDouble = __webpack_require__(248);
+	var NavigationChevronRight = __webpack_require__(249);
+	var NavigationChevronRightDouble = __webpack_require__(250);
+	var SlideInTransitionGroup = __webpack_require__(251);
 
 	var CalendarToolbar = React.createClass({
 	  displayName: 'CalendarToolbar',
@@ -50238,13 +50366,13 @@
 	module.exports = CalendarToolbar;
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var Toolbar = React.createClass({
 	  displayName: 'Toolbar',
@@ -50288,14 +50416,14 @@
 	module.exports = Toolbar;
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var Colors = __webpack_require__(198);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var Colors = __webpack_require__(205);
+	var StylePropable = __webpack_require__(199);
 
 	var ToolbarGroup = React.createClass({
 	  displayName: 'ToolbarGroup',
@@ -50446,19 +50574,19 @@
 	module.exports = ToolbarGroup;
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var ClickAwayable = __webpack_require__(239);
-	var DropDownArrow = __webpack_require__(238);
-	var Paper = __webpack_require__(207);
-	var Menu = __webpack_require__(240);
-	var ClearFix = __webpack_require__(221);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var ClickAwayable = __webpack_require__(240);
+	var DropDownArrow = __webpack_require__(239);
+	var Paper = __webpack_require__(215);
+	var Menu = __webpack_require__(241);
+	var ClearFix = __webpack_require__(222);
 	var DropDownMenu = React.createClass({
 	  displayName: 'DropDownMenu',
 
@@ -50659,12 +50787,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var DropDownArrow = React.createClass({
@@ -50683,14 +50811,14 @@
 	module.exports = DropDownArrow;
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var Events = __webpack_require__(201);
-	var Dom = __webpack_require__(205);
+	var React = __webpack_require__(188);
+	var Events = __webpack_require__(197);
+	var Dom = __webpack_require__(207);
 
 	module.exports = {
 
@@ -50729,7 +50857,7 @@
 	};
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -50738,17 +50866,17 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var CssEvent = __webpack_require__(228);
-	var Dom = __webpack_require__(205);
-	var KeyLine = __webpack_require__(241);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var ClickAwayable = __webpack_require__(239);
-	var Paper = __webpack_require__(207);
-	var MenuItem = __webpack_require__(242);
-	var LinkMenuItem = __webpack_require__(244);
-	var SubheaderMenuItem = __webpack_require__(245);
+	var React = __webpack_require__(188);
+	var CssEvent = __webpack_require__(229);
+	var Dom = __webpack_require__(207);
+	var KeyLine = __webpack_require__(242);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var ClickAwayable = __webpack_require__(240);
+	var Paper = __webpack_require__(215);
+	var MenuItem = __webpack_require__(243);
+	var LinkMenuItem = __webpack_require__(245);
+	var SubheaderMenuItem = __webpack_require__(246);
 
 	/***********************
 	* Nested Menu Component
@@ -51131,7 +51259,7 @@
 	module.exports = Menu;
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */"use strict";
@@ -51151,7 +51279,7 @@
 	};
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -51160,10 +51288,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var FontIcon = __webpack_require__(210);
-	var Toggle = __webpack_require__(243);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var FontIcon = __webpack_require__(209);
+	var Toggle = __webpack_require__(244);
 
 	var Types = {
 	  LINK: 'LINK',
@@ -51365,7 +51493,7 @@
 	module.exports = MenuItem;
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -51374,11 +51502,11 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Paper = __webpack_require__(207);
-	var EnhancedSwitch = __webpack_require__(219);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Paper = __webpack_require__(215);
+	var EnhancedSwitch = __webpack_require__(220);
 
 	var Toggle = React.createClass({
 	  displayName: 'Toggle',
@@ -51518,15 +51646,15 @@
 	module.exports = Toggle;
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var LinkMenuItem = React.createClass({
 	  displayName: 'LinkMenuItem',
@@ -51629,14 +51757,14 @@
 	module.exports = LinkMenuItem;
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Typography = __webpack_require__(197);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Typography = __webpack_require__(212);
 
 	var SubheaderMenuItem = React.createClass({
 	  displayName: 'SubheaderMenuItem',
@@ -51705,12 +51833,12 @@
 	module.exports = SubheaderMenuItem;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var NavigationChevronLeft = React.createClass({
@@ -51729,12 +51857,12 @@
 	module.exports = NavigationChevronLeft;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var NavigationChevronLeftDouble = React.createClass({
@@ -51754,12 +51882,12 @@
 	module.exports = NavigationChevronLeftDouble;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var NavigationChevronLeft = React.createClass({
@@ -51778,12 +51906,12 @@
 	module.exports = NavigationChevronLeft;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var NavigationChevronRightDouble = React.createClass({
@@ -51803,7 +51931,7 @@
 	module.exports = NavigationChevronRightDouble;
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -51814,8 +51942,8 @@
 
 	var React = __webpack_require__(1);
 	var ReactTransitionGroup = React.addons.TransitionGroup;
-	var StylePropable = __webpack_require__(191);
-	var SlideInChild = __webpack_require__(251);
+	var StylePropable = __webpack_require__(199);
+	var SlideInChild = __webpack_require__(252);
 
 	var SlideIn = React.createClass({
 	  displayName: 'SlideIn',
@@ -51875,7 +52003,7 @@
 	module.exports = SlideIn;
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -51885,9 +52013,9 @@
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 	var React = __webpack_require__(1);
-	var StylePropable = __webpack_require__(191);
-	var AutoPrefix = __webpack_require__(192);
-	var Transitions = __webpack_require__(195);
+	var StylePropable = __webpack_require__(199);
+	var AutoPrefix = __webpack_require__(200);
+	var Transitions = __webpack_require__(204);
 
 	var SlideInChild = React.createClass({
 	  displayName: 'SlideInChild',
@@ -51957,7 +52085,7 @@
 	module.exports = SlideInChild;
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -51966,12 +52094,12 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var DateTime = __webpack_require__(226);
-	var Transitions = __webpack_require__(195);
-	var AutoPrefix = __webpack_require__(192);
-	var SlideInTransitionGroup = __webpack_require__(250);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var DateTime = __webpack_require__(227);
+	var Transitions = __webpack_require__(204);
+	var AutoPrefix = __webpack_require__(200);
+	var SlideInTransitionGroup = __webpack_require__(251);
 
 	var DateDisplay = React.createClass({
 	  displayName: 'DateDisplay',
@@ -52228,20 +52356,20 @@
 	module.exports = DateDisplay;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var WindowListenable = __webpack_require__(200);
-	var CssEvent = __webpack_require__(228);
-	var KeyCode = __webpack_require__(202);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var FlatButton = __webpack_require__(254);
-	var Overlay = __webpack_require__(255);
-	var Paper = __webpack_require__(207);
+	var React = __webpack_require__(188);
+	var WindowListenable = __webpack_require__(196);
+	var CssEvent = __webpack_require__(229);
+	var KeyCode = __webpack_require__(198);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var FlatButton = __webpack_require__(255);
+	var Overlay = __webpack_require__(257);
+	var Paper = __webpack_require__(215);
 
 	var DialogWindow = React.createClass({
 	  displayName: 'DialogWindow',
@@ -52504,7 +52632,7 @@
 	module.exports = DialogWindow;
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -52513,12 +52641,12 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var ColorManipulator = __webpack_require__(196);
-	var Typography = __webpack_require__(197);
-	var EnhancedButton = __webpack_require__(199);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var ColorManipulator = __webpack_require__(256);
+	var Typography = __webpack_require__(212);
+	var EnhancedButton = __webpack_require__(195);
 
 	var FlatButton = React.createClass({
 	  displayName: 'FlatButton',
@@ -52683,7 +52811,187 @@
 	module.exports = FlatButton;
 
 /***/ },
-/* 255 */
+/* 256 */
+/***/ function(module, exports) {
+
+	/** @jsx React.DOM */'use strict';
+
+	module.exports = {
+
+	  /**
+	   * The relative brightness of any point in a colorspace, normalized to 0 for 
+	   * darkest black and 1 for lightest white. RGB colors only. Does not take 
+	   * into account alpha values. 
+	   *
+	   * TODO: 
+	   * - Take into account alpha values.
+	   * - Identify why there are minor discrepancies for some use cases 
+	   *   (i.e. #F0F & #FFF). Note that these cases rarely occur.
+	   *
+	   * Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+	   */
+	  _luminance: function _luminance(color) {
+	    color = this._decomposeColor(color);
+
+	    if (color.type.indexOf('rgb') > -1) {
+	      var rgb = color.values.map(function (val) {
+	        val /= 255; // normalized
+	        return val <= 0.03928 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
+	      });
+
+	      return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+	    } else {
+	      var message = 'Calculating the relative luminance is not available for ' + 'HSL and HSLA.';
+	      console.error(message);
+	      return -1;
+	    }
+	  },
+
+	  /**
+	   * @params:
+	   * additionalValue = An extra value that has been calculated but not included 
+	   *                   with the original color object, such as an alpha value.
+	   */
+	  _convertColorToString: function _convertColorToString(color, additonalValue) {
+	    var str = color.type + '(' + parseInt(color.values[0]) + ',' + parseInt(color.values[1]) + ',' + parseInt(color.values[2]);
+
+	    if (additonalValue !== undefined) {
+	      str += ',' + additonalValue + ')';
+	    } else if (color.values.length == 4) {
+	      str += ',' + color.values[3] + ')';
+	    } else {
+	      str += ')';
+	    }
+
+	    return str;
+	  },
+
+	  // Converts a color from hex format to rgb format.
+	  _convertHexToRGB: function _convertHexToRGB(color) {
+	    if (color.length === 4) {
+	      var extendedColor = '#';
+	      for (var i = 1; i < color.length; i++) {
+	        extendedColor += color.charAt(i) + color.charAt(i);
+	      }
+	      color = extendedColor;
+	    }
+
+	    var values = {
+	      r: parseInt(color.substr(1, 2), 16),
+	      g: parseInt(color.substr(3, 2), 16),
+	      b: parseInt(color.substr(5, 2), 16)
+	    };
+
+	    return 'rgb(' + values.r + ',' + values.g + ',' + values.b + ')';
+	  },
+
+	  // Returns the type and values of a color of any given type.
+	  _decomposeColor: function _decomposeColor(color) {
+	    if (color.charAt(0) === '#') {
+	      return this._decomposeColor(this._convertHexToRGB(color));
+	    }
+
+	    var marker = color.indexOf('(');
+	    var type = color.substring(0, marker);
+	    var values = color.substring(marker + 1, color.length - 1).split(',');
+
+	    return { type: type, values: values };
+	  },
+
+	  // Set the absolute transparency of a color.
+	  // Any existing alpha values are overwritten.
+	  fade: function fade(color, amount) {
+	    color = this._decomposeColor(color);
+	    if (color.type == 'rgb' || color.type == 'hsl') color.type += 'a';
+	    return this._convertColorToString(color, amount);
+	  },
+
+	  // Desaturates rgb and sets opacity to 0.15
+	  lighten: function lighten(color, amount) {
+	    color = this._decomposeColor(color);
+
+	    if (color.type.indexOf('hsl') > -1) {
+	      color.values[2] += amount;
+	      return this._decomposeColor(this._convertColorToString(color));
+	    } else if (color.type.indexOf('rgb') > -1) {
+	      for (var i = 0; i < 3; i++) {
+	        color.values[i] *= 1 + amount;
+	        if (color.values[i] > 255) color.values[i] = 255;
+	      }
+	    }
+
+	    if (color.type.indexOf('a') <= -1) color.type += 'a';
+
+	    return this._convertColorToString(color, '0.15');
+	  },
+
+	  darken: function darken(color, amount) {
+	    color = this._decomposeColor(color);
+
+	    if (color.type.indexOf('hsl') > -1) {
+	      color.values[2] += amount;
+	      return this._decomposeColor(this._convertColorToString(color));
+	    } else if (color.type.indexOf('rgb') > -1) {
+	      for (var i = 0; i < 3; i++) {
+	        color.values[i] *= 1 - amount;
+	        if (color.values[i] < 0) color.values[i] = 0;
+	      }
+	    }
+
+	    return this._convertColorToString(color);
+	  },
+
+	  // Calculates the contrast ratio between two colors.
+	  //
+	  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+	  contrastRatio: function contrastRatio(background, foreground) {
+	    var lumA = this._luminance(background);
+	    var lumB = this._luminance(foreground);
+
+	    if (lumA >= lumB) {
+	      return ((lumA + 0.05) / (lumB + 0.05)).toFixed(2);
+	    } else {
+	      return ((lumB + 0.05) / (lumA + 0.05)).toFixed(2);
+	    }
+	  },
+
+	  /** 
+	   * Determines how readable a color combination is based on its level.
+	   * Levels are defined from @LeaVerou:
+	   * https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/contrast-ratio.js
+	   */
+	  contrastRatioLevel: function contrastRatioLevel(background, foreground) {
+	    var levels = {
+	      'fail': {
+	        range: [0, 3],
+	        color: 'hsl(0, 100%, 40%)'
+	      },
+	      'aa-large': {
+	        range: [3, 4.5],
+	        color: 'hsl(40, 100%, 45%)'
+	      },
+	      'aa': {
+	        range: [4.5, 7],
+	        color: 'hsl(80, 60%, 45%)'
+	      },
+	      'aaa': {
+	        range: [7, 22],
+	        color: 'hsl(95, 60%, 41%)'
+	      }
+	    };
+
+	    var ratio = this.contrastRatio(background, foreground);
+
+	    for (var level in levels) {
+	      var range = levels[level].range;
+	      if (ratio >= range[0] && ratio <= range[1]) return level;
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -52692,10 +53000,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Colors = __webpack_require__(198);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Colors = __webpack_require__(205);
 
 	var Overlay = React.createClass({
 	  displayName: 'Overlay',
@@ -52787,7 +53095,7 @@
 	module.exports = Overlay;
 
 /***/ },
-/* 256 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
@@ -52796,13 +53104,13 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var ColorManipulator = __webpack_require__(196);
-	var Colors = __webpack_require__(198);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var UniqueId = __webpack_require__(220);
-	var EnhancedTextarea = __webpack_require__(257);
+	var React = __webpack_require__(188);
+	var ColorManipulator = __webpack_require__(256);
+	var Colors = __webpack_require__(205);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var UniqueId = __webpack_require__(221);
+	var EnhancedTextarea = __webpack_require__(259);
 
 	var TextField = React.createClass({
 	  displayName: 'TextField',
@@ -53145,7 +53453,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 257 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -53154,9 +53462,9 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var AutoPrefix = __webpack_require__(192);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var AutoPrefix = __webpack_require__(200);
 
 	var EnhancedTextarea = React.createClass({
 	  displayName: 'EnhancedTextarea',
@@ -53294,7 +53602,7 @@
 	module.exports = EnhancedTextarea;
 
 /***/ },
-/* 258 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -53303,10 +53611,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Spacing = __webpack_require__(211);
-	var DialogWindow = __webpack_require__(253);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Spacing = __webpack_require__(210);
+	var DialogWindow = __webpack_require__(254);
 
 	var Dialog = React.createClass({
 	  displayName: 'Dialog',
@@ -53388,7 +53696,7 @@
 	module.exports = Dialog;
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -53397,13 +53705,13 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var Spacing = __webpack_require__(211);
-	var ClickAwayable = __webpack_require__(239);
-	var FontIcon = __webpack_require__(210);
-	var Menu = __webpack_require__(240);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var Spacing = __webpack_require__(210);
+	var ClickAwayable = __webpack_require__(240);
+	var FontIcon = __webpack_require__(209);
+	var Menu = __webpack_require__(241);
 
 	var DropDownIcon = React.createClass({
 	  displayName: 'DropDownIcon',
@@ -53516,7 +53824,7 @@
 	module.exports = DropDownIcon;
 
 /***/ },
-/* 260 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
@@ -53525,13 +53833,13 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var ColorManipulator = __webpack_require__(196);
-	var EnhancedButton = __webpack_require__(199);
-	var FontIcon = __webpack_require__(210);
-	var Paper = __webpack_require__(207);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var ColorManipulator = __webpack_require__(256);
+	var EnhancedButton = __webpack_require__(195);
+	var FontIcon = __webpack_require__(209);
+	var Paper = __webpack_require__(215);
 
 	var getZDepth = function getZDepth(disabled) {
 	  var zDepth = disabled ? 0 : 2;
@@ -53748,20 +54056,20 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 261 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var KeyCode = __webpack_require__(202);
-	var StylePropable = __webpack_require__(191);
-	var AutoPrefix = __webpack_require__(192);
-	var Transitions = __webpack_require__(195);
-	var WindowListenable = __webpack_require__(200);
-	var Overlay = __webpack_require__(255);
-	var Paper = __webpack_require__(207);
-	var Menu = __webpack_require__(240);
+	var React = __webpack_require__(188);
+	var KeyCode = __webpack_require__(198);
+	var StylePropable = __webpack_require__(199);
+	var AutoPrefix = __webpack_require__(200);
+	var Transitions = __webpack_require__(204);
+	var WindowListenable = __webpack_require__(196);
+	var Overlay = __webpack_require__(257);
+	var Paper = __webpack_require__(215);
+	var Menu = __webpack_require__(241);
 
 	var LeftNav = React.createClass({
 	  displayName: 'LeftNav',
@@ -54040,7 +54348,7 @@
 	module.exports = LeftNav;
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -54049,9 +54357,9 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
 
 	var LinearProgress = React.createClass({
 	  displayName: 'LinearProgress',
@@ -54199,7 +54507,7 @@
 	module.exports = LinearProgress;
 
 /***/ },
-/* 263 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -54209,8 +54517,8 @@
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 	var React = __webpack_require__(1);
-	var StylePropable = __webpack_require__(191);
-	var Typography = __webpack_require__(197);
+	var StylePropable = __webpack_require__(199);
+	var Typography = __webpack_require__(212);
 
 	var List = React.createClass({
 	  displayName: 'List',
@@ -54278,7 +54586,7 @@
 	module.exports = List;
 
 /***/ },
-/* 264 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -54288,7 +54596,7 @@
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 	var React = __webpack_require__(1);
-	var StylePropable = __webpack_require__(191);
+	var StylePropable = __webpack_require__(199);
 
 	var ListDivider = React.createClass({
 	  displayName: 'ListDivider',
@@ -54326,7 +54634,7 @@
 	module.exports = ListDivider;
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -54336,12 +54644,12 @@
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 	var React = __webpack_require__(1);
-	var ColorManipulator = __webpack_require__(196);
-	var StylePropable = __webpack_require__(191);
-	var Colors = __webpack_require__(198);
-	var Transitions = __webpack_require__(195);
-	var Typography = __webpack_require__(197);
-	var EnhancedButton = __webpack_require__(199);
+	var ColorManipulator = __webpack_require__(256);
+	var StylePropable = __webpack_require__(199);
+	var Colors = __webpack_require__(205);
+	var Transitions = __webpack_require__(204);
+	var Typography = __webpack_require__(212);
+	var EnhancedButton = __webpack_require__(195);
 
 	var ListItem = React.createClass({
 	  displayName: 'ListItem',
@@ -54560,13 +54868,13 @@
 	module.exports = ListItem;
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var classNames = __webpack_require__(267);
+	var React = __webpack_require__(188);
+	var classNames = __webpack_require__(269);
 
 	module.exports = {
 
@@ -54615,7 +54923,7 @@
 	};
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/** @jsx React.DOM *//*!
@@ -54664,12 +54972,12 @@
 
 
 /***/ },
-/* 268 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var Events = __webpack_require__(201);
+	var Events = __webpack_require__(197);
 
 	var Sizes = {
 	  SMALL: 1,
@@ -54717,7 +55025,7 @@
 	};
 
 /***/ },
-/* 269 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -54726,12 +55034,12 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var EnhancedSwitch = __webpack_require__(219);
-	var RadioButtonOff = __webpack_require__(270);
-	var RadioButtonOn = __webpack_require__(271);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var EnhancedSwitch = __webpack_require__(220);
+	var RadioButtonOff = __webpack_require__(272);
+	var RadioButtonOn = __webpack_require__(273);
 
 	var RadioButton = React.createClass({
 	  displayName: 'RadioButton',
@@ -54852,12 +55160,12 @@
 	module.exports = RadioButton;
 
 /***/ },
-/* 270 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var RadioButtonOff = React.createClass({
@@ -54876,12 +55184,12 @@
 	module.exports = RadioButtonOff;
 
 /***/ },
-/* 271 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var SvgIcon = __webpack_require__(214);
 
 	var RadioButtonOn = React.createClass({
@@ -54900,7 +55208,7 @@
 	module.exports = RadioButtonOn;
 
 /***/ },
-/* 272 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM */'use strict';
@@ -54909,8 +55217,8 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var RadioButton = __webpack_require__(269);
+	var React = __webpack_require__(188);
+	var RadioButton = __webpack_require__(271);
 
 	var RadioButtonGroup = React.createClass({
 	  displayName: 'RadioButtonGroup',
@@ -55017,15 +55325,241 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 273 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Draggable = __webpack_require__(274);
-	var Transitions = __webpack_require__(195);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var ColorManipulator = __webpack_require__(256);
+	var Typography = __webpack_require__(212);
+	var EnhancedButton = __webpack_require__(195);
+	var Paper = __webpack_require__(215);
+
+	var RaisedButton = React.createClass({
+	  displayName: 'RaisedButton',
+
+	  mixins: [StylePropable],
+
+	  contextTypes: {
+	    muiTheme: React.PropTypes.object
+	  },
+
+	  propTypes: {
+	    className: React.PropTypes.string,
+	    disabled: React.PropTypes.bool,
+	    label: function label(props, propName, componentName) {
+	      if (!props.children && !props.label) {
+	        return new Error('Warning: Required prop `label` or `children` was not specified in `' + componentName + '`.');
+	      }
+	    },
+	    onMouseDown: React.PropTypes.func,
+	    onMouseUp: React.PropTypes.func,
+	    onMouseOut: React.PropTypes.func,
+	    onTouchEnd: React.PropTypes.func,
+	    onTouchStart: React.PropTypes.func,
+	    primary: React.PropTypes.bool,
+	    secondary: React.PropTypes.bool,
+	    labelStyle: React.PropTypes.object
+	  },
+
+	  getInitialState: function getInitialState() {
+	    var zDepth = this.props.disabled ? 0 : 1;
+	    return {
+	      zDepth: zDepth,
+	      initialZDepth: zDepth,
+	      hovered: false
+	    };
+	  },
+
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    var zDepth = nextProps.disabled ? 0 : 1;
+	    this.setState({
+	      zDepth: zDepth,
+	      initialZDepth: zDepth
+	    });
+	  },
+
+	  _getBackgroundColor: function _getBackgroundColor() {
+	    return this.props.disabled ? this.getTheme().disabledColor : this.props.primary ? this.getTheme().primaryColor : this.props.secondary ? this.getTheme().secondaryColor : this.getTheme().color;
+	  },
+
+	  _getLabelColor: function _getLabelColor() {
+	    return this.props.disabled ? this.getTheme().disabledTextColor : this.props.primary ? this.getTheme().primaryTextColor : this.props.secondary ? this.getTheme().secondaryTextColor : this.getTheme().textColor;
+	  },
+
+	  getThemeButton: function getThemeButton() {
+	    return this.context.muiTheme.component.button;
+	  },
+
+	  getTheme: function getTheme() {
+	    return this.context.muiTheme.component.raisedButton;
+	  },
+
+	  getStyles: function getStyles() {
+	    var amount = this.props.primary || this.props.secondary ? 0.4 : 0.08;
+	    var styles = {
+	      root: {
+	        display: 'inline-block',
+	        minWidth: this.getThemeButton().minWidth,
+	        height: this.getThemeButton().height,
+	        transition: Transitions.easeOut()
+	      },
+	      container: {
+	        position: 'relative',
+	        height: '100%',
+	        width: '100%',
+	        padding: 0,
+	        overflow: 'hidden',
+	        borderRadius: 2,
+	        transition: Transitions.easeOut(),
+	        backgroundColor: this._getBackgroundColor(),
+
+	        //This is need so that ripples do not bleed
+	        //past border radius.
+	        //See: http://stackoverflow.com/questions/17298739/css-overflow-hidden-not-working-in-chrome-when-parent-has-border-radius-and-chil
+	        transform: 'translate3d(0, 0, 0)'
+	      },
+	      label: {
+	        position: 'relative',
+	        opacity: 1,
+	        fontSize: '14px',
+	        letterSpacing: 0,
+	        textTransform: 'uppercase',
+	        fontWeight: Typography.fontWeightMedium,
+	        margin: 0,
+	        padding: '0px ' + this.context.muiTheme.spacing.desktopGutterLess + 'px',
+	        userSelect: 'none',
+	        lineHeight: this.getThemeButton().height + 'px',
+	        color: this._getLabelColor()
+	      },
+	      overlay: {
+	        transition: Transitions.easeOut(),
+	        top: 0
+	      },
+	      overlayWhenHovered: {
+	        backgroundColor: ColorManipulator.fade(this._getLabelColor(), amount)
+	      }
+	    };
+	    return styles;
+	  },
+
+	  render: function render() {
+	    var _props = this.props;
+	    var label = _props.label;
+	    var primary = _props.primary;
+	    var secondary = _props.secondary;
+
+	    var other = _objectWithoutProperties(_props, ['label', 'primary', 'secondary']);
+
+	    var styles = this.getStyles();
+
+	    var labelElement;
+	    if (label) {
+	      labelElement = React.createElement(
+	        'span',
+	        { style: this.mergeAndPrefix(styles.label, this.props.labelStyle) },
+	        label
+	      );
+	    }
+
+	    var rippleColor = styles.label.color;
+	    var rippleOpacity = !(primary || secondary) ? 0.1 : 0.16;
+
+	    return React.createElement(
+	      Paper,
+	      {
+	        style: this.mergeAndPrefix(styles.root, this.props.style),
+	        zDepth: this.state.zDepth },
+	      React.createElement(
+	        EnhancedButton,
+	        _extends({}, other, {
+	          ref: 'container',
+	          style: this.mergeAndPrefix(styles.container),
+	          onMouseUp: this._handleMouseUp,
+	          onMouseDown: this._handleMouseDown,
+	          onMouseOut: this._handleMouseOut,
+	          onMouseOver: this._handleMouseOver,
+	          onTouchStart: this._handleTouchStart,
+	          onTouchEnd: this._handleTouchEnd,
+	          focusRippleColor: rippleColor,
+	          touchRippleColor: rippleColor,
+	          focusRippleOpacity: rippleOpacity,
+	          touchRippleOpacity: rippleOpacity,
+	          onKeyboardFocus: this._handleKeyboardFocus }),
+	        React.createElement(
+	          'div',
+	          { ref: 'overlay', style: this.mergeAndPrefix(styles.overlay, this.state.hovered && !this.props.disabled && styles.overlayWhenHovered) },
+	          labelElement,
+	          this.props.children
+	        )
+	      )
+	    );
+	  },
+
+	  _handleMouseDown: function _handleMouseDown(e) {
+	    //only listen to left clicks
+	    if (e.button === 0) {
+	      this.setState({ zDepth: this.state.initialZDepth + 1 });
+	    }
+	    if (this.props.onMouseDown) this.props.onMouseDown(e);
+	  },
+
+	  _handleMouseUp: function _handleMouseUp(e) {
+	    this.setState({ zDepth: this.state.initialZDepth });
+	    if (this.props.onMouseUp) this.props.onMouseUp(e);
+	  },
+
+	  _handleMouseOut: function _handleMouseOut(e) {
+	    if (!this.refs.container.isKeyboardFocused()) this.setState({ zDepth: this.state.initialZDepth, hovered: false });
+	    if (this.props.onMouseOut) this.props.onMouseOut(e);
+	  },
+
+	  _handleMouseOver: function _handleMouseOver(e) {
+	    if (!this.refs.container.isKeyboardFocused()) this.setState({ hovered: true });
+	    if (this.props.onMouseOver) this.props.onMouseOver(e);
+	  },
+
+	  _handleTouchStart: function _handleTouchStart(e) {
+	    this.setState({ zDepth: this.state.initialZDepth + 1 });
+	    if (this.props.onTouchStart) this.props.onTouchStart(e);
+	  },
+
+	  _handleTouchEnd: function _handleTouchEnd(e) {
+	    this.setState({ zDepth: this.state.initialZDepth });
+	    if (this.props.onTouchEnd) this.props.onTouchEnd(e);
+	  },
+
+	  _handleKeyboardFocus: function _handleKeyboardFocus(e, keyboardFocused) {
+	    if (keyboardFocused && !this.props.disabled) {
+	      this.setState({ zDepth: this.state.initialZDepth + 1 });
+	      var amount = this.props.primary || this.props.secondary ? 0.4 : 0.08;
+	      React.findDOMNode(this.refs.overlay).style.backgroundColor = ColorManipulator.fade(this.mergeAndPrefix(this.getStyles().label, this.props.labelStyle).color, amount);
+	    } else if (!this.state.hovered) {
+	      this.setState({ zDepth: this.state.initialZDepth });
+	      React.findDOMNode(this.refs.overlay).style.backgroundColor = 'transparent';
+	    }
+	  }
+	});
+
+	module.exports = RaisedButton;
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Draggable = __webpack_require__(277);
+	var Transitions = __webpack_require__(204);
 	var FocusRipple = __webpack_require__(203);
 
 	var Slider = React.createClass({
@@ -55378,7 +55912,7 @@
 	module.exports = Slider;
 
 /***/ },
-/* 274 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -56053,17 +56587,17 @@
 
 
 /***/ },
-/* 275 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var Spacing = __webpack_require__(211);
-	var Extend = __webpack_require__(194);
+	var Spacing = __webpack_require__(210);
+	var Extend = __webpack_require__(202);
 
 	var Types = {
-	  LIGHT: __webpack_require__(276),
-	  DARK: __webpack_require__(277)
+	  LIGHT: __webpack_require__(279),
+	  DARK: __webpack_require__(280)
 	};
 
 	var ThemeManager = function ThemeManager() {
@@ -56101,14 +56635,14 @@
 	module.exports = ThemeManager;
 
 /***/ },
-/* 276 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var Colors = __webpack_require__(198);
-	var Spacing = __webpack_require__(211);
-	var ColorManipulator = __webpack_require__(196);
+	var Colors = __webpack_require__(205);
+	var Spacing = __webpack_require__(210);
+	var ColorManipulator = __webpack_require__(256);
 
 	/**
 	 *  Light Theme is the default theme used in material-ui. It is guaranteed to
@@ -56273,13 +56807,13 @@
 	module.exports = LightTheme;
 
 /***/ },
-/* 277 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var Colors = __webpack_require__(198);
-	var ColorManipulator = __webpack_require__(196);
+	var Colors = __webpack_require__(205);
+	var ColorManipulator = __webpack_require__(256);
 
 	var DarkTheme = {
 	  getPalette: function getPalette() {
@@ -56337,17 +56871,17 @@
 	module.exports = DarkTheme;
 
 /***/ },
-/* 278 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var CssEvent = __webpack_require__(228);
-	var StylePropable = __webpack_require__(191);
-	var Transitions = __webpack_require__(195);
-	var ClickAwayable = __webpack_require__(239);
-	var FlatButton = __webpack_require__(254);
+	var React = __webpack_require__(188);
+	var CssEvent = __webpack_require__(229);
+	var StylePropable = __webpack_require__(199);
+	var Transitions = __webpack_require__(204);
+	var ClickAwayable = __webpack_require__(240);
+	var FlatButton = __webpack_require__(255);
 
 	var Snackbar = React.createClass({
 	  displayName: 'Snackbar',
@@ -56478,14 +57012,14 @@
 	module.exports = Snackbar;
 
 /***/ },
-/* 279 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var Colors = __webpack_require__(198);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var Colors = __webpack_require__(205);
 	var Tab = React.createClass({
 	  displayName: 'Tab',
 
@@ -56536,16 +57070,16 @@
 	module.exports = Tab;
 
 /***/ },
-/* 280 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var React = __webpack_require__(1);
-	var TabTemplate = __webpack_require__(281);
-	var InkBar = __webpack_require__(282);
-	var StylePropable = __webpack_require__(191);
-	var Events = __webpack_require__(201);
+	var TabTemplate = __webpack_require__(284);
+	var InkBar = __webpack_require__(285);
+	var StylePropable = __webpack_require__(199);
+	var Events = __webpack_require__(197);
 
 	var Tabs = React.createClass({
 	  displayName: 'Tabs',
@@ -56687,12 +57221,12 @@
 	module.exports = Tabs;
 
 /***/ },
-/* 281 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 
 	var TabTemplate = React.createClass({
 	  displayName: 'TabTemplate',
@@ -56723,14 +57257,14 @@
 	module.exports = TabTemplate;
 
 /***/ },
-/* 282 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var Transitions = __webpack_require__(195);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var Transitions = __webpack_require__(204);
+	var StylePropable = __webpack_require__(199);
 
 	var InkBar = React.createClass({
 	  displayName: 'InkBar',
@@ -56773,15 +57307,167 @@
 	module.exports = InkBar;
 
 /***/ },
-/* 283 */
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var React = __webpack_require__(1);
+	var TabTemplate = __webpack_require__(284);
+	var InkBar = __webpack_require__(285);
+	var StylePropable = __webpack_require__(199);
+	var Events = __webpack_require__(197);
+
+	var InvertTabs = React.createClass({
+	  displayName: 'Tabs',
+
+	  mixins: [StylePropable],
+
+	  contextTypes: {
+	    muiTheme: React.PropTypes.object
+	  },
+
+	  propTypes: {
+	    initialSelectedIndex: React.PropTypes.number,
+	    onActive: React.PropTypes.func,
+	    tabWidth: React.PropTypes.number
+	  },
+
+	  getInitialState: function getInitialState() {
+	    var selectedIndex = 0;
+	    if (this.props.initialSelectedIndex && this.props.initialSelectedIndex < this.props.children.length) {
+	      selectedIndex = this.props.initialSelectedIndex;
+	    }
+	    return {
+	      selectedIndex: selectedIndex
+	    };
+	  },
+
+	  getEvenWidth: function getEvenWidth() {
+	    return parseInt(window.getComputedStyle(React.findDOMNode(this)).getPropertyValue('width'), 10);
+	  },
+
+	  componentDidMount: function componentDidMount() {
+	    this._updateTabWidth();
+	    Events.on(window, 'resize', this._updateTabWidth);
+	  },
+
+	  componentWillUnmount: function componentWillUnmount() {
+	    Events.off(window, 'resize', this._updateTabWidth);
+	  },
+
+	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	    if (newProps.hasOwnProperty('style')) this._updateTabWidth();
+	  },
+
+	  handleTouchTap: function handleTouchTap(tabIndex, tab) {
+	    if (this.props.onChange && this.state.selectedIndex !== tabIndex) {
+	      this.props.onChange(tabIndex, tab);
+	    }
+
+	    this.setState({ selectedIndex: tabIndex });
+	    //default CB is _onActive. Can be updated in tab.jsx
+	    if (tab.props.onActive) tab.props.onActive(tab);
+	  },
+
+	  getStyles: function getStyles() {
+	    var themeVariables = this.context.muiTheme.component.tabs;
+
+	    return {
+	      tabItemContainer: {
+	        margin: '0',
+	        padding: '0',
+	        width: '100%',
+	        height: '48px',
+	        backgroundColor: themeVariables.backgroundColor,
+	        whiteSpace: 'nowrap',
+	        display: 'table'
+	      }
+	    };
+	  },
+
+	  render: function render() {
+	    var styles = this.getStyles();
+
+	    var tabContent = [];
+	    var width = this.state.fixedWidth ? 100 / this.props.children.length + '%' : this.props.tabWidth + 'px';
+
+	    var left = 'calc(' + width + '*' + this.state.selectedIndex + ')';
+
+	    var tabs = React.Children.map(this.props.children, function (tab, index) {
+	      if (tab.type.displayName === 'Tab') {
+
+	        if (tab.props.children) {
+	          tabContent.push(React.createElement(TabTemplate, {
+	            key: index,
+	            selected: this.state.selectedIndex === index
+	          }, tab.props.children));
+	        } else {
+	          tabContent.push(undefined);
+	        }
+
+	        return React.addons.cloneWithProps(tab, {
+	          key: index,
+	          selected: this.state.selectedIndex === index,
+	          tabIndex: index,
+	          width: width,
+	          handleTouchTap: this.handleTouchTap
+	        });
+	      } else {
+	        var type = tab.type.displayName || tab.type;
+	        throw 'Tabs only accepts Tab Components as children. Found ' + type + ' as child number ' + (index + 1) + ' of Tabs';
+	      }
+	    }, this);
+	    return React.createElement(
+	      'div',
+	      { style: this.mergeAndPrefix(this.props.style) },
+	      React.createElement(
+	        'div',
+	        {style: this.props.tabStyle},
+	        tabContent
+	      ),
+	      React.createElement(
+	        'div',
+	        { style: this.mergeAndPrefix(styles.tabItemContainer, this.props.tabItemContainerStyle) },
+	        tabs
+	      ),
+	      React.createElement(InkBar, { left: left, width: width })
+	      
+	    );
+	  },
+
+	  _tabWidthPropIsValid: function _tabWidthPropIsValid() {
+	    return this.props.tabWidth && this.props.tabWidth * this.props.children.length <= this.getEvenWidth();
+	  },
+
+	  // Validates that the tabWidth can fit all tabs on the tab bar. If not, the
+	  // tabWidth is recalculated and fixed.
+	  _updateTabWidth: function _updateTabWidth() {
+	    if (this._tabWidthPropIsValid()) {
+	      this.setState({
+	        fixedWidth: false
+	      });
+	    } else {
+	      this.setState({
+	        fixedWidth: true
+	      });
+	    }
+	  }
+
+	});
+
+	module.exports = InvertTabs;
+
+/***/ },
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var React = __webpack_require__(190);
-	var ThemeManager = __webpack_require__(275);
+	var React = __webpack_require__(188);
+	var ThemeManager = __webpack_require__(278);
 
 	var Theme = React.createClass({
 	  displayName: 'Theme',
@@ -56845,15 +57531,15 @@
 	module.exports.theme = theme;
 
 /***/ },
-/* 284 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	module.exports = __webpack_require__(285);
+	module.exports = __webpack_require__(289);
 
 /***/ },
-/* 285 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -56862,12 +57548,12 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
-	var WindowListenable = __webpack_require__(200);
-	var TimePickerDialog = __webpack_require__(286);
-	var TextField = __webpack_require__(256);
+	var WindowListenable = __webpack_require__(196);
+	var TimePickerDialog = __webpack_require__(290);
+	var TextField = __webpack_require__(258);
 
 	var emptyTime = new Date();
 	emptyTime.setHours(0);
@@ -56996,7 +57682,7 @@
 	module.exports = TimePicker;
 
 /***/ },
-/* 286 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -57005,13 +57691,13 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var WindowListenable = __webpack_require__(200);
-	var KeyCode = __webpack_require__(202);
-	var Clock = __webpack_require__(287);
-	var DialogWindow = __webpack_require__(253);
-	var FlatButton = __webpack_require__(254);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var WindowListenable = __webpack_require__(196);
+	var KeyCode = __webpack_require__(198);
+	var Clock = __webpack_require__(291);
+	var DialogWindow = __webpack_require__(254);
+	var FlatButton = __webpack_require__(255);
 
 	var TimePickerDialog = React.createClass({
 	  displayName: 'TimePickerDialog',
@@ -57130,18 +57816,18 @@
 	module.exports = TimePickerDialog;
 
 /***/ },
-/* 287 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
-	var TimeDisplay = __webpack_require__(289);
-	var ClockButton = __webpack_require__(288);
-	var ClockHours = __webpack_require__(290);
-	var ClockMinutes = __webpack_require__(293);
+	var TimeDisplay = __webpack_require__(293);
+	var ClockButton = __webpack_require__(292);
+	var ClockHours = __webpack_require__(294);
+	var ClockMinutes = __webpack_require__(297);
 
 	var Clock = React.createClass({
 	  displayName: 'Clock',
@@ -57315,7 +58001,7 @@
 	module.exports = Clock;
 
 /***/ },
-/* 288 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -57324,10 +58010,10 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var EnhancedButton = __webpack_require__(199);
-	var Transitions = __webpack_require__(195);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var EnhancedButton = __webpack_require__(195);
+	var Transitions = __webpack_require__(204);
 
 	var ClockButton = React.createClass({
 	  displayName: 'ClockButton',
@@ -57425,7 +58111,7 @@
 	module.exports = ClockButton;
 
 /***/ },
-/* 289 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -57436,8 +58122,8 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var TimeDisplay = React.createClass({
 	  displayName: 'TimeDisplay',
@@ -57576,15 +58262,15 @@
 	module.exports = TimeDisplay;
 
 /***/ },
-/* 290 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
-	var ClockNumber = __webpack_require__(291);
-	var ClockPointer = __webpack_require__(292);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
+	var ClockNumber = __webpack_require__(295);
+	var ClockPointer = __webpack_require__(296);
 
 	function rad2deg(rad) {
 	  return rad * 57.29577951308232;
@@ -57755,15 +58441,15 @@
 	module.exports = ClockHours;
 
 /***/ },
-/* 291 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var ClockNumber = React.createClass({
 	  displayName: 'ClockNumber',
@@ -57858,13 +58544,13 @@
 	module.exports = ClockNumber;
 
 /***/ },
-/* 292 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var ClockPointer = React.createClass({
 	  displayName: 'ClockPointer',
@@ -57971,16 +58657,16 @@
 	module.exports = ClockPointer;
 
 /***/ },
-/* 293 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
-	var ClockNumber = __webpack_require__(291);
-	var ClockPointer = __webpack_require__(292);
+	var ClockNumber = __webpack_require__(295);
+	var ClockPointer = __webpack_require__(296);
 
 	function rad2deg(rad) {
 	  return rad * 57.29577951308232;
@@ -58133,13 +58819,13 @@
 	module.exports = ClockMinutes;
 
 /***/ },
-/* 294 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var ToolbarSeparator = React.createClass({
 	  displayName: 'ToolbarSeparator',
@@ -58178,7 +58864,7 @@
 	module.exports = ToolbarSeparator;
 
 /***/ },
-/* 295 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -58187,8 +58873,8 @@
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-	var React = __webpack_require__(190);
-	var StylePropable = __webpack_require__(191);
+	var React = __webpack_require__(188);
+	var StylePropable = __webpack_require__(199);
 
 	var ToolbarTitle = React.createClass({
 	  displayName: 'ToolbarTitle',
@@ -58234,83 +58920,623 @@
 	module.exports = ToolbarTitle;
 
 /***/ },
-/* 296 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */var React = __webpack_require__(190);
-	var mui = __webpack_require__(188);
+	/** @jsx React.DOM */var React = __webpack_require__(188);
+	var mui = __webpack_require__(192);
 	var Tabs = mui.Tabs;
 	var Tab = mui.Tab;
-	var $__0=    mui.Styles,Colors=$__0.Colors,Spacing=$__0.Spacing,Typography=$__0.Typography;
-	var ReactRouter = __webpack_require__(297);
-	var DefaultRoute = ReactRouter.DefaultRoute;
-	var Link = ReactRouter.Link;
-	var ToolbarGroup = mui.ToolbarGroup;
-	var FlatButton = mui.FlatButton;
-	var HeadComponent = React.createClass({displayName: "HeadComponent",
-	  render: function(){
-	    return (
-	      React.createElement(ToolbarGroup, {key: 1, float: "left"}, 
-	        React.createElement("div", {style: {paddingTop: '5%', backgroundColor:"#00bcd4 none repeat scroll 0 0"}}, 
-	          React.createElement(Link, {style: {textDecoration: 'none', color:Typography.textFullWhite}, to: "app"}, 
-	            React.createElement(FlatButton, {style: {backgroundColor:"#00bcd4 none repeat scroll 0 0", color:Typography.textFullWhite}}, "Spot"
-	            )
-	          ), 
-	          React.createElement(Link, {style: {textDecoration: 'none', color:Typography.textFullWhite}, to: "margin"}, 
-	            React.createElement(FlatButton, {style: {backgroundColor:"#00bcd4 none repeat scroll 0 0", color:Typography.textFullWhite}}, "Margin"
-	            )
-	          ), 
-	          React.createElement(Link, {style: {textDecoration: 'none'}, to: "orders"}, 
-	            React.createElement(FlatButton, {style: {backgroundColor:"#00bcd4 none repeat scroll 0 0", color:Typography.textFullWhite}}, "Orders"
-	            )
-	          )
-	        )
-	      )
-	    )
-	  },
+
+	var CurrencyComponent = React.createClass({displayName: "CurrencyComponent",
+		render: function(){
+			return (
+					
+					React.createElement(Tabs, {style: {position:'relative', marginTop:'10px'}}, 
+						React.createElement(Tab, {label: "USD"}, 
+								"USD"
+						), 
+						React.createElement(Tab, {label: "JPN"}, 
+							"JPN"
+						), 
+						React.createElement(Tab, {label: "VND"}, 
+							"VND"
+						)
+					)
+			)
+		}
 	});
 
-	module.exports = HeadComponent;
+	module.exports = CurrencyComponent;
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */module.exports = function injectTapEventPlugin () {
+	  var React = __webpack_require__(188);
+	  React.initializeTouchEvents(true);
+
+	  __webpack_require__(72).injection.injectEventPluginsByName({
+	    "ResponderEventPlugin": __webpack_require__(302),
+	    "TapEventPlugin":       __webpack_require__(303)
+	  });
+	};
 
 
 /***/ },
-/* 297 */
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM *//**
+	 * Copyright 2013-2014, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ResponderEventPlugin
+	 */
+
+	"use strict";
+
+	var EventConstants = __webpack_require__(31);
+	var EventPluginUtils = __webpack_require__(30);
+	var EventPropagators = __webpack_require__(96);
+	var SyntheticEvent = __webpack_require__(100);
+
+	var accumulateInto = __webpack_require__(74);
+	var keyOf = __webpack_require__(42);
+
+	var isStartish = EventPluginUtils.isStartish;
+	var isMoveish = EventPluginUtils.isMoveish;
+	var isEndish = EventPluginUtils.isEndish;
+	var executeDirectDispatch = EventPluginUtils.executeDirectDispatch;
+	var hasDispatches = EventPluginUtils.hasDispatches;
+	var executeDispatchesInOrderStopAtTrue =
+	  EventPluginUtils.executeDispatchesInOrderStopAtTrue;
+
+	/**
+	 * ID of element that should respond to touch/move types of interactions, as
+	 * indicated explicitly by relevant callbacks.
+	 */
+	var responderID = null;
+	var isPressing = false;
+
+	var eventTypes = {
+	  /**
+	   * On a `touchStart`/`mouseDown`, is it desired that this element become the
+	   * responder?
+	   */
+	  startShouldSetResponder: {
+	    phasedRegistrationNames: {
+	      bubbled: keyOf({onStartShouldSetResponder: null}),
+	      captured: keyOf({onStartShouldSetResponderCapture: null})
+	    }
+	  },
+
+	  /**
+	   * On a `scroll`, is it desired that this element become the responder? This
+	   * is usually not needed, but should be used to retroactively infer that a
+	   * `touchStart` had occured during momentum scroll. During a momentum scroll,
+	   * a touch start will be immediately followed by a scroll event if the view is
+	   * currently scrolling.
+	   */
+	  scrollShouldSetResponder: {
+	    phasedRegistrationNames: {
+	      bubbled: keyOf({onScrollShouldSetResponder: null}),
+	      captured: keyOf({onScrollShouldSetResponderCapture: null})
+	    }
+	  },
+
+	  /**
+	   * On a `touchMove`/`mouseMove`, is it desired that this element become the
+	   * responder?
+	   */
+	  moveShouldSetResponder: {
+	    phasedRegistrationNames: {
+	      bubbled: keyOf({onMoveShouldSetResponder: null}),
+	      captured: keyOf({onMoveShouldSetResponderCapture: null})
+	    }
+	  },
+
+	  /**
+	   * Direct responder events dispatched directly to responder. Do not bubble.
+	   */
+	  responderMove: {registrationName: keyOf({onResponderMove: null})},
+	  responderRelease: {registrationName: keyOf({onResponderRelease: null})},
+	  responderTerminationRequest: {
+	    registrationName: keyOf({onResponderTerminationRequest: null})
+	  },
+	  responderGrant: {registrationName: keyOf({onResponderGrant: null})},
+	  responderReject: {registrationName: keyOf({onResponderReject: null})},
+	  responderTerminate: {registrationName: keyOf({onResponderTerminate: null})}
+	};
+
+	/**
+	 * Performs negotiation between any existing/current responder, checks to see if
+	 * any new entity is interested in becoming responder, performs that handshake
+	 * and returns any events that must be emitted to notify the relevant parties.
+	 *
+	 * A note about event ordering in the `EventPluginHub`.
+	 *
+	 * Suppose plugins are injected in the following order:
+	 *
+	 * `[R, S, C]`
+	 *
+	 * To help illustrate the example, assume `S` is `SimpleEventPlugin` (for
+	 * `onClick` etc) and `R` is `ResponderEventPlugin`.
+	 *
+	 * "Deferred-Dispatched Events":
+	 *
+	 * - The current event plugin system will traverse the list of injected plugins,
+	 *   in order, and extract events by collecting the plugin's return value of
+	 *   `extractEvents()`.
+	 * - These events that are returned from `extractEvents` are "deferred
+	 *   dispatched events".
+	 * - When returned from `extractEvents`, deferred-dispatched events contain an
+	 *   "accumulation" of deferred dispatches.
+	 * - These deferred dispatches are accumulated/collected before they are
+	 *   returned, but processed at a later time by the `EventPluginHub` (hence the
+	 *   name deferred).
+	 *
+	 * In the process of returning their deferred-dispatched events, event plugins
+	 * themselves can dispatch events on-demand without returning them from
+	 * `extractEvents`. Plugins might want to do this, so that they can use event
+	 * dispatching as a tool that helps them decide which events should be extracted
+	 * in the first place.
+	 *
+	 * "On-Demand-Dispatched Events":
+	 *
+	 * - On-demand-dispatched events are not returned from `extractEvents`.
+	 * - On-demand-dispatched events are dispatched during the process of returning
+	 *   the deferred-dispatched events.
+	 * - They should not have side effects.
+	 * - They should be avoided, and/or eventually be replaced with another
+	 *   abstraction that allows event plugins to perform multiple "rounds" of event
+	 *   extraction.
+	 *
+	 * Therefore, the sequence of event dispatches becomes:
+	 *
+	 * - `R`s on-demand events (if any)   (dispatched by `R` on-demand)
+	 * - `S`s on-demand events (if any)   (dispatched by `S` on-demand)
+	 * - `C`s on-demand events (if any)   (dispatched by `C` on-demand)
+	 * - `R`s extracted events (if any)   (dispatched by `EventPluginHub`)
+	 * - `S`s extracted events (if any)   (dispatched by `EventPluginHub`)
+	 * - `C`s extracted events (if any)   (dispatched by `EventPluginHub`)
+	 *
+	 * In the case of `ResponderEventPlugin`: If the `startShouldSetResponder`
+	 * on-demand dispatch returns `true` (and some other details are satisfied) the
+	 * `onResponderGrant` deferred dispatched event is returned from
+	 * `extractEvents`. The sequence of dispatch executions in this case
+	 * will appear as follows:
+	 *
+	 * - `startShouldSetResponder` (`ResponderEventPlugin` dispatches on-demand)
+	 * - `touchStartCapture`       (`EventPluginHub` dispatches as usual)
+	 * - `touchStart`              (`EventPluginHub` dispatches as usual)
+	 * - `responderGrant/Reject`   (`EventPluginHub` dispatches as usual)
+	 *
+	 * @param {string} topLevelType Record from `EventConstants`.
+	 * @param {string} topLevelTargetID ID of deepest React rendered element.
+	 * @param {object} nativeEvent Native browser event.
+	 * @return {*} An accumulation of synthetic events.
+	 */
+	function setResponderAndExtractTransfer(
+	    topLevelType,
+	    topLevelTargetID,
+	    nativeEvent) {
+	  var shouldSetEventType =
+	    isStartish(topLevelType) ? eventTypes.startShouldSetResponder :
+	    isMoveish(topLevelType) ? eventTypes.moveShouldSetResponder :
+	    eventTypes.scrollShouldSetResponder;
+
+	  var bubbleShouldSetFrom = responderID || topLevelTargetID;
+	  var shouldSetEvent = SyntheticEvent.getPooled(
+	    shouldSetEventType,
+	    bubbleShouldSetFrom,
+	    nativeEvent
+	  );
+	  EventPropagators.accumulateTwoPhaseDispatches(shouldSetEvent);
+	  var wantsResponderID = executeDispatchesInOrderStopAtTrue(shouldSetEvent);
+	  if (!shouldSetEvent.isPersistent()) {
+	    shouldSetEvent.constructor.release(shouldSetEvent);
+	  }
+
+	  if (!wantsResponderID || wantsResponderID === responderID) {
+	    return null;
+	  }
+	  var extracted;
+	  var grantEvent = SyntheticEvent.getPooled(
+	    eventTypes.responderGrant,
+	    wantsResponderID,
+	    nativeEvent
+	  );
+
+	  EventPropagators.accumulateDirectDispatches(grantEvent);
+	  if (responderID) {
+	    var terminationRequestEvent = SyntheticEvent.getPooled(
+	      eventTypes.responderTerminationRequest,
+	      responderID,
+	      nativeEvent
+	    );
+	    EventPropagators.accumulateDirectDispatches(terminationRequestEvent);
+	    var shouldSwitch = !hasDispatches(terminationRequestEvent) ||
+	      executeDirectDispatch(terminationRequestEvent);
+	    if (!terminationRequestEvent.isPersistent()) {
+	      terminationRequestEvent.constructor.release(terminationRequestEvent);
+	    }
+
+	    if (shouldSwitch) {
+	      var terminateType = eventTypes.responderTerminate;
+	      var terminateEvent = SyntheticEvent.getPooled(
+	        terminateType,
+	        responderID,
+	        nativeEvent
+	      );
+	      EventPropagators.accumulateDirectDispatches(terminateEvent);
+	      extracted = accumulateInto(extracted, [grantEvent, terminateEvent]);
+	      responderID = wantsResponderID;
+	    } else {
+	      var rejectEvent = SyntheticEvent.getPooled(
+	        eventTypes.responderReject,
+	        wantsResponderID,
+	        nativeEvent
+	      );
+	      EventPropagators.accumulateDirectDispatches(rejectEvent);
+	      extracted = accumulateInto(extracted, rejectEvent);
+	    }
+	  } else {
+	    extracted = accumulateInto(extracted, grantEvent);
+	    responderID = wantsResponderID;
+	  }
+	  return extracted;
+	}
+
+	/**
+	 * A transfer is a negotiation between a currently set responder and the next
+	 * element to claim responder status. Any start event could trigger a transfer
+	 * of responderID. Any move event could trigger a transfer, so long as there is
+	 * currently a responder set (in other words as long as the user is pressing
+	 * down).
+	 *
+	 * @param {string} topLevelType Record from `EventConstants`.
+	 * @return {boolean} True if a transfer of responder could possibly occur.
+	 */
+	function canTriggerTransfer(topLevelType) {
+	  return topLevelType === EventConstants.topLevelTypes.topScroll ||
+	         isStartish(topLevelType) ||
+	         (isPressing && isMoveish(topLevelType));
+	}
+
+	/**
+	 * Event plugin for formalizing the negotiation between claiming locks on
+	 * receiving touches.
+	 */
+	var ResponderEventPlugin = {
+
+	  getResponderID: function() {
+	    return responderID;
+	  },
+
+	  eventTypes: eventTypes,
+
+	  /**
+	   * @param {string} topLevelType Record from `EventConstants`.
+	   * @param {DOMEventTarget} topLevelTarget The listening component root node.
+	   * @param {string} topLevelTargetID ID of `topLevelTarget`.
+	   * @param {object} nativeEvent Native browser event.
+	   * @return {*} An accumulation of synthetic events.
+	   * @see {EventPluginHub.extractEvents}
+	   */
+	  extractEvents: function(
+	      topLevelType,
+	      topLevelTarget,
+	      topLevelTargetID,
+	      nativeEvent) {
+	    var extracted;
+	    // Must have missed an end event - reset the state here.
+	    if (responderID && isStartish(topLevelType)) {
+	      responderID = null;
+	    }
+	    if (isStartish(topLevelType)) {
+	      isPressing = true;
+	    } else if (isEndish(topLevelType)) {
+	      isPressing = false;
+	    }
+	    if (canTriggerTransfer(topLevelType)) {
+	      var transfer = setResponderAndExtractTransfer(
+	        topLevelType,
+	        topLevelTargetID,
+	        nativeEvent
+	      );
+	      if (transfer) {
+	        extracted = accumulateInto(extracted, transfer);
+	      }
+	    }
+	    // Now that we know the responder is set correctly, we can dispatch
+	    // responder type events (directly to the responder).
+	    var type = isMoveish(topLevelType) ? eventTypes.responderMove :
+	      isEndish(topLevelType) ? eventTypes.responderRelease :
+	      isStartish(topLevelType) ? eventTypes.responderStart : null;
+	    if (type) {
+	      var gesture = SyntheticEvent.getPooled(
+	        type,
+	        responderID || '',
+	        nativeEvent
+	      );
+	      EventPropagators.accumulateDirectDispatches(gesture);
+	      extracted = accumulateInto(extracted, gesture);
+	    }
+	    if (type === eventTypes.responderRelease) {
+	      responderID = null;
+	    }
+	    return extracted;
+	  }
+
+	};
+
+	module.exports = ResponderEventPlugin;
+
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM *//**
+	 * Copyright 2013-2014 Facebook, Inc.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *
+	 * @providesModule TapEventPlugin
+	 * @typechecks static-only
+	 */
+
+	"use strict";
+
+	var EventConstants = __webpack_require__(31);
+	var EventPluginUtils = __webpack_require__(30);
+	var EventPropagators = __webpack_require__(96);
+	var SyntheticUIEvent = __webpack_require__(109);
+	var TouchEventUtils = __webpack_require__(304);
+	var ViewportMetrics = __webpack_require__(77);
+
+	var keyOf = __webpack_require__(42);
+	var topLevelTypes = EventConstants.topLevelTypes;
+
+	var isStartish = EventPluginUtils.isStartish;
+	var isEndish = EventPluginUtils.isEndish;
+
+	var isTouch = function(topLevelType) {
+	  var touchTypes = [
+	    topLevelTypes.topTouchCancel,
+	    topLevelTypes.topTouchEnd,
+	    topLevelTypes.topTouchStart,
+	    topLevelTypes.topTouchMove
+	  ];
+	  return touchTypes.indexOf(topLevelType) >= 0;
+	}
+
+	/**
+	 * Number of pixels that are tolerated in between a `touchStart` and `touchEnd`
+	 * in order to still be considered a 'tap' event.
+	 */
+	var tapMoveThreshold = 10;
+	var ignoreMouseThreshold = 750;
+	var startCoords = {x: null, y: null};
+	var lastTouchEvent = null;
+
+	var Axis = {
+	  x: {page: 'pageX', client: 'clientX', envScroll: 'currentPageScrollLeft'},
+	  y: {page: 'pageY', client: 'clientY', envScroll: 'currentPageScrollTop'}
+	};
+
+	function getAxisCoordOfEvent(axis, nativeEvent) {
+	  var singleTouch = TouchEventUtils.extractSingleTouch(nativeEvent);
+	  if (singleTouch) {
+	    return singleTouch[axis.page];
+	  }
+	  return axis.page in nativeEvent ?
+	    nativeEvent[axis.page] :
+	    nativeEvent[axis.client] + ViewportMetrics[axis.envScroll];
+	}
+
+	function getDistance(coords, nativeEvent) {
+	  var pageX = getAxisCoordOfEvent(Axis.x, nativeEvent);
+	  var pageY = getAxisCoordOfEvent(Axis.y, nativeEvent);
+	  return Math.pow(
+	    Math.pow(pageX - coords.x, 2) + Math.pow(pageY - coords.y, 2),
+	    0.5
+	  );
+	}
+
+	var dependencies = [
+	  topLevelTypes.topMouseDown,
+	  topLevelTypes.topMouseMove,
+	  topLevelTypes.topMouseUp
+	];
+
+	if (EventPluginUtils.useTouchEvents) {
+	  dependencies.push(
+	    topLevelTypes.topTouchEnd,
+	    topLevelTypes.topTouchStart,
+	    topLevelTypes.topTouchMove
+	  );
+	}
+
+	var eventTypes = {
+	  touchTap: {
+	    phasedRegistrationNames: {
+	      bubbled: keyOf({onTouchTap: null}),
+	      captured: keyOf({onTouchTapCapture: null})
+	    },
+	    dependencies: dependencies
+	  }
+	};
+
+	var now = function() {
+	  if (Date.now) {
+	    return Date.now();
+	  } else {
+	    // IE8 support: http://stackoverflow.com/questions/9430357/please-explain-why-and-how-new-date-works-as-workaround-for-date-now-in
+	    return +new Date;
+	  }
+	}
+
+	var TapEventPlugin = {
+
+	  tapMoveThreshold: tapMoveThreshold,
+
+	  ignoreMouseThreshold: ignoreMouseThreshold,
+
+	  eventTypes: eventTypes,
+
+	  /**
+	   * @param {string} topLevelType Record from `EventConstants`.
+	   * @param {DOMEventTarget} topLevelTarget The listening component root node.
+	   * @param {string} topLevelTargetID ID of `topLevelTarget`.
+	   * @param {object} nativeEvent Native browser event.
+	   * @return {*} An accumulation of synthetic events.
+	   * @see {EventPluginHub.extractEvents}
+	   */
+	  extractEvents: function(
+	      topLevelType,
+	      topLevelTarget,
+	      topLevelTargetID,
+	      nativeEvent) {
+
+	    if (isTouch(topLevelType)) {
+	      lastTouchEvent = now();
+	    } else {
+	      if (lastTouchEvent && (now() - lastTouchEvent) < ignoreMouseThreshold) {
+	        return null;
+	      }
+	    }
+
+	    if (!isStartish(topLevelType) && !isEndish(topLevelType)) {
+	      return null;
+	    }
+	    var event = null;
+	    var distance = getDistance(startCoords, nativeEvent);
+	    if (isEndish(topLevelType) && distance < tapMoveThreshold) {
+	      event = SyntheticUIEvent.getPooled(
+	        eventTypes.touchTap,
+	        topLevelTargetID,
+	        nativeEvent
+	      );
+	    }
+	    if (isStartish(topLevelType)) {
+	      startCoords.x = getAxisCoordOfEvent(Axis.x, nativeEvent);
+	      startCoords.y = getAxisCoordOfEvent(Axis.y, nativeEvent);
+	    } else if (isEndish(topLevelType)) {
+	      startCoords.x = 0;
+	      startCoords.y = 0;
+	    }
+	    EventPropagators.accumulateTwoPhaseDispatches(event);
+	    return event;
+	  }
+
+	};
+
+	module.exports = TapEventPlugin;
+
+
+/***/ },
+/* 304 */
+/***/ function(module, exports) {
+
+	/** @jsx React.DOM *//**
+	 * Copyright 2013-2014 Facebook, Inc.
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License");
+	 * you may not use this file except in compliance with the License.
+	 * You may obtain a copy of the License at
+	 *
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 *
+	 * @providesModule TouchEventUtils
+	 */
+
+	var TouchEventUtils = {
+	  /**
+	   * Utility function for common case of extracting out the primary touch from a
+	   * touch event.
+	   * - `touchEnd` events usually do not have the `touches` property.
+	   *   http://stackoverflow.com/questions/3666929/
+	   *   mobile-sarai-touchend-event-not-firing-when-last-touch-is-removed
+	   *
+	   * @param {Event} nativeEvent Native event that may or may not be a touch.
+	   * @return {TouchesObject?} an object with pageX and pageY or null.
+	   */
+	  extractSingleTouch: function(nativeEvent) {
+	    var touches = nativeEvent.touches;
+	    var changedTouches = nativeEvent.changedTouches;
+	    var hasTouches = touches && touches.length > 0;
+	    var hasChangedTouches = changedTouches && changedTouches.length > 0;
+
+	    return !hasTouches && hasChangedTouches ? changedTouches[0] :
+	           hasTouches ? touches[0] :
+	           nativeEvent;
+	  }
+	};
+
+	module.exports = TouchEventUtils;
+
+
+/***/ },
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	exports.DefaultRoute = __webpack_require__(298);
-	exports.Link = __webpack_require__(311);
-	exports.NotFoundRoute = __webpack_require__(312);
-	exports.Redirect = __webpack_require__(313);
-	exports.Route = __webpack_require__(310);
-	exports.ActiveHandler = __webpack_require__(308);
+	exports.DefaultRoute = __webpack_require__(306);
+	exports.Link = __webpack_require__(319);
+	exports.NotFoundRoute = __webpack_require__(320);
+	exports.Redirect = __webpack_require__(321);
+	exports.Route = __webpack_require__(318);
+	exports.ActiveHandler = __webpack_require__(316);
 	exports.RouteHandler = exports.ActiveHandler;
 
-	exports.HashLocation = __webpack_require__(314);
-	exports.HistoryLocation = __webpack_require__(317);
-	exports.RefreshLocation = __webpack_require__(318);
-	exports.StaticLocation = __webpack_require__(319);
-	exports.TestLocation = __webpack_require__(320);
+	exports.HashLocation = __webpack_require__(322);
+	exports.HistoryLocation = __webpack_require__(325);
+	exports.RefreshLocation = __webpack_require__(326);
+	exports.StaticLocation = __webpack_require__(327);
+	exports.TestLocation = __webpack_require__(328);
 
-	exports.ImitateBrowserBehavior = __webpack_require__(321);
-	exports.ScrollToTopBehavior = __webpack_require__(322);
+	exports.ImitateBrowserBehavior = __webpack_require__(329);
+	exports.ScrollToTopBehavior = __webpack_require__(330);
 
-	exports.History = __webpack_require__(316);
-	exports.Navigation = __webpack_require__(323);
-	exports.State = __webpack_require__(324);
+	exports.History = __webpack_require__(324);
+	exports.Navigation = __webpack_require__(331);
+	exports.State = __webpack_require__(332);
 
-	exports.createRoute = __webpack_require__(300).createRoute;
-	exports.createDefaultRoute = __webpack_require__(300).createDefaultRoute;
-	exports.createNotFoundRoute = __webpack_require__(300).createNotFoundRoute;
-	exports.createRedirect = __webpack_require__(300).createRedirect;
-	exports.createRoutesFromReactChildren = __webpack_require__(325);
+	exports.createRoute = __webpack_require__(308).createRoute;
+	exports.createDefaultRoute = __webpack_require__(308).createDefaultRoute;
+	exports.createNotFoundRoute = __webpack_require__(308).createNotFoundRoute;
+	exports.createRedirect = __webpack_require__(308).createRedirect;
+	exports.createRoutesFromReactChildren = __webpack_require__(333);
 
-	exports.create = __webpack_require__(326);
-	exports.run = __webpack_require__(335);
+	exports.create = __webpack_require__(334);
+	exports.run = __webpack_require__(343);
 
 /***/ },
-/* 298 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -58319,9 +59545,9 @@
 
 	var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-	var PropTypes = __webpack_require__(299);
-	var RouteHandler = __webpack_require__(308);
-	var Route = __webpack_require__(310);
+	var PropTypes = __webpack_require__(307);
+	var RouteHandler = __webpack_require__(316);
+	var Route = __webpack_require__(318);
 
 	/**
 	 * A <DefaultRoute> component is a special kind of <Route> that
@@ -58362,14 +59588,14 @@
 	module.exports = DefaultRoute;
 
 /***/ },
-/* 299 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var assign = __webpack_require__(8);
-	var ReactPropTypes = __webpack_require__(190).PropTypes;
-	var Route = __webpack_require__(300);
+	var ReactPropTypes = __webpack_require__(188).PropTypes;
+	var Route = __webpack_require__(308);
 
 	var PropTypes = assign({}, ReactPropTypes, {
 
@@ -58398,7 +59624,7 @@
 	module.exports = PropTypes;
 
 /***/ },
-/* 300 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -58410,7 +59636,7 @@
 	var assign = __webpack_require__(8);
 	var invariant = __webpack_require__(7);
 	var warning = __webpack_require__(18);
-	var PathUtils = __webpack_require__(301);
+	var PathUtils = __webpack_require__(309);
 
 	var _currentRoute;
 
@@ -58603,14 +59829,14 @@
 	module.exports = Route;
 
 /***/ },
-/* 301 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var invariant = __webpack_require__(7);
-	var assign = __webpack_require__(302);
-	var qs = __webpack_require__(303);
+	var assign = __webpack_require__(310);
+	var qs = __webpack_require__(311);
 
 	var paramCompileMatcher = /:([a-zA-Z_$][a-zA-Z0-9_$]*)|[*.()\[\]\\+|{}^$]/g;
 	var paramInjectMatcher = /:([a-zA-Z_$][a-zA-Z0-9_$?]*[?]?)|[*]/g;
@@ -58761,7 +59987,7 @@
 	module.exports = PathUtils;
 
 /***/ },
-/* 302 */
+/* 310 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */'use strict';
@@ -58793,20 +60019,20 @@
 
 
 /***/ },
-/* 303 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */module.exports = __webpack_require__(304);
+	/** @jsx React.DOM */module.exports = __webpack_require__(312);
 
 
 /***/ },
-/* 304 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */// Load modules
 
-	var Stringify = __webpack_require__(305);
-	var Parse = __webpack_require__(307);
+	var Stringify = __webpack_require__(313);
+	var Parse = __webpack_require__(315);
 
 
 	// Declare internals
@@ -58821,12 +60047,12 @@
 
 
 /***/ },
-/* 305 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */// Load modules
 
-	var Utils = __webpack_require__(306);
+	var Utils = __webpack_require__(314);
 
 
 	// Declare internals
@@ -58924,7 +60150,7 @@
 
 
 /***/ },
-/* 306 */
+/* 314 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */// Load modules
@@ -59062,12 +60288,12 @@
 
 
 /***/ },
-/* 307 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */// Load modules
 
-	var Utils = __webpack_require__(306);
+	var Utils = __webpack_require__(314);
 
 
 	// Declare internals
@@ -59229,7 +60455,7 @@
 
 
 /***/ },
-/* 308 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59240,10 +60466,10 @@
 
 	var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-	var React = __webpack_require__(190);
-	var ContextWrapper = __webpack_require__(309);
+	var React = __webpack_require__(188);
+	var ContextWrapper = __webpack_require__(317);
 	var assign = __webpack_require__(8);
-	var PropTypes = __webpack_require__(299);
+	var PropTypes = __webpack_require__(307);
 
 	var REF_NAME = '__routeHandler__';
 
@@ -59342,7 +60568,7 @@
 	module.exports = RouteHandler;
 
 /***/ },
-/* 309 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59359,7 +60585,7 @@
 	 * between the "owner" and "parent" contexts.
 	 */
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 
 	var ContextWrapper = (function (_React$Component) {
 	  function ContextWrapper() {
@@ -59385,7 +60611,7 @@
 	module.exports = ContextWrapper;
 
 /***/ },
-/* 310 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59396,10 +60622,10 @@
 
 	var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var invariant = __webpack_require__(7);
-	var PropTypes = __webpack_require__(299);
-	var RouteHandler = __webpack_require__(308);
+	var PropTypes = __webpack_require__(307);
+	var RouteHandler = __webpack_require__(316);
 
 	/**
 	 * <Route> components specify components that are rendered to the page when the
@@ -59481,7 +60707,7 @@
 	module.exports = Route;
 
 /***/ },
-/* 311 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59492,9 +60718,9 @@
 
 	var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var assign = __webpack_require__(8);
-	var PropTypes = __webpack_require__(299);
+	var PropTypes = __webpack_require__(307);
 
 	function isLeftClickEvent(event) {
 	  return event.button === 0;
@@ -59621,7 +60847,7 @@
 	module.exports = Link;
 
 /***/ },
-/* 312 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59630,9 +60856,9 @@
 
 	var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-	var PropTypes = __webpack_require__(299);
-	var RouteHandler = __webpack_require__(308);
-	var Route = __webpack_require__(310);
+	var PropTypes = __webpack_require__(307);
+	var RouteHandler = __webpack_require__(316);
+	var Route = __webpack_require__(318);
 
 	/**
 	 * A <NotFoundRoute> is a special kind of <Route> that
@@ -59674,7 +60900,7 @@
 	module.exports = NotFoundRoute;
 
 /***/ },
-/* 313 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59683,8 +60909,8 @@
 
 	var _inherits = function (subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-	var PropTypes = __webpack_require__(299);
-	var Route = __webpack_require__(310);
+	var PropTypes = __webpack_require__(307);
+	var Route = __webpack_require__(318);
 
 	/**
 	 * A <Redirect> component is a special kind of <Route> that always
@@ -59722,13 +60948,13 @@
 	module.exports = Redirect;
 
 /***/ },
-/* 314 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var LocationActions = __webpack_require__(315);
-	var History = __webpack_require__(316);
+	var LocationActions = __webpack_require__(323);
+	var History = __webpack_require__(324);
 
 	var _listeners = [];
 	var _isListening = false;
@@ -59838,7 +61064,7 @@
 	module.exports = HashLocation;
 
 /***/ },
-/* 315 */
+/* 323 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM *//**
@@ -59868,7 +61094,7 @@
 	module.exports = LocationActions;
 
 /***/ },
-/* 316 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -59903,13 +61129,13 @@
 	module.exports = History;
 
 /***/ },
-/* 317 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var LocationActions = __webpack_require__(315);
-	var History = __webpack_require__(316);
+	var LocationActions = __webpack_require__(323);
+	var History = __webpack_require__(324);
 
 	var _listeners = [];
 	var _isListening = false;
@@ -59994,13 +61220,13 @@
 	module.exports = HistoryLocation;
 
 /***/ },
-/* 318 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var HistoryLocation = __webpack_require__(317);
-	var History = __webpack_require__(316);
+	var HistoryLocation = __webpack_require__(325);
+	var History = __webpack_require__(324);
 
 	/**
 	 * A Location that uses full page refreshes. This is used as
@@ -60030,7 +61256,7 @@
 	module.exports = RefreshLocation;
 
 /***/ },
-/* 319 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -60084,7 +61310,7 @@
 	module.exports = StaticLocation;
 
 /***/ },
-/* 320 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -60094,8 +61320,8 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	var invariant = __webpack_require__(7);
-	var LocationActions = __webpack_require__(315);
-	var History = __webpack_require__(316);
+	var LocationActions = __webpack_require__(323);
+	var History = __webpack_require__(324);
 
 	/**
 	 * A location that is convenient for testing and does not require a DOM.
@@ -60183,12 +61409,12 @@
 	module.exports = TestLocation;
 
 /***/ },
-/* 321 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var LocationActions = __webpack_require__(315);
+	var LocationActions = __webpack_require__(323);
 
 	/**
 	 * A scroll behavior that attempts to imitate the default behavior
@@ -60217,7 +61443,7 @@
 	module.exports = ImitateBrowserBehavior;
 
 /***/ },
-/* 322 */
+/* 330 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM *//**
@@ -60237,12 +61463,12 @@
 	module.exports = ScrollToTopBehavior;
 
 /***/ },
-/* 323 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var PropTypes = __webpack_require__(299);
+	var PropTypes = __webpack_require__(307);
 
 	/**
 	 * A mixin for components that modify the URL.
@@ -60312,12 +61538,12 @@
 	module.exports = Navigation;
 
 /***/ },
-/* 324 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var PropTypes = __webpack_require__(299);
+	var PropTypes = __webpack_require__(307);
 
 	/**
 	 * A mixin for components that need to know the path, routes, URL
@@ -60391,19 +61617,19 @@
 	module.exports = State;
 
 /***/ },
-/* 325 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM *//* jshint -W084 */
 	'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var assign = __webpack_require__(8);
 	var warning = __webpack_require__(18);
-	var DefaultRoute = __webpack_require__(298);
-	var NotFoundRoute = __webpack_require__(312);
-	var Redirect = __webpack_require__(313);
-	var Route = __webpack_require__(300);
+	var DefaultRoute = __webpack_require__(306);
+	var NotFoundRoute = __webpack_require__(320);
+	var Redirect = __webpack_require__(321);
+	var Route = __webpack_require__(308);
 
 	function checkPropTypes(componentName, propTypes, props) {
 	  componentName = componentName || 'UnknownComponent';
@@ -60477,34 +61703,34 @@
 	module.exports = createRoutesFromReactChildren;
 
 /***/ },
-/* 326 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/** @jsx React.DOM *//* jshint -W058 */
 	'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 	var warning = __webpack_require__(18);
 	var invariant = __webpack_require__(7);
 	var canUseDOM = __webpack_require__(54).canUseDOM;
-	var LocationActions = __webpack_require__(315);
-	var ImitateBrowserBehavior = __webpack_require__(321);
-	var HashLocation = __webpack_require__(314);
-	var HistoryLocation = __webpack_require__(317);
-	var RefreshLocation = __webpack_require__(318);
-	var StaticLocation = __webpack_require__(319);
-	var ScrollHistory = __webpack_require__(327);
-	var createRoutesFromReactChildren = __webpack_require__(325);
-	var isReactChildren = __webpack_require__(329);
-	var Transition = __webpack_require__(330);
-	var PropTypes = __webpack_require__(299);
-	var Redirect = __webpack_require__(332);
-	var History = __webpack_require__(316);
-	var Cancellation = __webpack_require__(331);
-	var Match = __webpack_require__(333);
-	var Route = __webpack_require__(300);
-	var supportsHistory = __webpack_require__(334);
-	var PathUtils = __webpack_require__(301);
+	var LocationActions = __webpack_require__(323);
+	var ImitateBrowserBehavior = __webpack_require__(329);
+	var HashLocation = __webpack_require__(322);
+	var HistoryLocation = __webpack_require__(325);
+	var RefreshLocation = __webpack_require__(326);
+	var StaticLocation = __webpack_require__(327);
+	var ScrollHistory = __webpack_require__(335);
+	var createRoutesFromReactChildren = __webpack_require__(333);
+	var isReactChildren = __webpack_require__(337);
+	var Transition = __webpack_require__(338);
+	var PropTypes = __webpack_require__(307);
+	var Redirect = __webpack_require__(340);
+	var History = __webpack_require__(324);
+	var Cancellation = __webpack_require__(339);
+	var Match = __webpack_require__(341);
+	var Route = __webpack_require__(308);
+	var supportsHistory = __webpack_require__(342);
+	var PathUtils = __webpack_require__(309);
 
 	/**
 	 * The default location for new routers.
@@ -60997,14 +62223,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 327 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
 	var invariant = __webpack_require__(7);
 	var canUseDOM = __webpack_require__(54).canUseDOM;
-	var getWindowScrollPosition = __webpack_require__(328);
+	var getWindowScrollPosition = __webpack_require__(336);
 
 	function shouldUpdateScroll(state, prevState) {
 	  if (!prevState) {
@@ -61077,7 +62303,7 @@
 	module.exports = ScrollHistory;
 
 /***/ },
-/* 328 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -61100,12 +62326,12 @@
 	module.exports = getWindowScrollPosition;
 
 /***/ },
-/* 329 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var React = __webpack_require__(190);
+	var React = __webpack_require__(188);
 
 	function isValidChild(object) {
 	  return object == null || React.isValidElement(object);
@@ -61118,15 +62344,15 @@
 	module.exports = isReactChildren;
 
 /***/ },
-/* 330 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM *//* jshint -W058 */
 
 	'use strict';
 
-	var Cancellation = __webpack_require__(331);
-	var Redirect = __webpack_require__(332);
+	var Cancellation = __webpack_require__(339);
+	var Redirect = __webpack_require__(340);
 
 	/**
 	 * Encapsulates a transition to a given path.
@@ -61198,7 +62424,7 @@
 	module.exports = Transition;
 
 /***/ },
-/* 331 */
+/* 339 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM *//**
@@ -61212,7 +62438,7 @@
 	module.exports = Cancellation;
 
 /***/ },
-/* 332 */
+/* 340 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM *//**
@@ -61229,7 +62455,7 @@
 	module.exports = Redirect;
 
 /***/ },
-/* 333 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
@@ -61239,7 +62465,7 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	/* jshint -W084 */
-	var PathUtils = __webpack_require__(301);
+	var PathUtils = __webpack_require__(309);
 
 	function deepSearch(route, pathname, query) {
 	  // Check the subtree first to find the most deeply-nested match.
@@ -61309,7 +62535,7 @@
 	module.exports = Match;
 
 /***/ },
-/* 334 */
+/* 342 */
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */'use strict';
@@ -61330,12 +62556,12 @@
 	module.exports = supportsHistory;
 
 /***/ },
-/* 335 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */'use strict';
 
-	var createRouter = __webpack_require__(326);
+	var createRouter = __webpack_require__(334);
 
 	/**
 	 * A high-level convenience method that creates, configures, and
@@ -61385,11 +62611,113 @@
 	module.exports = runRouter;
 
 /***/ },
-/* 336 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */var React = __webpack_require__(190);
-	var mui = __webpack_require__(188);
+	/** @jsx React.DOM */var React = __webpack_require__(188);
+	var AppBarComponent = __webpack_require__(345);
+	var OrdersComponent = React.createClass({displayName: "OrdersComponent",
+	  render: function(){
+	    return (
+	      React.createElement("div", null, 
+	      	"Orders"
+	      )
+	    )
+	  }
+	});
+	module.exports = OrdersComponent;
+
+
+/***/ },
+/* 345 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(188);
+	var mui = __webpack_require__(192);
+	var AppBar = mui.AppBar;
+	var HeadComponent = __webpack_require__(346);
+	var LeftComponent = __webpack_require__(347);
+	var LineSeparator = __webpack_require__(348);
+	var AppBarComponent = React.createClass({displayName: "AppBarComponent",
+		render: function(){
+			return (
+				React.createElement("div", null, 
+			        React.createElement(AppBar, {title: "", iconClassNameRight: "muidocs-icon-navigation-expand-more", onLeftIconButtonTouchTap: this._onToggleLeftNav, style: {width: '120%', marginLeft: '-8px', marginTop: '-8px', top: '0px', marginBottom: '10px'}}, 
+			          React.createElement(HeadComponent, null)
+			        ), 
+			        React.createElement(LineSeparator, null), 
+			        React.createElement(LeftComponent, {ref: "leftNav"})
+		        )
+		     )
+		},
+		_onToggleLeftNav: function(){
+		    this.refs.leftNav.toggle();
+		  }
+	});
+
+	module.exports = AppBarComponent;
+
+/***/ },
+/* 346 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(188);
+	var mui = __webpack_require__(192);
+	var Tabs = mui.Tabs;
+	var Tab = mui.Tab;
+	var $__0=    mui.Styles,Colors=$__0.Colors,Spacing=$__0.Spacing,Typography=$__0.Typography;
+	var ReactRouter = __webpack_require__(305);
+	var DefaultRoute = ReactRouter.DefaultRoute;
+	var Link = ReactRouter.Link;
+	var ToolbarGroup = mui.ToolbarGroup;
+	var FlatButton = mui.FlatButton;
+	var HeadComponent = React.createClass({displayName: "HeadComponent",
+	  getStyles: function(){
+	    return {
+	      ul: {
+	        listStyleType: 'none',
+	        margin: '0',
+	        padding: '20px'  
+	      },
+	      li: {
+	        display: 'inline'
+	      }
+	      
+	    }
+	  },
+	  render: function(){
+	    return (
+	      React.createElement("ul", {style: this.getStyles().ul}, 
+	        React.createElement("li", {style: this.getStyles().li}, 
+	          React.createElement(Link, {activeStyle: {textDecoration:'none', color:Typography.textFullWhite}, to: "app"}, 
+	            "Spot"
+	          )
+	        ), 
+	        React.createElement("li", {style: this.getStyles().li}, 
+	          React.createElement(Link, {activeStyle: {textDecoration:'none', color:Typography.textFullWhite}, to: "margin"}, 
+	            "Margin"
+	          )
+	        ), 
+	        React.createElement("li", {style: this.getStyles().li}, 
+	          React.createElement(Link, {activeStyle: {textDecoration:'none', color:Typography.textFullWhite}, to: "orders"}, 
+	            "Orders"
+	          )
+	        )
+
+	      )
+	    )
+	  },
+	});
+
+	module.exports = HeadComponent;
+
+
+/***/ },
+/* 347 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */var React = __webpack_require__(188);
+	var mui = __webpack_require__(192);
 	var LeftNav = mui.LeftNav;
 	var ThemeManager = new mui.Styles.ThemeManager();
 	var MenuItem = mui.MenuItem;
@@ -61455,1324 +62783,10 @@
 
 
 /***/ },
-/* 337 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */module.exports = function injectTapEventPlugin () {
-	  var React = __webpack_require__(190);
-	  React.initializeTouchEvents(true);
-
-	  __webpack_require__(72).injection.injectEventPluginsByName({
-	    "ResponderEventPlugin": __webpack_require__(338),
-	    "TapEventPlugin":       __webpack_require__(339)
-	  });
-	};
-
-
-/***/ },
-/* 338 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM *//**
-	 * Copyright 2013-2014, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ResponderEventPlugin
-	 */
-
-	"use strict";
-
-	var EventConstants = __webpack_require__(31);
-	var EventPluginUtils = __webpack_require__(30);
-	var EventPropagators = __webpack_require__(96);
-	var SyntheticEvent = __webpack_require__(100);
-
-	var accumulateInto = __webpack_require__(74);
-	var keyOf = __webpack_require__(42);
-
-	var isStartish = EventPluginUtils.isStartish;
-	var isMoveish = EventPluginUtils.isMoveish;
-	var isEndish = EventPluginUtils.isEndish;
-	var executeDirectDispatch = EventPluginUtils.executeDirectDispatch;
-	var hasDispatches = EventPluginUtils.hasDispatches;
-	var executeDispatchesInOrderStopAtTrue =
-	  EventPluginUtils.executeDispatchesInOrderStopAtTrue;
-
-	/**
-	 * ID of element that should respond to touch/move types of interactions, as
-	 * indicated explicitly by relevant callbacks.
-	 */
-	var responderID = null;
-	var isPressing = false;
-
-	var eventTypes = {
-	  /**
-	   * On a `touchStart`/`mouseDown`, is it desired that this element become the
-	   * responder?
-	   */
-	  startShouldSetResponder: {
-	    phasedRegistrationNames: {
-	      bubbled: keyOf({onStartShouldSetResponder: null}),
-	      captured: keyOf({onStartShouldSetResponderCapture: null})
-	    }
-	  },
-
-	  /**
-	   * On a `scroll`, is it desired that this element become the responder? This
-	   * is usually not needed, but should be used to retroactively infer that a
-	   * `touchStart` had occured during momentum scroll. During a momentum scroll,
-	   * a touch start will be immediately followed by a scroll event if the view is
-	   * currently scrolling.
-	   */
-	  scrollShouldSetResponder: {
-	    phasedRegistrationNames: {
-	      bubbled: keyOf({onScrollShouldSetResponder: null}),
-	      captured: keyOf({onScrollShouldSetResponderCapture: null})
-	    }
-	  },
-
-	  /**
-	   * On a `touchMove`/`mouseMove`, is it desired that this element become the
-	   * responder?
-	   */
-	  moveShouldSetResponder: {
-	    phasedRegistrationNames: {
-	      bubbled: keyOf({onMoveShouldSetResponder: null}),
-	      captured: keyOf({onMoveShouldSetResponderCapture: null})
-	    }
-	  },
-
-	  /**
-	   * Direct responder events dispatched directly to responder. Do not bubble.
-	   */
-	  responderMove: {registrationName: keyOf({onResponderMove: null})},
-	  responderRelease: {registrationName: keyOf({onResponderRelease: null})},
-	  responderTerminationRequest: {
-	    registrationName: keyOf({onResponderTerminationRequest: null})
-	  },
-	  responderGrant: {registrationName: keyOf({onResponderGrant: null})},
-	  responderReject: {registrationName: keyOf({onResponderReject: null})},
-	  responderTerminate: {registrationName: keyOf({onResponderTerminate: null})}
-	};
-
-	/**
-	 * Performs negotiation between any existing/current responder, checks to see if
-	 * any new entity is interested in becoming responder, performs that handshake
-	 * and returns any events that must be emitted to notify the relevant parties.
-	 *
-	 * A note about event ordering in the `EventPluginHub`.
-	 *
-	 * Suppose plugins are injected in the following order:
-	 *
-	 * `[R, S, C]`
-	 *
-	 * To help illustrate the example, assume `S` is `SimpleEventPlugin` (for
-	 * `onClick` etc) and `R` is `ResponderEventPlugin`.
-	 *
-	 * "Deferred-Dispatched Events":
-	 *
-	 * - The current event plugin system will traverse the list of injected plugins,
-	 *   in order, and extract events by collecting the plugin's return value of
-	 *   `extractEvents()`.
-	 * - These events that are returned from `extractEvents` are "deferred
-	 *   dispatched events".
-	 * - When returned from `extractEvents`, deferred-dispatched events contain an
-	 *   "accumulation" of deferred dispatches.
-	 * - These deferred dispatches are accumulated/collected before they are
-	 *   returned, but processed at a later time by the `EventPluginHub` (hence the
-	 *   name deferred).
-	 *
-	 * In the process of returning their deferred-dispatched events, event plugins
-	 * themselves can dispatch events on-demand without returning them from
-	 * `extractEvents`. Plugins might want to do this, so that they can use event
-	 * dispatching as a tool that helps them decide which events should be extracted
-	 * in the first place.
-	 *
-	 * "On-Demand-Dispatched Events":
-	 *
-	 * - On-demand-dispatched events are not returned from `extractEvents`.
-	 * - On-demand-dispatched events are dispatched during the process of returning
-	 *   the deferred-dispatched events.
-	 * - They should not have side effects.
-	 * - They should be avoided, and/or eventually be replaced with another
-	 *   abstraction that allows event plugins to perform multiple "rounds" of event
-	 *   extraction.
-	 *
-	 * Therefore, the sequence of event dispatches becomes:
-	 *
-	 * - `R`s on-demand events (if any)   (dispatched by `R` on-demand)
-	 * - `S`s on-demand events (if any)   (dispatched by `S` on-demand)
-	 * - `C`s on-demand events (if any)   (dispatched by `C` on-demand)
-	 * - `R`s extracted events (if any)   (dispatched by `EventPluginHub`)
-	 * - `S`s extracted events (if any)   (dispatched by `EventPluginHub`)
-	 * - `C`s extracted events (if any)   (dispatched by `EventPluginHub`)
-	 *
-	 * In the case of `ResponderEventPlugin`: If the `startShouldSetResponder`
-	 * on-demand dispatch returns `true` (and some other details are satisfied) the
-	 * `onResponderGrant` deferred dispatched event is returned from
-	 * `extractEvents`. The sequence of dispatch executions in this case
-	 * will appear as follows:
-	 *
-	 * - `startShouldSetResponder` (`ResponderEventPlugin` dispatches on-demand)
-	 * - `touchStartCapture`       (`EventPluginHub` dispatches as usual)
-	 * - `touchStart`              (`EventPluginHub` dispatches as usual)
-	 * - `responderGrant/Reject`   (`EventPluginHub` dispatches as usual)
-	 *
-	 * @param {string} topLevelType Record from `EventConstants`.
-	 * @param {string} topLevelTargetID ID of deepest React rendered element.
-	 * @param {object} nativeEvent Native browser event.
-	 * @return {*} An accumulation of synthetic events.
-	 */
-	function setResponderAndExtractTransfer(
-	    topLevelType,
-	    topLevelTargetID,
-	    nativeEvent) {
-	  var shouldSetEventType =
-	    isStartish(topLevelType) ? eventTypes.startShouldSetResponder :
-	    isMoveish(topLevelType) ? eventTypes.moveShouldSetResponder :
-	    eventTypes.scrollShouldSetResponder;
-
-	  var bubbleShouldSetFrom = responderID || topLevelTargetID;
-	  var shouldSetEvent = SyntheticEvent.getPooled(
-	    shouldSetEventType,
-	    bubbleShouldSetFrom,
-	    nativeEvent
-	  );
-	  EventPropagators.accumulateTwoPhaseDispatches(shouldSetEvent);
-	  var wantsResponderID = executeDispatchesInOrderStopAtTrue(shouldSetEvent);
-	  if (!shouldSetEvent.isPersistent()) {
-	    shouldSetEvent.constructor.release(shouldSetEvent);
-	  }
-
-	  if (!wantsResponderID || wantsResponderID === responderID) {
-	    return null;
-	  }
-	  var extracted;
-	  var grantEvent = SyntheticEvent.getPooled(
-	    eventTypes.responderGrant,
-	    wantsResponderID,
-	    nativeEvent
-	  );
-
-	  EventPropagators.accumulateDirectDispatches(grantEvent);
-	  if (responderID) {
-	    var terminationRequestEvent = SyntheticEvent.getPooled(
-	      eventTypes.responderTerminationRequest,
-	      responderID,
-	      nativeEvent
-	    );
-	    EventPropagators.accumulateDirectDispatches(terminationRequestEvent);
-	    var shouldSwitch = !hasDispatches(terminationRequestEvent) ||
-	      executeDirectDispatch(terminationRequestEvent);
-	    if (!terminationRequestEvent.isPersistent()) {
-	      terminationRequestEvent.constructor.release(terminationRequestEvent);
-	    }
-
-	    if (shouldSwitch) {
-	      var terminateType = eventTypes.responderTerminate;
-	      var terminateEvent = SyntheticEvent.getPooled(
-	        terminateType,
-	        responderID,
-	        nativeEvent
-	      );
-	      EventPropagators.accumulateDirectDispatches(terminateEvent);
-	      extracted = accumulateInto(extracted, [grantEvent, terminateEvent]);
-	      responderID = wantsResponderID;
-	    } else {
-	      var rejectEvent = SyntheticEvent.getPooled(
-	        eventTypes.responderReject,
-	        wantsResponderID,
-	        nativeEvent
-	      );
-	      EventPropagators.accumulateDirectDispatches(rejectEvent);
-	      extracted = accumulateInto(extracted, rejectEvent);
-	    }
-	  } else {
-	    extracted = accumulateInto(extracted, grantEvent);
-	    responderID = wantsResponderID;
-	  }
-	  return extracted;
-	}
-
-	/**
-	 * A transfer is a negotiation between a currently set responder and the next
-	 * element to claim responder status. Any start event could trigger a transfer
-	 * of responderID. Any move event could trigger a transfer, so long as there is
-	 * currently a responder set (in other words as long as the user is pressing
-	 * down).
-	 *
-	 * @param {string} topLevelType Record from `EventConstants`.
-	 * @return {boolean} True if a transfer of responder could possibly occur.
-	 */
-	function canTriggerTransfer(topLevelType) {
-	  return topLevelType === EventConstants.topLevelTypes.topScroll ||
-	         isStartish(topLevelType) ||
-	         (isPressing && isMoveish(topLevelType));
-	}
-
-	/**
-	 * Event plugin for formalizing the negotiation between claiming locks on
-	 * receiving touches.
-	 */
-	var ResponderEventPlugin = {
-
-	  getResponderID: function() {
-	    return responderID;
-	  },
-
-	  eventTypes: eventTypes,
-
-	  /**
-	   * @param {string} topLevelType Record from `EventConstants`.
-	   * @param {DOMEventTarget} topLevelTarget The listening component root node.
-	   * @param {string} topLevelTargetID ID of `topLevelTarget`.
-	   * @param {object} nativeEvent Native browser event.
-	   * @return {*} An accumulation of synthetic events.
-	   * @see {EventPluginHub.extractEvents}
-	   */
-	  extractEvents: function(
-	      topLevelType,
-	      topLevelTarget,
-	      topLevelTargetID,
-	      nativeEvent) {
-	    var extracted;
-	    // Must have missed an end event - reset the state here.
-	    if (responderID && isStartish(topLevelType)) {
-	      responderID = null;
-	    }
-	    if (isStartish(topLevelType)) {
-	      isPressing = true;
-	    } else if (isEndish(topLevelType)) {
-	      isPressing = false;
-	    }
-	    if (canTriggerTransfer(topLevelType)) {
-	      var transfer = setResponderAndExtractTransfer(
-	        topLevelType,
-	        topLevelTargetID,
-	        nativeEvent
-	      );
-	      if (transfer) {
-	        extracted = accumulateInto(extracted, transfer);
-	      }
-	    }
-	    // Now that we know the responder is set correctly, we can dispatch
-	    // responder type events (directly to the responder).
-	    var type = isMoveish(topLevelType) ? eventTypes.responderMove :
-	      isEndish(topLevelType) ? eventTypes.responderRelease :
-	      isStartish(topLevelType) ? eventTypes.responderStart : null;
-	    if (type) {
-	      var gesture = SyntheticEvent.getPooled(
-	        type,
-	        responderID || '',
-	        nativeEvent
-	      );
-	      EventPropagators.accumulateDirectDispatches(gesture);
-	      extracted = accumulateInto(extracted, gesture);
-	    }
-	    if (type === eventTypes.responderRelease) {
-	      responderID = null;
-	    }
-	    return extracted;
-	  }
-
-	};
-
-	module.exports = ResponderEventPlugin;
-
-
-/***/ },
-/* 339 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM *//**
-	 * Copyright 2013-2014 Facebook, Inc.
-	 *
-	 * Licensed under the Apache License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 * http://www.apache.org/licenses/LICENSE-2.0
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 *
-	 * @providesModule TapEventPlugin
-	 * @typechecks static-only
-	 */
-
-	"use strict";
-
-	var EventConstants = __webpack_require__(31);
-	var EventPluginUtils = __webpack_require__(30);
-	var EventPropagators = __webpack_require__(96);
-	var SyntheticUIEvent = __webpack_require__(109);
-	var TouchEventUtils = __webpack_require__(340);
-	var ViewportMetrics = __webpack_require__(77);
-
-	var keyOf = __webpack_require__(42);
-	var topLevelTypes = EventConstants.topLevelTypes;
-
-	var isStartish = EventPluginUtils.isStartish;
-	var isEndish = EventPluginUtils.isEndish;
-
-	var isTouch = function(topLevelType) {
-	  var touchTypes = [
-	    topLevelTypes.topTouchCancel,
-	    topLevelTypes.topTouchEnd,
-	    topLevelTypes.topTouchStart,
-	    topLevelTypes.topTouchMove
-	  ];
-	  return touchTypes.indexOf(topLevelType) >= 0;
-	}
-
-	/**
-	 * Number of pixels that are tolerated in between a `touchStart` and `touchEnd`
-	 * in order to still be considered a 'tap' event.
-	 */
-	var tapMoveThreshold = 10;
-	var ignoreMouseThreshold = 750;
-	var startCoords = {x: null, y: null};
-	var lastTouchEvent = null;
-
-	var Axis = {
-	  x: {page: 'pageX', client: 'clientX', envScroll: 'currentPageScrollLeft'},
-	  y: {page: 'pageY', client: 'clientY', envScroll: 'currentPageScrollTop'}
-	};
-
-	function getAxisCoordOfEvent(axis, nativeEvent) {
-	  var singleTouch = TouchEventUtils.extractSingleTouch(nativeEvent);
-	  if (singleTouch) {
-	    return singleTouch[axis.page];
-	  }
-	  return axis.page in nativeEvent ?
-	    nativeEvent[axis.page] :
-	    nativeEvent[axis.client] + ViewportMetrics[axis.envScroll];
-	}
-
-	function getDistance(coords, nativeEvent) {
-	  var pageX = getAxisCoordOfEvent(Axis.x, nativeEvent);
-	  var pageY = getAxisCoordOfEvent(Axis.y, nativeEvent);
-	  return Math.pow(
-	    Math.pow(pageX - coords.x, 2) + Math.pow(pageY - coords.y, 2),
-	    0.5
-	  );
-	}
-
-	var dependencies = [
-	  topLevelTypes.topMouseDown,
-	  topLevelTypes.topMouseMove,
-	  topLevelTypes.topMouseUp
-	];
-
-	if (EventPluginUtils.useTouchEvents) {
-	  dependencies.push(
-	    topLevelTypes.topTouchEnd,
-	    topLevelTypes.topTouchStart,
-	    topLevelTypes.topTouchMove
-	  );
-	}
-
-	var eventTypes = {
-	  touchTap: {
-	    phasedRegistrationNames: {
-	      bubbled: keyOf({onTouchTap: null}),
-	      captured: keyOf({onTouchTapCapture: null})
-	    },
-	    dependencies: dependencies
-	  }
-	};
-
-	var now = function() {
-	  if (Date.now) {
-	    return Date.now();
-	  } else {
-	    // IE8 support: http://stackoverflow.com/questions/9430357/please-explain-why-and-how-new-date-works-as-workaround-for-date-now-in
-	    return +new Date;
-	  }
-	}
-
-	var TapEventPlugin = {
-
-	  tapMoveThreshold: tapMoveThreshold,
-
-	  ignoreMouseThreshold: ignoreMouseThreshold,
-
-	  eventTypes: eventTypes,
-
-	  /**
-	   * @param {string} topLevelType Record from `EventConstants`.
-	   * @param {DOMEventTarget} topLevelTarget The listening component root node.
-	   * @param {string} topLevelTargetID ID of `topLevelTarget`.
-	   * @param {object} nativeEvent Native browser event.
-	   * @return {*} An accumulation of synthetic events.
-	   * @see {EventPluginHub.extractEvents}
-	   */
-	  extractEvents: function(
-	      topLevelType,
-	      topLevelTarget,
-	      topLevelTargetID,
-	      nativeEvent) {
-
-	    if (isTouch(topLevelType)) {
-	      lastTouchEvent = now();
-	    } else {
-	      if (lastTouchEvent && (now() - lastTouchEvent) < ignoreMouseThreshold) {
-	        return null;
-	      }
-	    }
-
-	    if (!isStartish(topLevelType) && !isEndish(topLevelType)) {
-	      return null;
-	    }
-	    var event = null;
-	    var distance = getDistance(startCoords, nativeEvent);
-	    if (isEndish(topLevelType) && distance < tapMoveThreshold) {
-	      event = SyntheticUIEvent.getPooled(
-	        eventTypes.touchTap,
-	        topLevelTargetID,
-	        nativeEvent
-	      );
-	    }
-	    if (isStartish(topLevelType)) {
-	      startCoords.x = getAxisCoordOfEvent(Axis.x, nativeEvent);
-	      startCoords.y = getAxisCoordOfEvent(Axis.y, nativeEvent);
-	    } else if (isEndish(topLevelType)) {
-	      startCoords.x = 0;
-	      startCoords.y = 0;
-	    }
-	    EventPropagators.accumulateTwoPhaseDispatches(event);
-	    return event;
-	  }
-
-	};
-
-	module.exports = TapEventPlugin;
-
-
-/***/ },
-/* 340 */
-/***/ function(module, exports) {
-
-	/** @jsx React.DOM *//**
-	 * Copyright 2013-2014 Facebook, Inc.
-	 *
-	 * Licensed under the Apache License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 * http://www.apache.org/licenses/LICENSE-2.0
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 *
-	 * @providesModule TouchEventUtils
-	 */
-
-	var TouchEventUtils = {
-	  /**
-	   * Utility function for common case of extracting out the primary touch from a
-	   * touch event.
-	   * - `touchEnd` events usually do not have the `touches` property.
-	   *   http://stackoverflow.com/questions/3666929/
-	   *   mobile-sarai-touchend-event-not-firing-when-last-touch-is-removed
-	   *
-	   * @param {Event} nativeEvent Native event that may or may not be a touch.
-	   * @return {TouchesObject?} an object with pageX and pageY or null.
-	   */
-	  extractSingleTouch: function(nativeEvent) {
-	    var touches = nativeEvent.touches;
-	    var changedTouches = nativeEvent.changedTouches;
-	    var hasTouches = touches && touches.length > 0;
-	    var hasChangedTouches = changedTouches && changedTouches.length > 0;
-
-	    return !hasTouches && hasChangedTouches ? changedTouches[0] :
-	           hasTouches ? touches[0] :
-	           nativeEvent;
-	  }
-	};
-
-	module.exports = TouchEventUtils;
-
-
-/***/ },
-/* 341 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */var React = __webpack_require__(190);
-	var AppBarComponent = __webpack_require__(344);
-	var OrdersComponent = React.createClass({displayName: "OrdersComponent",
-	  render: function(){
-	    return (
-	      React.createElement("div", null, 
-	      	"Orders"
-	      )
-	    )
-	  }
-	});
-	module.exports = OrdersComponent;
-
-
-/***/ },
-/* 342 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/** @jsx React.DOM */(function (root, factory) {
-
-	  if (true) {
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(190), __webpack_require__(343)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if (typeof module === 'object' && typeof module.exports === 'object') {
-	    module.exports = factory(require('react'), require('spin.js'));
-	  } else {
-	    root.Loader = factory(root.React, root.Spinner);
-	  }
-
-	}(this, function (React, Spinner) {
-
-	  var Loader = React.createClass({displayName: "Loader",
-	    propTypes: {
-	      component: React.PropTypes.any,
-	      loaded:    React.PropTypes.bool,
-	      options:   React.PropTypes.object,
-	      scale:     React.PropTypes.number,
-	      lines:     React.PropTypes.number,
-	      length:    React.PropTypes.number,
-	      width:     React.PropTypes.number,
-	      radius:    React.PropTypes.number,
-	      corners:   React.PropTypes.number,
-	      rotate:    React.PropTypes.number,
-	      direction: React.PropTypes.oneOf([1, -1]),
-	      color:     React.PropTypes.string,
-	      speed:     React.PropTypes.number,
-	      trail:     React.PropTypes.number,
-	      shadow:    React.PropTypes.bool,
-	      hwaccell:  React.PropTypes.bool,
-	      className: React.PropTypes.string,
-	      zIndex:    React.PropTypes.number,
-	      top:       React.PropTypes.string,
-	      left:      React.PropTypes.string
-	    },
-
-	    getDefaultProps: function () {
-	      return { component: 'div' };
-	    },
-
-	    getInitialState: function () {
-	      return { loaded: false, options: {} };
-	    },
-
-	    componentDidMount: function () {
-	      this.updateState(this.props);
-	    },
-
-	    componentWillReceiveProps: function (nextProps) {
-	      this.updateState(nextProps);
-	    },
-
-	    updateState: function (props) {
-	      props || (props = {});
-
-	      var loaded = this.state.loaded;
-	      var options = this.state.options;
-
-	      // update loaded state, if supplied
-	      if ('loaded' in props) {
-	        loaded = !!props.loaded;
-	      }
-
-	      // update spinner options, if supplied
-	      var allowedOptions = Object.keys(this.constructor.propTypes);
-	      allowedOptions.splice(allowedOptions.indexOf('loaded'), 1);
-	      allowedOptions.splice(allowedOptions.indexOf('options'), 1);
-
-	      // allows passing options as either props or as an option object
-	      var propsOrObjectOptions = 'options' in props ? props.options : props;
-
-	      allowedOptions.forEach(function (key) {
-	        if (key in propsOrObjectOptions) {
-	          options[key] = propsOrObjectOptions[key];
-	        }
-	      });
-
-	      this.setState({ loaded: loaded, options: options }, this.spin);
-	    },
-
-	    spin: function () {
-	      if (this.isMounted() && !this.state.loaded) {
-	        var spinner = new Spinner(this.state.options);
-	        var target = this.refs.loader.getDOMNode();
-
-	        // clear out any other spinners from previous renders
-	        target.innerHTML = '';
-	        spinner.spin(target);
-	      }
-	    },
-
-	    render: function () {
-	      var props, children;
-
-	      if (this.state.loaded) {
-	        props = { key: 'content', className: 'loadedContent' };
-	        children = this.props.children;
-	      } else {
-	        props = { key: 'loader', ref: 'loader', className: 'loader' };
-	      }
-
-	      return React.createElement(this.props.component, props, children);
-	    }
-	  });
-
-	  return Loader;
-
-	}));
-
-
-/***/ },
-/* 343 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM *//**
-	 * Copyright (c) 2011-2014 Felix Gnass
-	 * Licensed under the MIT license
-	 * http://spin.js.org/
-	 *
-	 * Example:
-	    var opts = {
-	      lines: 12             // The number of lines to draw
-	    , length: 7             // The length of each line
-	    , width: 5              // The line thickness
-	    , radius: 10            // The radius of the inner circle
-	    , scale: 1.0            // Scales overall size of the spinner
-	    , corners: 1            // Roundness (0..1)
-	    , color: '#000'         // #rgb or #rrggbb
-	    , opacity: 1/4          // Opacity of the lines
-	    , rotate: 0             // Rotation offset
-	    , direction: 1          // 1: clockwise, -1: counterclockwise
-	    , speed: 1              // Rounds per second
-	    , trail: 100            // Afterglow percentage
-	    , fps: 20               // Frames per second when using setTimeout()
-	    , zIndex: 2e9           // Use a high z-index by default
-	    , className: 'spinner'  // CSS class to assign to the element
-	    , top: '50%'            // center vertically
-	    , left: '50%'           // center horizontally
-	    , shadow: false         // Whether to render a shadow
-	    , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
-	    , position: 'absolute'  // Element positioning
-	    }
-	    var target = document.getElementById('foo')
-	    var spinner = new Spinner(opts).spin(target)
-	 */
-	;(function (root, factory) {
-
-	  /* CommonJS */
-	  if (true) module.exports = factory()
-
-	  /* AMD module */
-	  else if (typeof define == 'function' && define.amd) define(factory)
-
-	  /* Browser global */
-	  else root.Spinner = factory()
-	}(this, function () {
-	  "use strict"
-
-	  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
-	    , animations = {} /* Animation rules keyed by their name */
-	    , useCssAnimations /* Whether to use CSS animations or setTimeout */
-	    , sheet /* A stylesheet to hold the @keyframe or VML rules. */
-
-	  /**
-	   * Utility function to create elements. If no tag name is given,
-	   * a DIV is created. Optionally properties can be passed.
-	   */
-	  function createEl (tag, prop) {
-	    var el = document.createElement(tag || 'div')
-	      , n
-
-	    for (n in prop) el[n] = prop[n]
-	    return el
-	  }
-
-	  /**
-	   * Appends children and returns the parent.
-	   */
-	  function ins (parent /* child1 child2, ...*/) {
-	    for (var i = 1, n = arguments.length; i < n; i++) {
-	      parent.appendChild(arguments[i])
-	    }
-
-	    return parent
-	  }
-
-	  /**
-	   * Creates an opacity keyframe animation rule and returns its name.
-	   * Since most mobile Webkits have timing issues with animation-delay,
-	   * we create separate rules for each line/segment.
-	   */
-	  function addAnimation (alpha, trail, i, lines) {
-	    var name = ['opacity', trail, ~~(alpha * 100), i, lines].join('-')
-	      , start = 0.01 + i/lines * 100
-	      , z = Math.max(1 - (1-alpha) / trail * (100-start), alpha)
-	      , prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase()
-	      , pre = prefix && '-' + prefix + '-' || ''
-
-	    if (!animations[name]) {
-	      sheet.insertRule(
-	        '@' + pre + 'keyframes ' + name + '{' +
-	        '0%{opacity:' + z + '}' +
-	        start + '%{opacity:' + alpha + '}' +
-	        (start+0.01) + '%{opacity:1}' +
-	        (start+trail) % 100 + '%{opacity:' + alpha + '}' +
-	        '100%{opacity:' + z + '}' +
-	        '}', sheet.cssRules.length)
-
-	      animations[name] = 1
-	    }
-
-	    return name
-	  }
-
-	  /**
-	   * Tries various vendor prefixes and returns the first supported property.
-	   */
-	  function vendor (el, prop) {
-	    var s = el.style
-	      , pp
-	      , i
-
-	    prop = prop.charAt(0).toUpperCase() + prop.slice(1)
-	    if (s[prop] !== undefined) return prop
-	    for (i = 0; i < prefixes.length; i++) {
-	      pp = prefixes[i]+prop
-	      if (s[pp] !== undefined) return pp
-	    }
-	  }
-
-	  /**
-	   * Sets multiple style properties at once.
-	   */
-	  function css (el, prop) {
-	    for (var n in prop) {
-	      el.style[vendor(el, n) || n] = prop[n]
-	    }
-
-	    return el
-	  }
-
-	  /**
-	   * Fills in default values.
-	   */
-	  function merge (obj) {
-	    for (var i = 1; i < arguments.length; i++) {
-	      var def = arguments[i]
-	      for (var n in def) {
-	        if (obj[n] === undefined) obj[n] = def[n]
-	      }
-	    }
-	    return obj
-	  }
-
-	  /**
-	   * Returns the line color from the given string or array.
-	   */
-	  function getColor (color, idx) {
-	    return typeof color == 'string' ? color : color[idx % color.length]
-	  }
-
-	  // Built-in defaults
-
-	  var defaults = {
-	    lines: 12             // The number of lines to draw
-	  , length: 7             // The length of each line
-	  , width: 5              // The line thickness
-	  , radius: 10            // The radius of the inner circle
-	  , scale: 1.0            // Scales overall size of the spinner
-	  , corners: 1            // Roundness (0..1)
-	  , color: '#000'         // #rgb or #rrggbb
-	  , opacity: 1/4          // Opacity of the lines
-	  , rotate: 0             // Rotation offset
-	  , direction: 1          // 1: clockwise, -1: counterclockwise
-	  , speed: 1              // Rounds per second
-	  , trail: 100            // Afterglow percentage
-	  , fps: 20               // Frames per second when using setTimeout()
-	  , zIndex: 2e9           // Use a high z-index by default
-	  , className: 'spinner'  // CSS class to assign to the element
-	  , top: '50%'            // center vertically
-	  , left: '50%'           // center horizontally
-	  , shadow: false         // Whether to render a shadow
-	  , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
-	  , position: 'absolute'  // Element positioning
-	  }
-
-	  /** The constructor */
-	  function Spinner (o) {
-	    this.opts = merge(o || {}, Spinner.defaults, defaults)
-	  }
-
-	  // Global defaults that override the built-ins:
-	  Spinner.defaults = {}
-
-	  merge(Spinner.prototype, {
-	    /**
-	     * Adds the spinner to the given target element. If this instance is already
-	     * spinning, it is automatically removed from its previous target b calling
-	     * stop() internally.
-	     */
-	    spin: function (target) {
-	      this.stop()
-
-	      var self = this
-	        , o = self.opts
-	        , el = self.el = createEl(null, {className: o.className})
-
-	      css(el, {
-	        position: o.position
-	      , width: 0
-	      , zIndex: o.zIndex
-	      , left: o.left
-	      , top: o.top
-	      })
-
-	      if (target) {
-	        target.insertBefore(el, target.firstChild || null)
-	      }
-
-	      el.setAttribute('role', 'progressbar')
-	      self.lines(el, self.opts)
-
-	      if (!useCssAnimations) {
-	        // No CSS animation support, use setTimeout() instead
-	        var i = 0
-	          , start = (o.lines - 1) * (1 - o.direction) / 2
-	          , alpha
-	          , fps = o.fps
-	          , f = fps / o.speed
-	          , ostep = (1 - o.opacity) / (f * o.trail / 100)
-	          , astep = f / o.lines
-
-	        ;(function anim () {
-	          i++
-	          for (var j = 0; j < o.lines; j++) {
-	            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity)
-
-	            self.opacity(el, j * o.direction + start, alpha, o)
-	          }
-	          self.timeout = self.el && setTimeout(anim, ~~(1000 / fps))
-	        })()
-	      }
-	      return self
-	    }
-
-	    /**
-	     * Stops and removes the Spinner.
-	     */
-	  , stop: function () {
-	      var el = this.el
-	      if (el) {
-	        clearTimeout(this.timeout)
-	        if (el.parentNode) el.parentNode.removeChild(el)
-	        this.el = undefined
-	      }
-	      return this
-	    }
-
-	    /**
-	     * Internal method that draws the individual lines. Will be overwritten
-	     * in VML fallback mode below.
-	     */
-	  , lines: function (el, o) {
-	      var i = 0
-	        , start = (o.lines - 1) * (1 - o.direction) / 2
-	        , seg
-
-	      function fill (color, shadow) {
-	        return css(createEl(), {
-	          position: 'absolute'
-	        , width: o.scale * (o.length + o.width) + 'px'
-	        , height: o.scale * o.width + 'px'
-	        , background: color
-	        , boxShadow: shadow
-	        , transformOrigin: 'left'
-	        , transform: 'rotate(' + ~~(360/o.lines*i + o.rotate) + 'deg) translate(' + o.scale*o.radius + 'px' + ',0)'
-	        , borderRadius: (o.corners * o.scale * o.width >> 1) + 'px'
-	        })
-	      }
-
-	      for (; i < o.lines; i++) {
-	        seg = css(createEl(), {
-	          position: 'absolute'
-	        , top: 1 + ~(o.scale * o.width / 2) + 'px'
-	        , transform: o.hwaccel ? 'translate3d(0,0,0)' : ''
-	        , opacity: o.opacity
-	        , animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1 / o.speed + 's linear infinite'
-	        })
-
-	        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px #000'), {top: '2px'}))
-	        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')))
-	      }
-	      return el
-	    }
-
-	    /**
-	     * Internal method that adjusts the opacity of a single line.
-	     * Will be overwritten in VML fallback mode below.
-	     */
-	  , opacity: function (el, i, val) {
-	      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val
-	    }
-
-	  })
-
-
-	  function initVML () {
-
-	    /* Utility function to create a VML tag */
-	    function vml (tag, attr) {
-	      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr)
-	    }
-
-	    // No CSS transforms but VML support, add a CSS rule for VML elements:
-	    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)')
-
-	    Spinner.prototype.lines = function (el, o) {
-	      var r = o.scale * (o.length + o.width)
-	        , s = o.scale * 2 * r
-
-	      function grp () {
-	        return css(
-	          vml('group', {
-	            coordsize: s + ' ' + s
-	          , coordorigin: -r + ' ' + -r
-	          })
-	        , { width: s, height: s }
-	        )
-	      }
-
-	      var margin = -(o.width + o.length) * o.scale * 2 + 'px'
-	        , g = css(grp(), {position: 'absolute', top: margin, left: margin})
-	        , i
-
-	      function seg (i, dx, filter) {
-	        ins(
-	          g
-	        , ins(
-	            css(grp(), {rotation: 360 / o.lines * i + 'deg', left: ~~dx})
-	          , ins(
-	              css(
-	                vml('roundrect', {arcsize: o.corners})
-	              , { width: r
-	                , height: o.scale * o.width
-	                , left: o.scale * o.radius
-	                , top: -o.scale * o.width >> 1
-	                , filter: filter
-	                }
-	              )
-	            , vml('fill', {color: getColor(o.color, i), opacity: o.opacity})
-	            , vml('stroke', {opacity: 0}) // transparent stroke to fix color bleeding upon opacity change
-	            )
-	          )
-	        )
-	      }
-
-	      if (o.shadow)
-	        for (i = 1; i <= o.lines; i++) {
-	          seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)')
-	        }
-
-	      for (i = 1; i <= o.lines; i++) seg(i)
-	      return ins(el, g)
-	    }
-
-	    Spinner.prototype.opacity = function (el, i, val, o) {
-	      var c = el.firstChild
-	      o = o.shadow && o.lines || 0
-	      if (c && i + o < c.childNodes.length) {
-	        c = c.childNodes[i + o]; c = c && c.firstChild; c = c && c.firstChild
-	        if (c) c.opacity = val
-	      }
-	    }
-	  }
-
-	  if (typeof document !== 'undefined') {
-	    sheet = (function () {
-	      var el = createEl('style', {type : 'text/css'})
-	      ins(document.getElementsByTagName('head')[0], el)
-	      return el.sheet || el.styleSheet
-	    }())
-
-	    var probe = css(createEl('group'), {behavior: 'url(#default#VML)'})
-
-	    if (!vendor(probe, 'transform') && probe.adj) initVML()
-	    else useCssAnimations = vendor(probe, 'animation')
-	  }
-
-	  return Spinner
-
-	}));
-
-
-/***/ },
-/* 344 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */var React = __webpack_require__(190);
-	var mui = __webpack_require__(188);
-	var AppBar = mui.AppBar;
-	var HeadComponent = __webpack_require__(296);
-	var LeftComponent = __webpack_require__(336);
-	var LineSeparator = __webpack_require__(349);
-	var AppBarComponent = React.createClass({displayName: "AppBarComponent",
-		render: function(){
-			return (
-				React.createElement("div", null, 
-			        React.createElement(AppBar, {title: "", iconClassNameRight: "muidocs-icon-navigation-expand-more", onLeftIconButtonTouchTap: this._onToggleLeftNav, style: {width: '120%', marginLeft: '-8px', marginTop: '-8px', top: '0px', marginBottom: '10px'}}, 
-			          React.createElement(HeadComponent, null)
-			        ), 
-			        React.createElement(LineSeparator, null), 
-			        React.createElement(LeftComponent, {ref: "leftNav"})
-		        )
-		     )
-		},
-		_onToggleLeftNav: function(){
-		    this.refs.leftNav.toggle();
-		  }
-	});
-
-	module.exports = AppBarComponent;
-
-/***/ },
-/* 345 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */var React = __webpack_require__(190);
-	var mui = __webpack_require__(188);
-	var InvertTabs = mui.InvertTabs;
-	var Tab = mui.Tab;
-	var CurrencyComponent = __webpack_require__(348);
-	var width = window.innerWidth
-	  || document.documentElement.clientWidth
-	  || document.body.clientWidth;
-
-	  var height = window.innerHeight
-	  || document.documentElement.clientHeight
-	  || document.body.clientHeight;
-	var CurrenciesTabsComponent = React.createClass({displayName: "CurrenciesTabsComponent",
-		
-		render: function(){
-			return (
-				React.createElement(InvertTabs, {style: {marginBottom: '1px'}, tabStyle: {height: height * 0.75}}, 
-					React.createElement(Tab, {label: "Market", style: {marginBottom: '22%'}}, 
-						React.createElement(CurrencyComponent, null)
-					), 
-					React.createElement(Tab, {label: "Limit", style: {marginBottom: '22%'}}, 
-						React.createElement(CurrencyComponent, null)
-					), 
-					React.createElement(Tab, {label: "Range", style: {marginBottom: '22%'}}, 
-						React.createElement(CurrencyComponent, null)
-					)
-				)
-			)
-		}
-	});
-
-	module.exports = CurrenciesTabsComponent;
-
-/***/ },
-/* 346 */,
-/* 347 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var React = __webpack_require__(1);
-	var TabTemplate = __webpack_require__(281);
-	var InkBar = __webpack_require__(282);
-	var StylePropable = __webpack_require__(191);
-	var Events = __webpack_require__(201);
-
-	var InvertTabs = React.createClass({
-	  displayName: 'Tabs',
-
-	  mixins: [StylePropable],
-
-	  contextTypes: {
-	    muiTheme: React.PropTypes.object
-	  },
-
-	  propTypes: {
-	    initialSelectedIndex: React.PropTypes.number,
-	    onActive: React.PropTypes.func,
-	    tabWidth: React.PropTypes.number
-	  },
-
-	  getInitialState: function getInitialState() {
-	    var selectedIndex = 0;
-	    if (this.props.initialSelectedIndex && this.props.initialSelectedIndex < this.props.children.length) {
-	      selectedIndex = this.props.initialSelectedIndex;
-	    }
-	    return {
-	      selectedIndex: selectedIndex
-	    };
-	  },
-
-	  getEvenWidth: function getEvenWidth() {
-	    return parseInt(window.getComputedStyle(React.findDOMNode(this)).getPropertyValue('width'), 10);
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    this._updateTabWidth();
-	    Events.on(window, 'resize', this._updateTabWidth);
-	  },
-
-	  componentWillUnmount: function componentWillUnmount() {
-	    Events.off(window, 'resize', this._updateTabWidth);
-	  },
-
-	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-	    if (newProps.hasOwnProperty('style')) this._updateTabWidth();
-	  },
-
-	  handleTouchTap: function handleTouchTap(tabIndex, tab) {
-	    if (this.props.onChange && this.state.selectedIndex !== tabIndex) {
-	      this.props.onChange(tabIndex, tab);
-	    }
-
-	    this.setState({ selectedIndex: tabIndex });
-	    //default CB is _onActive. Can be updated in tab.jsx
-	    if (tab.props.onActive) tab.props.onActive(tab);
-	  },
-
-	  getStyles: function getStyles() {
-	    var themeVariables = this.context.muiTheme.component.tabs;
-
-	    return {
-	      tabItemContainer: {
-	        margin: '0',
-	        padding: '0',
-	        width: '100%',
-	        height: '48px',
-	        backgroundColor: themeVariables.backgroundColor,
-	        whiteSpace: 'nowrap',
-	        display: 'table'
-	      }
-	    };
-	  },
-
-	  render: function render() {
-	    var styles = this.getStyles();
-
-	    var tabContent = [];
-	    var width = this.state.fixedWidth ? 100 / this.props.children.length + '%' : this.props.tabWidth + 'px';
-
-	    var left = 'calc(' + width + '*' + this.state.selectedIndex + ')';
-
-	    var tabs = React.Children.map(this.props.children, function (tab, index) {
-	      if (tab.type.displayName === 'Tab') {
-
-	        if (tab.props.children) {
-	          tabContent.push(React.createElement(TabTemplate, {
-	            key: index,
-	            selected: this.state.selectedIndex === index
-	          }, tab.props.children));
-	        } else {
-	          tabContent.push(undefined);
-	        }
-
-	        return React.addons.cloneWithProps(tab, {
-	          key: index,
-	          selected: this.state.selectedIndex === index,
-	          tabIndex: index,
-	          width: width,
-	          handleTouchTap: this.handleTouchTap
-	        });
-	      } else {
-	        var type = tab.type.displayName || tab.type;
-	        throw 'Tabs only accepts Tab Components as children. Found ' + type + ' as child number ' + (index + 1) + ' of Tabs';
-	      }
-	    }, this);
-	    return React.createElement(
-	      'div',
-	      { style: this.mergeAndPrefix(this.props.style) },
-	      React.createElement(
-	        'div',
-	        {style: this.props.tabStyle},
-	        tabContent
-	      ),
-	      React.createElement(
-	        'div',
-	        { style: this.mergeAndPrefix(styles.tabItemContainer, this.props.tabItemContainerStyle) },
-	        tabs
-	      ),
-	      React.createElement(InkBar, { left: left, width: width })
-	      
-	    );
-	  },
-
-	  _tabWidthPropIsValid: function _tabWidthPropIsValid() {
-	    return this.props.tabWidth && this.props.tabWidth * this.props.children.length <= this.getEvenWidth();
-	  },
-
-	  // Validates that the tabWidth can fit all tabs on the tab bar. If not, the
-	  // tabWidth is recalculated and fixed.
-	  _updateTabWidth: function _updateTabWidth() {
-	    if (this._tabWidthPropIsValid()) {
-	      this.setState({
-	        fixedWidth: false
-	      });
-	    } else {
-	      this.setState({
-	        fixedWidth: true
-	      });
-	    }
-	  }
-
-	});
-
-	module.exports = InvertTabs;
-
-/***/ },
 /* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx React.DOM */var React = __webpack_require__(190);
-	var mui = __webpack_require__(188);
-	var Tabs = mui.Tabs;
-	var Tab = mui.Tab;
-
-	var CurrencyComponent = React.createClass({displayName: "CurrencyComponent",
-		render: function(){
-			return (
-					
-					React.createElement(Tabs, {style: {position:'relative', marginTop:'10px'}}, 
-						React.createElement(Tab, {label: "USD"}, 
-								"USD"
-						), 
-						React.createElement(Tab, {label: "JPN"}, 
-							"JPN"
-						), 
-						React.createElement(Tab, {label: "VND"}, 
-							"VND"
-						)
-					)
-			)
-		}
-	});
-
-	module.exports = CurrencyComponent;
-
-/***/ },
-/* 349 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */var React = __webpack_require__(190);
+	/** @jsx React.DOM */var React = __webpack_require__(188);
 
 	var LineSeparator = React.createClass({displayName: "LineSeparator",
 		getStyles: function(){
